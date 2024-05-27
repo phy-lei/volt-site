@@ -19,7 +19,9 @@ const { title } = Astro.props;
   </head>
   <body>
     <Nav client:load />
-    <slot />
+    <div class="py-72px">
+      <slot />
+    </div>
   </body>
 </html>
 <style is:global>
