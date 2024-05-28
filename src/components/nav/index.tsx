@@ -17,7 +17,7 @@ const Nav = () => {
   });
 
   return (
-    <nav class="fixed w-full h-72px bg-red dark:bg-blue">
+    <nav class="w-full h-72px bg-red sticky top-0 z-40 w-full py-4 transition-colors backdrop-blur-md text-black">
       <div class="h-full flex items-center justify-between">
         <div class="flex">
           <h1>Volt+</h1>
