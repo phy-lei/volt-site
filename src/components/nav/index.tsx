@@ -17,7 +17,7 @@ const Nav = () => {
   });
 
   return (
-    <nav class="w-full h-72px bg-red sticky top-0 z-40 w-full py-4 transition-colors backdrop-blur-md text-black">
+    <nav class="w-full h-72px sticky top-0 z-40 w-full py-4 transition-colors backdrop-blur-md text-[hsl(var(--foreground))] bg-[hsl(var(--background))]">
       <div class="h-full flex items-center justify-between">
         <div class="flex">
           <h1>Volt+</h1>
