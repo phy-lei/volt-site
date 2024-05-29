@@ -16,6 +16,7 @@
     "@astrojs/prefetch": "^0.4.1",
     "@astrojs/solid-js": "^4.2.0",
     "astro": "^4.9.1",
+    "clsx": "^2.1.1",
     "solid-js": "^1.8.17",
     "typescript": "^5.4.5"
   },

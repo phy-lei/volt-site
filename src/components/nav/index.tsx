@@ -1,14 +1,31 @@
-import { onMount, onCleanup } from 'solid-js';
+import { onMount, onCleanup, createSignal } from 'solid-js';
 import ExpandButton from '../expand-button';
+import clsx from 'clsx';
+
+const SCROLL_PERCENT = 1.5;
+
+function getScrollPercentage() {
+  // 获取当前滚动的位置
+  const scrollTop = window.scrollY;
+  // 计算整个文档的高度减去视口的高度，得到总的可滚动高度
+  const scrollHeight =
+    document.documentElement.scrollHeight -
+    document.documentElement.clientHeight;
+  // 计算滚动的百分比
+  const scrollPercentage = (scrollTop / scrollHeight) * 100;
+  return scrollPercentage;
+}
+
 const Nav = () => {
+  const [transparent, setTransparent] = createSignal(true);
+
   onMount(() => {
     const scrollEvent = () => {
-      // @TODO 添加nav border 及背景色
-      console.log(
-        '%c [ xxx ]',
-        'font-size:13px; background:pink; color:#bf2c9f;',
-        123
-      );
+      if (getScrollPercentage() > SCROLL_PERCENT) {
+        setTransparent(false);
+      } else {
+        setTransparent(true);
+      }
     };
     window.addEventListener('scroll', scrollEvent);
     onCleanup(() => {
@@ -17,8 +34,15 @@ const Nav = () => {
   });
 
   return (
-    <nav class="w-full h-72px sticky top-0 z-40 w-full py-4 transition-colors backdrop-blur-md text-[hsl(var(--foreground))] bg-[hsl(var(--background))]">
-      <div class="h-full flex items-center justify-between">
+    <nav
+      class={clsx(
+        'w-full h-72px sticky top-0 z-40 w-full py-4 transition-colors py-4',
+        transparent()
+          ? 'text-[hsl(var(--muted-foreground))] bg-transparent'
+          : 'backdrop-blur-md text-[hsl(var(--foreground))] bg-[hsl(var(--background)/.75)]'
+      )}
+    >
+      <div class="h-full flex items-center justify-between gap-4 px-8">
         <div class="flex">
           <h1>Volt+</h1>
           <h1>icon</h1>

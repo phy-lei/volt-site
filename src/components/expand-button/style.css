@@ -6,7 +6,7 @@
 .expand-button span {
   width: 24px;
   height: 3px;
-  background-color: rgb(8, 15, 26);
+  background-color: currentColor;
   display: block;
   margin: 4px auto;
   transition: transform 0.2s ease-in 0s;

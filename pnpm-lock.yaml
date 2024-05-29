@@ -17,6 +17,9 @@ dependencies:
   astro:
     specifier: ^4.9.1
     version: 4.9.1(typescript@5.4.5)
+  clsx:
+    specifier: ^2.1.1
+    version: 2.1.1
   solid-js:
     specifier: ^1.8.17
     version: 1.8.17
