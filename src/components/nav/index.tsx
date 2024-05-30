@@ -44,18 +44,26 @@ const Nav = () => {
       )}
     >
       <div class="h-full flex items-center justify-between gap-4 px-8">
-        <div class="flex">
-          <Logo></Logo>
-        </div>
+        <Logo></Logo>
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
-            <a href="">光伏介绍</a>
-            <a href="">工商业解决方案</a>
-            <a href="">成功案例</a>
-            <a href="">关于 volt +</a>
-            <a href="">联系我们</a>
+            <a class="nav-link" href="">
+              光伏介绍
+            </a>
+            <a class="nav-link" href="">
+              工商业解决方案
+            </a>
+            <a class="nav-link" href="">
+              成功案例
+            </a>
+            <a class="nav-link" href="">
+              关于 volt +
+            </a>
+            <a class="nav-link" href="">
+              联系我们
+            </a>
           </div>
-          <div class="md:hidden">
+          <div class="md:hidden inline-flex items-center justify-center rounded-full text-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border hover:bg-accent hover:text-accent-foreground h-10 w-10">
             <ExpandButton
               onChange={(flag) => {
                 console.log(flag);
