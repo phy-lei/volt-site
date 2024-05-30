@@ -1,5 +1,6 @@
 import { onMount, onCleanup, createSignal } from 'solid-js';
 import ExpandButton from '../expand-button';
+import Logo from '../logo';
 import clsx from 'clsx';
 
 const SCROLL_PERCENT = 1.5;
@@ -12,8 +13,7 @@ function getScrollPercentage() {
     document.documentElement.scrollHeight -
     document.documentElement.clientHeight;
   // 计算滚动的百分比
-  const scrollPercentage = (scrollTop / scrollHeight) * 100;
-  return scrollPercentage;
+  return (scrollTop / scrollHeight) * 100;
 }
 
 const Nav = () => {
@@ -27,6 +27,7 @@ const Nav = () => {
         setTransparent(true);
       }
     };
+    scrollEvent();
     window.addEventListener('scroll', scrollEvent);
     onCleanup(() => {
       window.removeEventListener('scroll', scrollEvent);
@@ -44,8 +45,7 @@ const Nav = () => {
     >
       <div class="h-full flex items-center justify-between gap-4 px-8">
         <div class="flex">
-          <h1>Volt+</h1>
-          <h1>icon</h1>
+          <Logo></Logo>
         </div>
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
