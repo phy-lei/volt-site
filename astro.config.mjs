@@ -18,6 +18,7 @@ const envAdapter = () => {
 
 // https://astro.build/config
 export default defineConfig({
+  output: 'server',
   integrations: [
     UnoCSS({ injectReset: true }),
     solidJs(),

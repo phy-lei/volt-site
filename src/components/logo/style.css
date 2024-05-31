@@ -1,0 +1,29 @@
+#logoPath {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  stroke: currentColor;
+  fill: transparent;
+  animation: drawSignature 6s linear forwards;
+}
+
+@keyframes drawSignature {
+  0% {
+    stroke-dashoffset: 520;
+    stroke: currentColor;
+  }
+
+  50% {
+    fill: currentColor;
+  }
+
+  90% {
+    fill: currentColor;
+    stroke-dashoffset: 0;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+    fill: currentColor;
+    stroke: currentColor;
+  }
+}
