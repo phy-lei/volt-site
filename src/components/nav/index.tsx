@@ -37,7 +37,7 @@ const Nav = () => {
   return (
     <nav
       class={clsx(
-        'w-full h-72px sticky top-0 z-40 w-full py-4 transition-colors py-4',
+        'w-full h-72px fixed top-0 z-40 w-full py-4 transition-colors py-4',
         transparent()
           ? 'text-[hsl(var(--muted-foreground))] bg-transparent'
           : 'backdrop-blur-md text-[hsl(var(--foreground))] bg-[hsl(var(--background)/.75)]'
@@ -48,10 +48,10 @@ const Nav = () => {
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
             <a class="nav-link" href="">
-              光伏介绍
+              工商业解决方案
             </a>
             <a class="nav-link" href="">
-              工商业解决方案
+              家庭解决方案
             </a>
             <a class="nav-link" href="">
               成功案例

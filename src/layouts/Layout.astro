@@ -1,5 +1,6 @@
 ---
 import Nav from '@/components/nav';
+import LogoSvg from '@/components/logo/logo';
 interface Props {
   title: string;
 }
@@ -19,9 +20,74 @@ const { title } = Astro.props;
   </head>
   <body>
     <Nav client:load />
-    <div class="py-72px">
+    <div>
       <slot />
     </div>
+    <footer class="bg-white">
+      <div class="m-auto max-w-5xl">
+        <div class="flex justify-between border-gray border-b pt-10 pb-2 gap-4">
+          <div class="text-[var(--main-color)]">
+            <LogoSvg />
+            <h1 class="text-black px-2">辐特佳新能源</h1>
+          </div>
+          <div class="text-xs flex items-end self-end">
+            公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献<br />
+             创造绿色清洁能源的无限可能
+          </div>
+        </div>
+        <div class="flex justify-between px-2 py-4">
+          <div class="flex-1">
+            <h1 class="flex items-center mt-2">
+              <i
+                class="i-carbon:phone-voice-filled text-[var(--main-color)] mr-2"
+              ></i>
+              <span>4008-613-617</span>
+            </h1>
+            <h1 class="flex items-center mt-2">
+              <i class="i-carbon:location-filled text-[var(--main-color)] mr-2"
+              ></i>
+              <span>上海市宝山区军工路5169号A9-102室</span>
+            </h1>
+          </div>
+          <div class="flex items-center gap-4 <md:hidden">
+            <a
+              href=""
+              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
+              >工商业解决方案</a
+            >
+            <a
+              href=""
+              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
+              >家庭解决方案</a
+            >
+            <a
+              href=""
+              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
+              >成功案例</a
+            >
+            <a
+              href=""
+              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
+              >关于 volt +</a
+            >
+            <a
+              href=""
+              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
+              >联系我们</a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="bg-black text-white text-xs">
+        <div class="m-auto h-40px max-w-5xl flex items-center justify-between">
+          <span
+            >© 2019-2020 版权所有上海辐特佳新能源科技有限公司 xxxxxx
+            公安机关备案号：xxxxx</span
+          >
+          <a href="javascript:;">返回顶部</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
 <style is:global>
@@ -40,10 +106,10 @@ const { title } = Astro.props;
     --muted-foreground: 230 78% 91%;
     --accent: 0 0% 96.1%;
     --accent-foreground: 0 0% 9%;
+    --main-color: #34b366ff;
   }
   html {
     font-family: system-ui, sans-serif;
-    background-color: #004737;
   }
   code {
     font-family:
