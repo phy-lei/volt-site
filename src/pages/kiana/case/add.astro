@@ -1,0 +1,69 @@
+---
+import AdminLayoutIndex from '@/layouts/AdminLayoutIndex.astro';
+import ImgUpload from './components/ImgUpload';
+import Button from '@/components/button';
+import '@wangeditor/editor/dist/css/style.css';
+---
+
+<AdminLayoutIndex title="辐特佳新能源">
+  <div class="px-2 h-100% relative">
+    <div class="mb-5">
+      <h1
+        class="border-l border-[var(--main-color)] border-l-5 pl-2 text-xl font-500 mb-5"
+      >
+        封面
+      </h1>
+      <div class="h-120px">
+        <ImgUpload client:load />
+      </div>
+    </div>
+    <div class="w-100% h-70%">
+      <h1
+        class="border-l border-[var(--main-color)] border-l-5 pl-2 text-xl font-500 mb-5"
+      >
+        正文
+      </h1>
+      <div
+        id="editor—wrapper"
+        class="w-90% h-100% mx-2 border border-gray box-border overflow-y-auto"
+      >
+        <div id="toolbar-container"><!-- 工具栏 --></div>
+        <div id="editor-container"><!-- 编辑器 --></div>
+      </div>
+    </div>
+    <div class="absolute right-10 top-1">
+      <Button>上传案例</Button>
+    </div>
+  </div>
+</AdminLayoutIndex>
+
+<script>
+  import { createEditor, createToolbar } from '@wangeditor/editor';
+
+  window.onload = () => {
+    const editorConfig = {
+      placeholder: 'Type here...',
+      onChange(editor) {
+        const html = editor.getHtml();
+        console.log('editor content', html);
+        // 也可以同步到 <textarea>
+      },
+    };
+
+    const editor = createEditor({
+      selector: '#editor-container',
+      html: '<p><br></p>',
+      config: editorConfig,
+      mode: 'default', // or 'simple'
+    });
+
+    const toolbarConfig = {};
+
+    const toolbar = createToolbar({
+      editor,
+      selector: '#toolbar-container',
+      config: toolbarConfig,
+      mode: 'default', // or 'simple'
+    });
+  };
+</script>

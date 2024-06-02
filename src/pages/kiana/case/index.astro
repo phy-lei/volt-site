@@ -1,7 +1,74 @@
 ---
 import AdminLayoutIndex from '@/layouts/AdminLayoutIndex.astro';
+import Button from '@/components/button';
 ---
 
 <AdminLayoutIndex title="辐特佳新能源">
-  <div class="w-100% h-100% flex flex-col items-center justify-center">123</div>
+  <div class="px-2 h-100%">
+    <div class="h-40px">
+      <a href="/kiana/case/add">
+        <Button>新增</Button>
+      </a>
+    </div>
+    <div
+      class="w-80% h-[calc(100%-40px)] m-auto mt-10 overflow-auto pr-2 scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2"
+      id="case-list"
+    >
+      {
+        Array.from({ length: 10 })
+          .fill(1)
+          .map((item, index) => (
+            <div class="relative rounded-md border border-dashed leading-6 p-2 border-gray-700 flex items-center mb-5">
+              <img src="/img_1.jpg" alt="" class="w-100px h-100px mr-5" />
+              <p>123123</p>
+              <i
+                class="i-carbon:close-large absolute right-1 top-1 cursor-pointer"
+                data-index={index}
+              />
+            </div>
+          ))
+      }
+    </div>
+  </div>
 </AdminLayoutIndex>
+
+<style>
+  .scrollbar-w-2::-webkit-scrollbar {
+    width: 0.25rem;
+    height: 0.25rem;
+  }
+
+  .scrollbar-track-blue-lighter::-webkit-scrollbar-track {
+    background-color: #f7fafc;
+    background-color: rgba(247, 250, 252, 1);
+  }
+
+  .scrollbar-thumb-blue::-webkit-scrollbar-thumb {
+    --bg-opacity: 1;
+    background-color: #edf2f7;
+    background-color: rgba(237, 242, 247, 1);
+  }
+
+  .scrollbar-thumb-rounded::-webkit-scrollbar-thumb {
+    border-radius: 0.25rem;
+  }
+</style>
+
+<script>
+  const caseList = document.getElementById('case-list');
+  caseList.addEventListener('click', (e: any) => {
+    const index = e.target.dataset.index;
+
+    console.log(
+      '%c [ xxx ]',
+      'font-size:13px; background:pink; color:#bf2c9f;',
+      index
+    );
+    if (index === undefined) return;
+    console.log(
+      '%c [ xxx ]',
+      'font-size:13px; background:pink; color:#bf2c9f;',
+      222
+    );
+  });
+</script>
