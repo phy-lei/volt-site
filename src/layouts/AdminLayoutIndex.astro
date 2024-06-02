@@ -1,0 +1,93 @@
+---
+import LogoSvg from '@/components/logo/logo';
+import Solar from '@/components/icon/solar';
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="w-full flex h-screen">
+      <div
+        class="hidden sm:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 transition-all z-10 sidebar-fixed"
+      >
+        <div class="flex shrink-0 items-center justify-between">
+          <a
+            href="/kiana"
+            class="flex h-16 shrink-0 items-center text-[var(--main-color)]"
+          >
+            <LogoSvg />
+          </a>
+        </div>
+        <nav class="flex flex-1 flex-col">
+          <ul role="list" class="flex flex-1 flex-col gap-y-7">
+            <li class="hover:text-[var(--main-color)]">
+              <a href="" class="flex items-center">
+                <i class="i-carbon:chat mr-2"></i>
+                 消息列表
+              </a>
+            </li>
+            <li class="hover:text-[var(--main-color)]">
+              <a href="" class="flex items-center">
+                <Solar class="mr-2" />
+                 案例列表
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <aside class="max-h-screen container-atom py-16 sm:py-12 w-full">
+        <slot />
+      </aside>
+    </div>
+  </body>
+</html>
+<style is:global>
+  :root {
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+    --foreground: 0 0% 3.9%;
+    --background: 0 0% 100%;
+    --muted-foreground: 230 78% 91%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --main-color: #34b366ff;
+  }
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+  input {
+    outline: none;
+  }
+</style>

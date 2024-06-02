@@ -44,7 +44,16 @@ const Nav = () => {
       )}
     >
       <div class="h-full flex items-center justify-between gap-4 px-8">
-        <Logo></Logo>
+        <div
+          class={clsx(
+            transparent()
+              ? 'text-[hsl(var(--muted-foreground))]'
+              : 'text-[var(--main-color)]'
+          )}
+        >
+          <Logo></Logo>
+        </div>
+
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
             <a class="nav-link" href="">

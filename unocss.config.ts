@@ -18,9 +18,8 @@ export default defineConfig({
     }),
     presetTypography({
       cssExtend: {
-        'ul,ol': {
-          'padding-left': '2.25em',
-          'position': 'relative',
+        'input': {
+          'outline': 'none'
         },
         'screens': {
           '2xl': '1360px',
