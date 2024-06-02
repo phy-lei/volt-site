@@ -44,31 +44,32 @@ const Nav = () => {
       )}
     >
       <div class="h-full flex items-center justify-between gap-4 px-8">
-        <div
+        <a
           class={clsx(
             transparent()
               ? 'text-[hsl(var(--muted-foreground))]'
               : 'text-[var(--main-color)]'
           )}
+          href="/"
         >
           <Logo></Logo>
-        </div>
+        </a>
 
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/solution">
               工商业解决方案
             </a>
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/family">
               家庭解决方案
             </a>
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/success-case">
               成功案例
             </a>
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/about">
               关于 volt +
             </a>
-            <a class="nav-link" href="">
+            <a class="nav-link" href="/contact">
               联系我们
             </a>
           </div>

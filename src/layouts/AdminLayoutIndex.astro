@@ -23,7 +23,7 @@ const { title } = Astro.props;
       <div
         class="hidden sm:flex h-full w-full max-w-xs grow flex-col gap-y-5 overflow-y-auto border-r border-gray-200 bg-white px-6 transition-all z-10 sidebar-fixed"
       >
-        <div class="flex shrink-0 items-center justify-between">
+        <div class="flex shrink-0 items-center justify-between mt-4">
           <a
             href="/kiana"
             class="flex h-16 shrink-0 items-center text-[var(--main-color)]"
@@ -34,13 +34,13 @@ const { title } = Astro.props;
         <nav class="flex flex-1 flex-col">
           <ul role="list" class="flex flex-1 flex-col gap-y-7">
             <li class="hover:text-[var(--main-color)]">
-              <a href="" class="flex items-center">
+              <a href="/kiana/messages" class="flex items-center">
                 <i class="i-carbon:chat mr-2"></i>
                  消息列表
               </a>
             </li>
             <li class="hover:text-[var(--main-color)]">
-              <a href="" class="flex items-center">
+              <a href="/kiana/case" class="flex items-center">
                 <Solar class="mr-2" />
                  案例列表
               </a>
