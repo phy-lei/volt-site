@@ -43,7 +43,7 @@ import '@wangeditor/editor/dist/css/style.css';
   window.onload = () => {
     const editorConfig = {
       placeholder: 'Type here...',
-      onChange(editor) {
+      onChange(editor: any) {
         const html = editor.getHtml();
         console.log('editor content', html);
         // 也可以同步到 <textarea>
@@ -59,7 +59,7 @@ import '@wangeditor/editor/dist/css/style.css';
 
     const toolbarConfig = {};
 
-    const toolbar = createToolbar({
+    createToolbar({
       editor,
       selector: '#toolbar-container',
       config: toolbarConfig,
