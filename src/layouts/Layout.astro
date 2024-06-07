@@ -17,6 +17,10 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
+    <script
+      type="text/javascript"
+      src="https://webchat.7moor.com/javascripts/7moorInit.js?accessId=b39ec750-246c-11ef-9363-0d3723ecb1d0&autoShow=true&language=ZHCN"
+      async="async"></script>
   </head>
   <body class="min-h-screen relative">
     <Nav client:load />
@@ -32,7 +36,7 @@ const { title } = Astro.props;
           </div>
           <div class="text-xs flex items-end self-end">
             公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献<br />
-             创造绿色清洁能源的无限可能
+            创造绿色清洁能源的无限可能
           </div>
         </div>
         <div class="flex justify-between px-2 py-4">

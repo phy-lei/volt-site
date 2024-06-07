@@ -27,9 +27,4 @@ export default defineConfig({
   ],
   adapter: envAdapter(),
   server: { port: 4321, host: true },
-  vite: {
-    ssr: {
-      noExternal: process.env.OUTPUT ? false : true
-    }
-  }
 });
