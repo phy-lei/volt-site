@@ -11,7 +11,50 @@ import Layout from '@/layouts/Layout.astro';
       width="100%"
       loop=""></video>
   </div>
-  <div>
-    <img src="/img_1.jpg" alt="" />
+  <!-- <div class="solutions">
+    <div class="title">解决方案</div>
+    <div class="items">
+      <div>工商业解决方案</div>
+      <div>户用解决方案</div>
+    </div>
+    
   </div>
+  <div class="cases">
+    项目案例
+  </div>
+  <div class="about">
+    关于volt+
+  </div> -->
 </Layout>
+
+<style is:global>
+  .solutions {
+    height: 100vh;
+    display: flex;
+    background-image: url('/img_7.jpg');
+    background-size: cover;
+    background-position: center center;
+    .title {
+      width: 30%;
+      font-size: 100px;
+    }
+    .items {
+      flex: 1;
+    }
+  }
+  .cases {
+    height: 100vh;
+    background-color: aquamarine;
+    background-image: url('/img_9.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  .about {
+    height: 100vh;
+    background-color: blueviolet;
+    background-image: url('/img_5.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+
+</style>

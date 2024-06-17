@@ -57,14 +57,14 @@ const Nav = () => {
 
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
+          <a class="nav-link" href="/introduction">
+              分布式光伏
+            </a>
             <a class="nav-link" href="/solution">
               工商业解决方案
             </a>
             <a class="nav-link" href="/family">
-              家庭解决方案
-            </a>
-            <a class="nav-link" href="/success-case">
-              成功案例
+              家庭智能解决方案
             </a>
             <a class="nav-link" href="/about">
               关于 volt +

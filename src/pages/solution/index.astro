@@ -3,5 +3,130 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="辐特佳新能源">
-  <div>solution</div>
+  <div class="title_section">
+    工商业解决方案
+  </div>
+  <div class="cotainer">
+    <div class="item_1">
+      <div class="item_content">
+        <div class="item_name">工商业屋顶解决方案</div>
+        <div class="item_desc">
+          <div class="item_desc_content">
+            工商业屋顶分布式光伏电站应用是最为广泛的光伏发电系统，建在城市建筑物屋顶，与公共电网一起为工厂、商场等供电。系统根据不同类型屋面设计易安装、高可用的解决方案，可有效延长建筑物屋顶使用寿命，降低建筑物能耗。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item_2">
+      <div class="item_content">
+        <div class="item_desc">
+          <div class="item_desc_content">
+            新能源充电站是应用于停车场、机场、加油站等场景的分布式光伏解决方案。使用绿色新能源提供安全舒适的充电体验、经济的电力供应策略、高质量的出行方案，助力驱动新能源汽车与可再生能源高效协同。
+          </div>
+        </div>
+        <div class="item_name">新能源充电站解决方案</div>
+      </div>
+    </div>
+    <div class="item_3">
+      <div class="item_content">
+        <div class="item_name">高耗能脱碳方案</div>
+        <div class="item_desc">
+          <div class="item_desc_content">
+            高耗能脱碳方案应用于钢铁、化工等高耗能企业的绿色生产。光伏作为清洁能源可以与高耗能企业的自备电厂协调发电，满足消纳需求，在多种工艺流程中实现脱碳，助力高耗能企业达成双碳目标。
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="item_4">
+      <div class="item_content">
+        <div class="item_desc">
+          <div class="item_desc_content">
+            高速公路光伏应用于高速服务区、高速收费站内的相关建构筑物屋顶。方案充分利用沿线护坡、隔离带、匝道圈等闲置土地，发展绿色能源高速公路附属建筑，提升经济价值的同时解决偏远区域用电问题。
+          </div>
+        </div>
+        <div class="item_name">高速公路光伏解决方案</div>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style is:global>
+  .title_section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 10px;
+    background-image: url('/img_6.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  .cotainer {
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      .item_name {
+        width: 40%;
+        font-size: 20px;
+        font-weight: 400;
+      }
+      .item_desc {
+        flex: 1;
+        color: white;
+        position: relative;
+        padding: 30px;
+        background-size: cover;
+        background-position: center;
+        .item_desc_content {
+          z-index: 1;
+        }
+      }
+    }
+    .item_content {
+      height: 50vh;
+      width: 80vw;
+      overflow: hidden;
+      .item_name {
+        height: 100%;
+      }
+      
+    }
+  }
+  .item_desc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+  }
+  .item_1 {
+    .item_desc {
+      background-image: url('/img_4.jpg');
+    }
+  }
+  .item_2 {
+    .item_desc {
+      background-image: url('/img_11.jpg');
+    }
+  }
+  .item_3 {
+    .item_desc {
+      background-image: url('/img_2.jpg');
+    }
+  }
+  .item_4 {
+    .item_desc {
+      background-image: url('/img_9.jpg');
+    }
+  }
+
+</style>
