@@ -1,0 +1,128 @@
+---
+import Layout from '@/layouts/Layout.astro';
+---
+
+<Layout title="辐特佳新能源">
+  <div class="title_section">
+    分布式光伏
+  </div>
+  <div class="content_section">
+    <div class="principle">
+      <div class="title">系统原理</div>
+      <div class="principle_content">光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入 用户侧。光伏所产生的电力优先分配给用户负载使用，多余电力通过双向电表出售给国家电网。整套光伏 系统通过GPRS的方式将数据上传至监控平台，用户可以随时查看发电量等数据。</div>
+    </div>
+    <div class="application">
+      <div class="title">应用场景</div>
+      <div class="application_scenes">
+        <div class="circle">工业厂房</div>
+        <div class="circle">商业园区</div>
+        <div class="circle">政府机关</div>
+        <div class="circle">学校</div>
+        <div class="circle">医院</div>
+        <div class="circle">别墅</div>
+      </div>
+    </div>
+    <div class="benifit">
+      <div class="title">多方效益</div>
+      <div class="benifit_content"></div>
+    </div>
+  </div>
+</Layout>
+
+<style is:global>
+  .title_section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 10px;
+    background-image: url('/img_4.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  .content_section > div {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px;
+  }
+  .title {
+    font-size: 24px;
+    font-weight: 400;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  .title::after {
+    content: "";
+    position: absolute;
+    left:0; 
+    bottom: -5px; 
+    width: 50%; 
+    border-bottom: 10px solid #006400;
+    transform: translateX(50%);
+  }
+  .principle_content {
+    height: 70%;
+    line-height: 35px;
+    display: flex;
+    align-items: center;
+    margin-top: 40px;
+    border-radius: 20px;
+    padding: 25px;
+  }
+  .application_scenes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    width: 100vw;
+    height: 50vh;
+  }
+
+  .circle {
+    width: 120px;
+    height: 120px;
+    margin: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    border-radius: 50%;
+    line-height: 50px;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .circle:nth-child(1) {
+    border-top: 3px solid rgb(229 231 235);
+  }
+
+  .circle:nth-child(2) {
+    border-right: 3px solid rgb(229 231 235);
+  }
+
+  .circle:nth-child(3) {
+    border-bottom: 3px solid rgb(229 231 235);
+  }
+
+  .circle:nth-child(4) {
+    border-left: 3px solid rgb(229 231 235);
+  }
+
+  .circle:nth-child(5) {
+    border-top: 3px solid rgb(229 231 235);
+    border-left: 3px solid rgb(229 231 235);
+  }
+
+  .circle:nth-child(6) {
+    border-right: 3px solid rgb(229 231 235);
+    border-bottom: 3px solid rgb(229 231 235);
+  }
+
+</style>

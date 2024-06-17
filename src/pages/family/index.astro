@@ -3,5 +3,86 @@ import Layout from '@/layouts/Layout.astro';
 ---
 
 <Layout title="辐特佳新能源">
-  <div>family</div>
+  <div class="title_section">
+    家庭智能解决方案
+  </div>
+  <div class="cotainer">
+    <div class="item_1">
+      <div class="item_content">
+        <div class="item_name">户用光伏电站</div>
+        <div class="item_desc">
+          <div class="item_desc_content">
+            户用光伏电站应用于平屋顶、斜屋顶等家庭住宅场景。方案根据家庭建筑风格以及屋顶性状进行定制化设计，在赋予屋顶美观、环保、科技的同时，保障稳定供电，带来经济效益。
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style is:global>
+  .title_section {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    font-weight: 600;
+    color: white;
+    letter-spacing: 10px;
+    background-image: url('/img_5.jpg');
+    background-size: cover;
+    background-position: center center;
+  }
+  .cotainer {
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60vh;
+      .item_name {
+        width: 40%;
+        font-size: 20px;
+        font-weight: 400;
+      }
+      .item_desc {
+        flex: 1;
+        color: white;
+        position: relative;
+        padding: 30px;
+        background-size: cover;
+        background-position: center;
+        .item_desc_content {
+          z-index: 1;
+        }
+      }
+    }
+    .item_content {
+      height: 50vh;
+      width: 80vw;
+      overflow: hidden;
+      .item_name {
+        height: 100%;
+      }
+      
+    }
+  }
+  .item_desc::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.4;
+  }
+  .item_1 {
+    .item_desc {
+      background-image: url('/img_3.jpg');
+    }
+  }
+
+</style>
+

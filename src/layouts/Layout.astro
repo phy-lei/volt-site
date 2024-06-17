@@ -27,7 +27,7 @@ const { title } = Astro.props;
     <div>
       <slot />
     </div>
-    <footer class="bg-white absolute bottom-0 w-100%">
+    <footer class="bg-white bottom-0 border-[var(--main-color)] border-t mt-20 w-100%">
       <div class="m-auto max-w-5xl">
         <div class="flex justify-between border-gray border-b pt-10 pb-2 gap-4">
           <div class="text-[var(--main-color)]">
@@ -55,6 +55,11 @@ const { title } = Astro.props;
           </div>
           <div class="flex items-center gap-4 <md:hidden">
             <a
+              href="/introduction"
+              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
+              >分布式光伏</a
+            >
+            <a
               href="/solution"
               class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
               >工商业解决方案</a
@@ -63,11 +68,6 @@ const { title } = Astro.props;
               href="/family"
               class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
               >家庭解决方案</a
-            >
-            <a
-              href="/success-case"
-              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
-              >成功案例</a
             >
             <a
               href="/about"
