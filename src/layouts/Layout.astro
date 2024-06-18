@@ -15,6 +15,7 @@ const { title } = Astro.props;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="prefetch" href="img_4.jpg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <script
@@ -28,7 +29,9 @@ const { title } = Astro.props;
     <div>
       <slot />
     </div>
-    <footer class="bg-white bottom-0 border-[var(--main-color)] border-t mt-20 w-100%">
+    <footer
+      class="bg-white bottom-0 border-[var(--main-color)] border-t mt-20 w-100%"
+    >
       <div class="m-auto max-w-5xl">
         <div class="flex justify-between border-gray border-b pt-10 pb-2 gap-4">
           <div class="text-[var(--main-color)]">
