@@ -16,7 +16,6 @@
     "@astrojs/check": "^0.7.0",
     "@astrojs/netlify": "^5.2.1",
     "@astrojs/node": "^8.2.5",
-    "@astrojs/prefetch": "^0.4.1",
     "@astrojs/solid-js": "^4.2.0",
     "@wangeditor/editor": "^5.1.23",
     "@zag-js/file-upload": "^0.51.2",

@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import solidJs from '@astrojs/solid-js';
 import UnoCSS from 'unocss/astro';
-import prefetch from '@astrojs/prefetch';
 import netlify from '@astrojs/netlify/functions';
 import node from '@astrojs/node';
 const envAdapter = () => {
@@ -21,10 +20,10 @@ export default defineConfig({
   integrations: [
     UnoCSS({ injectReset: true }),
     solidJs(),
-    prefetch({
-      throttle: 3,
-    }),
   ],
+  prefetch: {
+    defaultStrategy: 'viewport',
+  },
   adapter: envAdapter(),
   server: { port: 4321, host: true },
 });
