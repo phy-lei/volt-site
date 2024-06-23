@@ -11,21 +11,21 @@ import Layout from '@/layouts/Layout.astro';
       <div class="title">系统原理</div>
       <div class="principle_content">光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入 用户侧。光伏所产生的电力优先分配给用户负载使用，多余电力通过双向电表出售给国家电网。整套光伏 系统通过GPRS的方式将数据上传至监控平台，用户可以随时查看发电量等数据。</div>
     </div>
+    <div class="benifit">
+      <div class="title">为什么安装光伏</div>
+      <div class="benifit_content"></div>
+    </div>
     <div class="application">
       <div class="title">应用场景</div>
       <div class="application_scenes">
-        <div class="circle">工业厂房</div>
-        <div class="circle">商业园区</div>
-        <div class="circle">政府机关</div>
-        <div class="circle">学校</div>
-        <div class="circle">医院</div>
-        <div class="circle">别墅</div>
+        <div class="circle">工商业场景</div>
+        <div class="circle">家庭别墅场景</div>
+        <div class="circle">微电网场景</div>
       </div>
     </div>
-    <div class="benifit">
-      <div class="title">多方效益</div>
-      <div class="benifit_content"></div>
-    </div>
+  </div>
+  <div class="contact">
+    <a class="text" href="/contact">立即联系</a>
   </div>
 </Layout>
 
@@ -80,15 +80,35 @@ import Layout from '@/layouts/Layout.astro';
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 40px;
+    margin-top: 30px;
     width: 100vw;
     height: 50vh;
   }
+  .contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    .text {
+      height: 100px;
+      width: 200px;
+      display: flex;
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      background-color: #006400;
+    }
+    .text:hover {
+      color: #006400;
+      background-color: rgba(200, 200, 200, 0.5);
+    }
+  }
 
   .circle {
-    width: 120px;
-    height: 120px;
-    margin: 30px;
+    width: 200px;
+    height: 200px;
+    margin: 80px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -96,33 +116,23 @@ import Layout from '@/layouts/Layout.astro';
     border-radius: 50%;
     line-height: 50px;
     text-align: center;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .circle:nth-child(1) {
-    border-top: 3px solid rgb(229 231 235);
+    border-top: 3px solid gray;
+    border-left: 3px solid gray;
   }
 
   .circle:nth-child(2) {
-    border-right: 3px solid rgb(229 231 235);
+    border-bottom: 3px solid gray;
+    border-right: 3px solid gray;
   }
 
   .circle:nth-child(3) {
-    border-bottom: 3px solid rgb(229 231 235);
+    border-right: 3px solid gray;
+    border-bottom: 3px solid gray;
   }
 
-  .circle:nth-child(4) {
-    border-left: 3px solid rgb(229 231 235);
-  }
-
-  .circle:nth-child(5) {
-    border-top: 3px solid rgb(229 231 235);
-    border-left: 3px solid rgb(229 231 235);
-  }
-
-  .circle:nth-child(6) {
-    border-right: 3px solid rgb(229 231 235);
-    border-bottom: 3px solid rgb(229 231 235);
-  }
 
 </style>

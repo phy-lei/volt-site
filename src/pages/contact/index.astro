@@ -6,7 +6,27 @@ import Layout from '@/layouts/Layout.astro';
   <div class="title_section">
     联系我们
   </div>
-  <div class="cotainer">
+  <div class="content_section">
+    <div class="item_1">
+      <div class="title">全国服务热线</div>
+      <div class="text_box">
+        <div class="text">4008-613-617</div>
+      </div>
+    </div>
+    <div class="item_2">
+      <div class="title">办公地址</div>
+      <div class="text_box">
+        <div class="text">上海市宝山区军工路5169号A9</div>
+      </div>
+    </div>
+    <div class="item_3">
+      <i class="fas fa-shopping-cart"></i>
+      <div class="title">联系邮箱</div>
+      <div class="text_box">
+        <div class="text">xxxxx</div>
+      </div>
+    </div>
+  </div>
   </div>
 </Layout>
 
@@ -25,13 +45,51 @@ import Layout from '@/layouts/Layout.astro';
     background-size: cover;
     background-position: center center;
   }
-  .cotainer {
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 60vh;
+  .content_section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    position: relative;
+  }
+  .content_section>div {
+    height: 50vh;
+    width: 20vw;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid rgb(229 231 235) 2px;
+    border-radius: 20px;
+    .title {
+      /* color: white; */
+      font-size: 25px;
+      margin-top: 18px;
     }
+
+    .text_box {
+      flex: 1;
+      position: relative;
+      width: 80%;
+      margin-top: 20px;
+      .text {
+        position: relative;
+        /* color: white; */
+        font-size: 16px;
+        text-align: center;
+        margin: 20px;
+        height: 50%;
+        display: flex; 
+        justify-content: center;
+        align-items: center;
+        z-index: 1;
+      }
+    }
+  }
+  .content_section>div:hover {
+    transition: 0.4s;
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.01);
   }
 
 </style>
