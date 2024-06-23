@@ -5,9 +5,22 @@ const LoginButton = () => {
   const [isLoading, setIsLoading] = createSignal(false);
   const signInHandler = async () => {
     setIsLoading(true);
-    setTimeout(() => {
-      window.location.href = '/kiana';
-    }, 1000);
+    const payload = {
+      email: (document.getElementById('user-input') as HTMLInputElement)?.value ?? '',
+      password: (document.getElementById('password-input') as HTMLInputElement)?.value ?? ''
+    }
+    const response = await fetch('/api/auth/login',{
+      method: 'POST',
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(payload)
+    })
+    const res= await response.json()
+    if(response.status === 200) {
+      window.location.href = '/kiana'
+      window.localStorage.setItem('token', res.token)
+    }
   };
   return (
     <Button

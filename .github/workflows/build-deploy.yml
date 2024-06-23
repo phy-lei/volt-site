@@ -1,5 +1,8 @@
 name: build_deploy_ecs
 
+env:
+  API_URL: ${{ secrets.API_URL }}
+
 on:
   push:
     branches: [main]
