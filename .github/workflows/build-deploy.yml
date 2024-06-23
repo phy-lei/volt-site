@@ -14,6 +14,12 @@ jobs:
     name: Build_Deploy_Ecs
     runs-on: ubuntu-latest
     steps:
+      - name: 'Create env file'
+        run: |
+          touch .env
+          echo API_URL=${{ secrets.API_URL }} >> .env
+          cat .env
+
       - name: Checkout
         uses: actions/checkout@v3
 
