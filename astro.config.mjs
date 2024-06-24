@@ -1,18 +1,19 @@
-import { defineConfig } from 'astro/config';
-import solidJs from '@astrojs/solid-js';
-import UnoCSS from 'unocss/astro';
-import netlify from '@astrojs/netlify/functions';
-import node from '@astrojs/node';
-const envAdapter = () => {
+import { defineConfig } from 'astro/config'
+import solidJs from '@astrojs/solid-js'
+import UnoCSS from 'unocss/astro'
+import netlify from '@astrojs/netlify/functions'
+import node from '@astrojs/node'
+
+function envAdapter() {
   switch (process.env.OUTPUT) {
     case 'netlify':
       return netlify({
         edgeMiddleware: true,
-      });
+      })
     default:
-      return node({ mode: 'standalone' });
+      return node({ mode: 'standalone' })
   }
-};
+}
 
 // https://astro.build/config
 export default defineConfig({
@@ -26,4 +27,4 @@ export default defineConfig({
   },
   adapter: envAdapter(),
   server: { port: 4321, host: true },
-});
+})

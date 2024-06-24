@@ -6,7 +6,7 @@ export const POST: APIRoute = async ({ params, request }) => {
   const response = await fetch(`${API_URL}/${params.path}`, {
     method: 'POST',
     body: JSON.stringify(body),
-    headers: request.headers
+    headers: request.headers,
   }).catch((err: Error) => {
     console.error(err)
     return new Response(JSON.stringify({

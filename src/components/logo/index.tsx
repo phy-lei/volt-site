@@ -1,8 +1,8 @@
-import LogoSvg from './logo';
-import './style.css';
+import LogoSvg from './logo'
+import './style.css'
 
-const Logo = () => {
-  return <LogoSvg id="logoPath"></LogoSvg>;
-};
+function Logo() {
+  return <LogoSvg id="logoPath" />
+}
 
-export default Logo;
+export default Logo

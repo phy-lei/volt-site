@@ -1,11 +1,11 @@
-import { type Component, type JSX } from 'solid-js';
+import type { Component, JSX } from 'solid-js'
 
 interface LogoProps extends JSX.ImgHTMLAttributes<SVGAElement> {}
 
 const Logo: Component<LogoProps> = (props) => {
   return (
     <svg
-      style="transform: translate3d(0, 0, 0);"
+      style={{ transform: 'translate3d(0, 0, 0)' }}
       width="125"
       height="39"
       viewBox="0 0 125 39"
@@ -18,7 +18,7 @@ const Logo: Component<LogoProps> = (props) => {
         fill="currentColor"
       />
     </svg>
-  );
-};
+  )
+}
 
-export default Logo;
+export default Logo
