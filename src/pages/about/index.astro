@@ -82,14 +82,14 @@ import Layout from '@/layouts/Layout.astro';
   }
 
   .profile .title::after {
-      content: "";
-      position: absolute;
-      left:0; 
-      bottom: -5px; 
-      width: 80%; 
-      border-bottom: 10px solid gray;
-      border-right: 10px solid transparent;
-    }
+    content: "";
+    position: absolute;
+    left:0; 
+    bottom: -5px; 
+    width: 80%; 
+    border-bottom: 10px solid gray;
+    border-right: 10px solid transparent;
+  }
   .vision .content {
     display: flex;
   }
@@ -137,6 +137,12 @@ import Layout from '@/layouts/Layout.astro';
       border-radius: 20px;
       opacity: 0.4;
     }
+  }
+
+  .vision .content>div:hover {
+    transition: 0.4s;
+    transform: translateY(-20px) scale(1.05);
+    box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.01);
   }
 
   .vision .item_1 {

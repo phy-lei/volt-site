@@ -6,7 +6,17 @@ import Layout from '@/layouts/Layout.astro';
   <div class="title_section">
     家庭智能解决方案
   </div>
-  <div class="cotainer">
+  <div class="intro">
+    <div class="benefit">
+      <div class="title">产品卖点</div>
+      <div class="intro_content">商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍</div>
+    </div>
+    <div class="process">
+      <div class="title">工作流程</div>
+      <div class="intro_content">商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍</div>
+    </div>
+  </div>
+  <div class="cases">
     <div class="item_1">
       <div class="item_content">
         <div class="item_name">户用光伏电站</div>
@@ -17,6 +27,9 @@ import Layout from '@/layouts/Layout.astro';
         </div>
       </div>
     </div>
+  </div>
+  <div class="contact">
+    <a class="text" href="/contact">立即联系</a>
   </div>
 </Layout>
 
@@ -35,12 +48,50 @@ import Layout from '@/layouts/Layout.astro';
     background-size: cover;
     background-position: center center;
   }
-  .cotainer {
+  .intro{
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+    background-color: #f4f2f2bf;
+    >div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .title {
+        font-size: 24px;
+        font-weight: 400;
+        position: relative;
+        display: inline-block;
+        padding-bottom: 10px;
+      }
+      .title::after {
+        content: "";
+        position: absolute;
+        left:0; 
+        bottom: -5px; 
+        width: 50%; 
+        border-bottom: 10px solid #006400;
+        transform: translateX(50%);
+      }
+      .intro_content {
+        height: 70%;
+        line-height: 35px;
+        display: flex;
+        align-items: center;
+        margin-top: 40px;
+        border-radius: 20px;
+        padding: 25px 40px;
+      }
+    }
+  }
+  .cases {
+    margin-top: 30px;
     div {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 60vh;
+      height: 45vh;
       .item_name {
         width: 40%;
         font-size: 20px;
@@ -59,7 +110,7 @@ import Layout from '@/layouts/Layout.astro';
       }
     }
     .item_content {
-      height: 50vh;
+      height: 40vh;
       width: 80vw;
       overflow: hidden;
       .item_name {
@@ -81,6 +132,26 @@ import Layout from '@/layouts/Layout.astro';
   .item_1 {
     .item_desc {
       background-image: url('/img_3.jpg');
+    }
+  }
+  .contact {
+    display: flex;
+    justify-content: center;
+    margin-top: 200px;
+    .text {
+      height: 100px;
+      width: 200px;
+      display: flex;
+      font-size: 20px;
+      font-weight: 400;
+      color: white;
+      justify-content: center;
+      align-items: center;
+      background-color: #006400;
+    }
+    .text:hover {
+      color: #006400;
+      background-color: rgba(200, 200, 200, 0.5);
     }
   }
 

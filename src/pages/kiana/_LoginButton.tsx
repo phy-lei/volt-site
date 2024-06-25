@@ -37,6 +37,6 @@ function LoginButton() {
       登录
     </Button>
   )
-}
+};
 
 export default LoginButton
