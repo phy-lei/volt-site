@@ -1,34 +1,35 @@
-import { createSignal } from 'solid-js';
-import { type Component } from 'solid-js';
-import './style.css';
+import { createSignal } from 'solid-js'
+import type { Component } from 'solid-js'
+import './style.css'
 
 interface ExpandButtonProps {
-  onChange: (flag: 'expand' | 'fold') => void;
+  onChange: (flag: 'expand' | 'fold') => void
 }
 
 const ExpandButton: Component<ExpandButtonProps> = (props) => {
-  const [expand, setExpand] = createSignal(false);
+  const [expand, setExpand] = createSignal(false)
 
   const handleClick = () => {
     if (expand()) {
-      props.onChange('fold');
-    } else {
-      props.onChange('expand');
+      props.onChange('fold')
     }
-    setExpand(!expand());
-  };
+    else {
+      props.onChange('expand')
+    }
+    setExpand(!expand())
+  }
 
   return (
     <div
       class="expand-button"
-      classList={{ ['expand-button-close']: expand() }}
+      classList={{ 'expand-button-close': expand() }}
       onClick={handleClick}
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <span />
+      <span />
+      <span />
     </div>
-  );
-};
+  )
+}
 
-export default ExpandButton;
+export default ExpandButton

@@ -24,11 +24,21 @@ const { title } = Astro.props;
       async="async"></script>
   </head>
   <body class="min-h-screen relative">
+    <!-- prefetch img -->
+    <div class="invisible h-0">
+      <a href="/img_4.jpg" data-astro-prefetch></a>
+      <a href="/img_5.jpg" data-astro-prefetch></a>
+      <a href="/img_6.jpg" data-astro-prefetch></a>
+      <a href="/img_14.jpg" data-astro-prefetch></a>
+      <a href="/img_16.jpg" data-astro-prefetch></a>
+    </div>
     <Nav client:load />
     <div>
       <slot />
     </div>
-    <footer class="bg-white bottom-0 border-[var(--main-color)] border-t mt-20 w-100%">
+    <footer
+      class="bg-white bottom-0 border-[var(--main-color)] border-t mt-20 w-100%"
+    >
       <div class="m-auto max-w-5xl">
         <div class="flex justify-between border-gray border-b pt-10 pb-2 gap-4">
           <div class="text-[var(--main-color)]">

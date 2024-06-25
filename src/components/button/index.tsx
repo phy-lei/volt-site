@@ -1,5 +1,5 @@
-import { type Component, type JSX } from 'solid-js';
-import { cva, type VariantProps } from 'class-variance-authority';
+import type { Component, JSX } from 'solid-js'
+import { type VariantProps, cva } from 'class-variance-authority'
 
 const buttonVariants = cva(
   'active:scale-95 text-nowrap inline-flex items-center justify-center rounded-md text-sm font-medium transition-color focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none',
@@ -19,13 +19,13 @@ const buttonVariants = cva(
       variant: 'default',
       size: 'default',
     },
-  }
-);
+  },
+)
 
 interface ButtonProps
   extends JSX.HTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  isLoading?: boolean;
+  VariantProps<typeof buttonVariants> {
+  isLoading?: boolean
 }
 
 const Button: Component<ButtonProps> = (props) => {
@@ -39,12 +39,14 @@ const Button: Component<ButtonProps> = (props) => {
       })}
       disabled={props.isLoading}
     >
-      {props.isLoading ? (
-        <div class="i-mingcute-loading-fill mr-2 h-4 w-4 animate-spin" />
-      ) : null}
+      {props.isLoading
+        ? (
+          <div class="i-mingcute-loading-fill mr-2 h-4 w-4 animate-spin" />
+          )
+        : null}
       {props.children}
     </button>
-  );
-};
+  )
+}
 
-export default Button;
+export default Button
