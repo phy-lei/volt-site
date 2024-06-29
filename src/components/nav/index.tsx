@@ -58,19 +58,19 @@ function Nav() {
 
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
-            <a class="nav-link" href="/introduction" data-astro-prefetch>
+            <a class="nav-link font-700" href="/introduction" data-astro-prefetch>
               分布式光伏
             </a>
-            <a class="nav-link" href="/solution" data-astro-prefetch>
+            <a class="nav-link font-700" href="/solution" data-astro-prefetch>
               工商业解决方案
             </a>
-            <a class="nav-link" href="/family" data-astro-prefetch>
+            <a class="nav-link font-700" href="/family" data-astro-prefetch>
               家庭智能解决方案
             </a>
-            <a class="nav-link" href="/about" data-astro-prefetch>
+            <a class="nav-link font-700" href="/about" data-astro-prefetch>
               关于 volt +
             </a>
-            <a class="nav-link" href="/contact" data-astro-prefetch>
+            <a class="nav-link font-700" href="/contact" data-astro-prefetch>
               联系我们
             </a>
           </div>

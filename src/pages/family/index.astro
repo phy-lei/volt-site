@@ -1,19 +1,22 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Banner from '@/components/Banner.astro';
 ---
 
 <Layout title="辐特佳新能源">
-  <div class="title_section">
-    家庭智能解决方案
-  </div>
+  <Banner title="家庭智能解决方案" imgSrc="/img_5.jpg" />
   <div class="intro">
     <div class="benefit">
       <div class="title">产品卖点</div>
-      <div class="intro_content">商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍</div>
+      <div class="intro_content">
+        商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍
+      </div>
     </div>
     <div class="process">
       <div class="title">工作流程</div>
-      <div class="intro_content">商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍</div>
+      <div class="intro_content">
+        商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍
+      </div>
     </div>
   </div>
   <div class="cases">
@@ -34,27 +37,13 @@ import Layout from '@/layouts/Layout.astro';
 </Layout>
 
 <style is:global>
-  .title_section {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 100px;
-    font-weight: 600;
-    color: white;
-    letter-spacing: 10px;
-    background-image: url('/img_5.jpg');
-    background-size: cover;
-    background-position: center center;
-  }
-  .intro{
+  .intro {
     height: 50vh;
     display: flex;
     align-items: center;
     padding: 80px;
     background-color: #f4f2f2bf;
-    >div {
+    > div {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -66,11 +55,11 @@ import Layout from '@/layouts/Layout.astro';
         padding-bottom: 10px;
       }
       .title::after {
-        content: "";
+        content: '';
         position: absolute;
-        left:0; 
-        bottom: -5px; 
-        width: 50%; 
+        left: 0;
+        bottom: -5px;
+        width: 50%;
         border-bottom: 10px solid #006400;
         transform: translateX(50%);
       }
@@ -116,7 +105,6 @@ import Layout from '@/layouts/Layout.astro';
       .item_name {
         height: 100%;
       }
-      
     }
   }
   .item_desc::before {
@@ -154,6 +142,4 @@ import Layout from '@/layouts/Layout.astro';
       background-color: rgba(200, 200, 200, 0.5);
     }
   }
-
 </style>
-
