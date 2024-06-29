@@ -31,8 +31,6 @@ const src = `url(${imgSrc})`;
       start: '0',
       end: '50%',
       toggleClass: 'active',
-      ease: 'power2',
-      onEnter: () => console.log('动画开始'),
     },
   });
   gsap.to('.hero__image', {
@@ -41,7 +39,6 @@ const src = `url(${imgSrc})`;
       scrub: 0.5,
       start: 'top bottom',
       end: 'bottom -100%',
-      ease: 'power2',
     },
     y: '-15%',
   });
