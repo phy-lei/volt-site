@@ -3,6 +3,19 @@ import Layout from '@/layouts/Layout.astro';
 import Banner from '@/components/Banner.astro';
 import ContactFooter from '@/components/ContactFooter.astro';
 import clsx from 'clsx';
+import img03 from '/src/assets/imgs/03.jpg';
+
+import solution01 from '/src/assets/imgs/solution-case/01.png';
+import solution02 from '/src/assets/imgs/solution-case/02.jpg';
+import solution03 from '/src/assets/imgs/solution-case/03.png';
+import solution04 from '/src/assets/imgs/solution-case/04.jpg';
+
+console.log(
+  '%c [ solution01 ]',
+  'font-size:13px; background:pink; color:#bf2c9f;',
+  solution01
+);
+
 // 理由
 const reasonList = [
   {
@@ -26,19 +39,19 @@ const reasonList = [
 // 案例图片 后续可能改为后台获取
 const caseList = [
   {
-    imgUrl: 'bg-[url(src/assets/imgs/solution-case/01.png)]',
+    imgUrl: solution01.src,
     desc: '上海奉贤 459.96KWp',
   },
   {
-    imgUrl: 'bg-[url(src/assets/imgs/solution-case/02.jpg)]',
+    imgUrl: solution02.src,
     desc: '上海奉贤 225.75KWp',
   },
   {
-    imgUrl: 'bg-[url(src/assets/imgs/solution-case/03.png)]',
+    imgUrl: solution03.src,
     desc: '江苏泰州 1198.665KWp',
   },
   {
-    imgUrl: 'bg-[url(src/assets/imgs/solution-case/04.jpg)]',
+    imgUrl: solution04.src,
     desc: '浙江嘉兴 688.545KWp',
   },
 ];
@@ -76,7 +89,7 @@ const caseList = [
     </div>
   </section>
   <section class="flex py-30 w-70% flex-shrink-1">
-    <img src="/src/assets/imgs/03.jpg" class="w-60% max-h-445px" alt="" />
+    <img src={img03.src} class="w-60% max-h-445px" alt="" />
     <div class="w-60% h-100% ml-5 pt-5">
       <h1 class="text-size-2xl font-700">商业模式</h1>
       <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
@@ -101,8 +114,9 @@ const caseList = [
         caseList.map((item) => (
           <li
             class={clsx(
-              `${item.imgUrl} bg-no-repeat bg-center bg-cover w-25% h-300px flex justify-center items-center <md:w-80%`
+              `bg-no-repeat bg-center bg-cover w-25% h-300px flex justify-center items-center <md:w-80%`
             )}
+            style={{ backgroundImage: `url(${item.imgUrl})` }}
           >
             <h3 class="text-size-2xl text-white p-2 bg-[rgba(0,0,0,0.2)]">
               {item.desc}
