@@ -1,62 +1,134 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Banner from '@/components/Banner.astro';
+import ContactFooter from '@/components/ContactFooter.astro';
+import clsx from 'clsx';
+// 理由
+const reasonList = [
+  {
+    title: '创造经济收益',
+    desc: ['降低能源成本', '固定资产价值', '提升边际收益'],
+  },
+  {
+    title: '提升企业形象',
+    desc: [
+      '减少企业碳排放',
+      '增强企业声誉',
+      '展现环境保护/可持续发展的积极态度',
+    ],
+  },
+  {
+    title: '助力节能减排',
+    desc: ['解决企业限电问题', '降低环境监管风险', '满足环保法规要求'],
+  },
+];
+
+// 案例图片 后续可能改为后台获取
+const caseList = [
+  {
+    imgUrl: 'bg-[url(src/assets/imgs/solution-case/01.png)]',
+    desc: '上海奉贤 459.96KWp',
+  },
+  {
+    imgUrl: 'bg-[url(src/assets/imgs/solution-case/02.jpg)]',
+    desc: '上海奉贤 225.75KWp',
+  },
+  {
+    imgUrl: 'bg-[url(src/assets/imgs/solution-case/03.png)]',
+    desc: '江苏泰州 1198.665KWp',
+  },
+  {
+    imgUrl: 'bg-[url(src/assets/imgs/solution-case/04.jpg)]',
+    desc: '浙江嘉兴 688.545KWp',
+  },
+];
 ---
 
 <Layout title="辐特佳新能源">
   <Banner title="工商业解决方案" imgSrc="/img_6.jpg" />
-  <div class="intro">
-    <div class="title">商业模式</div>
-    <div class="intro_content">
-      商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍
-    </div>
-  </div>
-  <div class="cases">
-    <div class="item_1">
-      <div class="item_content">
-        <div class="item_name">工商业屋顶解决方案</div>
-        <div class="item_desc">
-          <div class="item_desc_content">
-            工商业屋顶分布式光伏电站应用是最为广泛的光伏发电系统，建在城市建筑物屋顶，与公共电网一起为工厂、商场等供电。系统根据不同类型屋面设计易安装、高可用的解决方案，可有效延长建筑物屋顶使用寿命，降低建筑物能耗。
-          </div>
-        </div>
+  <section
+    class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto py-[35px] relative"
+  >
+    <div class="m-auto translate-y-50% <md:translate-y-0">
+      <h1 class="text-center text-white text-size-2xl slide-in-up">
+        工商业安装光伏的三个理由
+      </h1>
+      <div
+        class="max-w-7xl m-auto flex items-center gap-8 text-white px-px-8 <md:flex-col pt-[25px]"
+      >
+        {
+          reasonList.map((item, index) => (
+            <div class="border border-white p-5 rounded-lg w-1/3 bg-[rgba(255,255,255,0.2)] after:(content-[''] absolute left-0 top-0 eight-0 bottom-0 bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-top bg-cover blur-[10px] z-[-1]) <md:w-80%">
+              <h3 class="text-size-xl mb-4">0{index + 1}</h3>
+              <h4 class="text-size-xl mb-4">{item.title}</h4>
+              <ul>
+                {item.desc.map((dec) => (
+                  <li class="flex items-center py-4">
+                    <i class="i-carbon:checkmark text-[var(--main-color)] mr-2" />
+                    {dec}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
       </div>
     </div>
-    <div class="item_2">
-      <div class="item_content">
-        <div class="item_desc">
-          <div class="item_desc_content">
-            新能源充电站是应用于停车场、机场、加油站等场景的分布式光伏解决方案。使用绿色新能源提供安全舒适的充电体验、经济的电力供应策略、高质量的出行方案，助力驱动新能源汽车与可再生能源高效协同。
-          </div>
-        </div>
-        <div class="item_name">新能源充电站解决方案</div>
-      </div>
+  </section>
+  <section class="flex py-30 w-70% flex-shrink-1">
+    <img src="/src/assets/imgs/03.jpg" class="w-60% max-h-445px" alt="" />
+    <div class="w-60% h-100% ml-5 pt-5">
+      <h1 class="text-size-2xl font-700">商业模式</h1>
+      <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
+        <strong> EPC模式：</strong>
+         辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。<br
+        />
+         业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
+      </p>
+      <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
+        <strong> EMC模式：</strong>
+         即合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。<br
+        />
+         无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维 可享长期收益。
+      </p>
     </div>
-    <div class="item_3">
-      <div class="item_content">
-        <div class="item_name">高耗能脱碳方案</div>
-        <div class="item_desc">
-          <div class="item_desc_content">
-            高耗能脱碳方案应用于钢铁、化工等高耗能企业的绿色生产。光伏作为清洁能源可以与高耗能企业的自备电厂协调发电，满足消纳需求，在多种工艺流程中实现脱碳，助力高耗能企业达成双碳目标。
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="item_4">
-      <div class="item_content">
-        <div class="item_desc">
-          <div class="item_desc_content">
-            高速公路光伏应用于高速服务区、高速收费站内的相关建构筑物屋顶。方案充分利用沿线护坡、隔离带、匝道圈等闲置土地，发展绿色能源高速公路附属建筑，提升经济价值的同时解决偏远区域用电问题。
-          </div>
-        </div>
-        <div class="item_name">高速公路光伏解决方案</div>
-      </div>
-    </div>
-  </div>
-  <div class="contact">
-    <a class="text" href="/contact">立即联系</a>
-  </div>
+  </section>
+  <!-- 案例图片 -->
+  <section class="w-100% pb-50">
+    <h1 class="text-center text-size-2xl slide-in-up mb-10">相关案例</h1>
+    <ul class="flex items-center justify-center gap-5 <md:flex-col">
+      {
+        caseList.map((item) => (
+          <li
+            class={clsx(
+              `${item.imgUrl} bg-no-repeat bg-center bg-cover w-25% h-300px flex justify-center items-center <md:w-80%`
+            )}
+          >
+            <h3 class="text-size-2xl text-white p-2 bg-[rgba(0,0,0,0.2)]">
+              {item.desc}
+            </h3>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+  <ContactFooter />
 </Layout>
+
+<script>
+  import Ino from '@/utils/Ino';
+  const slideTitle = document.querySelectorAll('.slide-in-up');
+  slideTitle.forEach((titleElement) => {
+    Ino(titleElement, {
+      onShow: (el) => {
+        el.classList.add('am-slide');
+      },
+      onHide: (el) => {
+        el.classList.remove('am-slide');
+      },
+    });
+  });
+</script>
 
 <style is:global>
   .intro {

@@ -59,7 +59,7 @@ function Nav() {
         <div class="flex items-center">
           <div class="flex gap-4 <md:hidden">
             <a class="nav-link font-700" href="/introduction" data-astro-prefetch>
-              分布式光伏
+              光伏的探寻
             </a>
             <a class="nav-link font-700" href="/solution" data-astro-prefetch>
               工商业解决方案

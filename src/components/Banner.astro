@@ -9,7 +9,7 @@ const { imgSrc, title } = Astro.props;
 const src = `url(${imgSrc})`;
 ---
 
-<section class="container_box hero" id="hero">
+<section class="container_box hero">
   <div class="hero__images">
     <img class="hero__image" src={imgSrc} />
   </div>
@@ -122,6 +122,7 @@ const src = `url(${imgSrc})`;
       display: block;
       transform: translateY(110%);
       transition: transform var(--duration) var(--ease);
+      font-family: 'Noto Serif SC', sans-serif;
     }
 
     .active & {
