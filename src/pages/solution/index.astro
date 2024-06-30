@@ -118,7 +118,7 @@ const caseList = [
 <script>
   import Ino from '@/utils/Ino';
   const slideTitle = document.querySelectorAll('.slide-in-up');
-  slideTitle.forEach((titleElement) => {
+  slideTitle.forEach((titleElement: HTMLElement) => {
     Ino(titleElement, {
       onShow: (el) => {
         el.classList.add('am-slide');
