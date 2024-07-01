@@ -10,12 +10,6 @@ import solution02 from '/src/assets/imgs/solution-case/02.jpg';
 import solution03 from '/src/assets/imgs/solution-case/03.png';
 import solution04 from '/src/assets/imgs/solution-case/04.jpg';
 
-console.log(
-  '%c [ solution01 ]',
-  'font-size:13px; background:pink; color:#bf2c9f;',
-  solution01
-);
-
 // 理由
 const reasonList = [
   {
@@ -63,7 +57,7 @@ const caseList = [
     class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto py-[35px] relative"
   >
     <div class="m-auto translate-y-50% <md:translate-y-0">
-      <h1 class="text-center text-white text-size-2xl slide-in-up">
+      <h1 class="text-center text-white text-size-2xl fade-in-up">
         工商业安装光伏的三个理由
       </h1>
       <div
@@ -94,27 +88,27 @@ const caseList = [
       <h1 class="text-size-2xl font-700">商业模式</h1>
       <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
         <strong> EPC模式：</strong>
-         辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。<br
+        辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。<br
         />
-         业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
+        业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
       </p>
       <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
         <strong> EMC模式：</strong>
-         即合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。<br
+        即合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。<br
         />
-         无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维 可享长期收益。
+        无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维 可享长期收益。
       </p>
     </div>
   </section>
   <!-- 案例图片 -->
   <section class="w-100% pb-50">
-    <h1 class="text-center text-size-2xl slide-in-up mb-10">相关案例</h1>
+    <h1 class="text-center text-size-2xl fade-in-up mb-10">相关案例</h1>
     <ul class="flex items-center justify-center gap-5 <md:flex-col">
       {
         caseList.map((item) => (
           <li
             class={clsx(
-              `bg-no-repeat bg-center bg-cover w-25% h-300px flex justify-center items-center <md:w-80%`
+              `bg-no-repeat bg-center bg-cover w-25% h-300px flex justify-center items-center <md:w-80% `
             )}
             style={{ backgroundImage: `url(${item.imgUrl})` }}
           >
@@ -128,137 +122,3 @@ const caseList = [
   </section>
   <ContactFooter />
 </Layout>
-
-<script>
-  import Ino from '@/utils/Ino';
-  const slideTitle = document.querySelectorAll('.slide-in-up');
-  slideTitle.forEach((titleElement: HTMLElement) => {
-    Ino(titleElement, {
-      onShow: (el) => {
-        el.classList.add('am-slide');
-      },
-      onHide: (el) => {
-        el.classList.remove('am-slide');
-      },
-    });
-  });
-</script>
-
-<style is:global>
-  .intro {
-    height: 50vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 80px;
-    background-color: #f4f2f2bf;
-    .title {
-      font-size: 24px;
-      font-weight: 400;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 10px;
-    }
-    .title::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      bottom: -5px;
-      width: 50%;
-      border-bottom: 10px solid #006400;
-      transform: translateX(50%);
-    }
-    .intro_content {
-      height: 70%;
-      line-height: 35px;
-      display: flex;
-      align-items: center;
-      margin-top: 40px;
-      border-radius: 20px;
-      padding: 25px;
-    }
-  }
-  .cases {
-    margin-top: 30px;
-    div {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 45vh;
-      .item_name {
-        width: 40%;
-        font-size: 20px;
-        font-weight: 400;
-      }
-      .item_desc {
-        flex: 1;
-        color: white;
-        position: relative;
-        padding: 30px;
-        background-size: cover;
-        background-position: center;
-        .item_desc_content {
-          z-index: 1;
-        }
-      }
-    }
-    .item_content {
-      height: 40vh;
-      width: 70vw;
-      overflow: hidden;
-      .item_name {
-        height: 100%;
-      }
-    }
-  }
-  .item_desc::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: black;
-    opacity: 0.4;
-  }
-  .item_1 {
-    .item_desc {
-      background-image: url('/img_4.jpg');
-    }
-  }
-  .item_2 {
-    .item_desc {
-      background-image: url('/img_11.jpg');
-    }
-  }
-  .item_3 {
-    .item_desc {
-      background-image: url('/img_2.jpg');
-    }
-  }
-  .item_4 {
-    .item_desc {
-      background-image: url('/img_9.jpg');
-    }
-  }
-  .contact {
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
-    .text {
-      height: 100px;
-      width: 200px;
-      display: flex;
-      font-size: 20px;
-      font-weight: 400;
-      color: white;
-      justify-content: center;
-      align-items: center;
-      background-color: #006400;
-    }
-    .text:hover {
-      color: #006400;
-      background-color: rgba(200, 200, 200, 0.5);
-    }
-  }
-</style>
