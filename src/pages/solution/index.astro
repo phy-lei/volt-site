@@ -34,19 +34,23 @@ const reasonList = [
 const caseList = [
   {
     imgUrl: solution01.src,
-    desc: '上海奉贤 459.96KWp',
+    title: '上海奉贤',
+    desc: '459.96KWp',
   },
   {
     imgUrl: solution02.src,
-    desc: '上海奉贤 225.75KWp',
+    title: '上海奉贤',
+    desc: '225.75KWp',
   },
   {
     imgUrl: solution03.src,
-    desc: '江苏泰州 1198.665KWp',
+    title: '江苏泰州 ',
+    desc: '1198.665KWp',
   },
   {
     imgUrl: solution04.src,
-    desc: '浙江嘉兴 688.545KWp',
+    title: '浙江嘉兴',
+    desc: '688.545KWp',
   },
 ];
 ---
@@ -88,15 +92,15 @@ const caseList = [
       <h1 class="text-size-2xl font-700">商业模式</h1>
       <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
         <strong> EPC模式：</strong>
-        辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。<br
+         辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。<br
         />
-        业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
+         业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
       </p>
       <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
         <strong> EMC模式：</strong>
-        即合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。<br
+         即合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。<br
         />
-        无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维 可享长期收益。
+         无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维 可享长期收益。
       </p>
     </div>
   </section>
@@ -106,15 +110,15 @@ const caseList = [
     <ul class="flex items-center justify-center gap-5 <md:flex-col">
       {
         caseList.map((item) => (
-          <li
-            class={clsx(
-              `bg-no-repeat bg-center bg-cover w-25% h-300px flex justify-center items-center <md:w-80% `
-            )}
-            style={{ backgroundImage: `url(${item.imgUrl})` }}
-          >
-            <h3 class="text-size-2xl text-white p-2 bg-[rgba(0,0,0,0.2)]">
-              {item.desc}
-            </h3>
+          <li class="relative overflow-hidden w-25% h-300px flex justify-center items-center <md:w-80% cursor-pointer">
+            <div
+              class="bg-no-repeat bg-cover w-100% h-100% hover:transform-scale-110 transition-all"
+              style={{ backgroundImage: `url(${item.imgUrl})` }}
+            />
+            <div class="w-100% flex justify-between absolute bottom-0 text-white">
+              <h3 class="text-size-xl p-2">{item.title}</h3>
+              <h1 class="text-size-2xl p-2">{item.desc}</h1>
+            </div>
           </li>
         ))
       }
