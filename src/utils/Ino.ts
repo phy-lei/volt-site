@@ -1,17 +1,18 @@
 function Ino(el: HTMLElement, {
   onShow,
-  onHide
-}: { onShow?: (el: HTMLElement) => void, onHide?: (el: HTMLElement) => void }) {
+  onHide,
+}: { onShow?: (el: Element) => void, onHide?: (el: Element) => void }) {
   const io = new IntersectionObserver((entries) => {
-    entries.forEach(item => {
+    entries.forEach((item) => {
       if (item.isIntersecting) {
-        onShow && onShow(el)
-      } else {
-        onHide && onHide(el)
+        onShow && onShow(item.target)
+      }
+      else {
+        onHide && onHide(item.target)
       }
     })
   }, {
-    root: document
+    rootMargin: '-20%',
   })
 
   io.observe(el)
