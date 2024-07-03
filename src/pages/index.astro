@@ -11,36 +11,56 @@ import Layout from '@/layouts/Layout.astro';
       width="100%"
       loop=""></video>
   </div>
+  <section
+    class="bg-[url(/src/assets/imgs/04.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto py-[35px] relative"
+  >
+    <div>
+      6大应用场景
+      分布式光伏指通过利用空闲屋顶安装光伏发电系统，产生可持续性绿色清洁能源，是一种可再生能源的利用方式。
+    </div>
+  </section>
+  <section
+    class="bg-[url(/img_1.jpg)] bg-no-repeat bg-center bg-cover w-80% h-screen pt-[100px] <md:h-auto py-[35px] relative"
+  >
+    <div>2030前实现碳达峰 2060前实现碳中和 光伏-加速能源转型的必然选择</div>
+  </section>
   <div class="container_section">
     <div class="policy">
       <div class="title">碳达峰、碳中和</div>
       <div class="more">
-        <div class="more_text">概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍</div>
+        <div class="more_text">
+          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
+        </div>
       </div>
     </div>
     <div class="introduction">
       <div class="title">光伏的探寻</div>
       <div class="more">
         <a class="more_btn" href="/introduction">了解更多 &rarr;</a>
-        <div class="more_text">概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍</div>
+        <div class="more_text">
+          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
+        </div>
       </div>
     </div>
     <div class="industry">
       <div class="title">工商业解决方案</div>
       <div class="more">
         <a class="more_btn" href="/solution">了解更多 &rarr;</a>
-        <div class="more_text">概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍</div>
+        <div class="more_text">
+          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
+        </div>
       </div>
     </div>
     <div class="family">
       <div class="title">家庭智能解决方案</div>
       <div class="more">
-        <a class="more_btn"  href="/family">了解更多 &rarr;</a>
-        <div class="more_text">概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍</div>
+        <a class="more_btn" href="/family">了解更多 &rarr;</a>
+        <div class="more_text">
+          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
+        </div>
       </div>
     </div>
   </div>
-  
 </Layout>
 
 <style is:global>
@@ -94,11 +114,11 @@ import Layout from '@/layouts/Layout.astro';
     }
   }
   .title::after {
-    content: "";
+    content: '';
     position: absolute;
-    left:0; 
-    bottom: -20px; 
-    width: 40%; 
+    left: 0;
+    bottom: -20px;
+    width: 40%;
     border-bottom: 10px solid var(--main-color);
     border-right: 10px solid transparent;
   }
