@@ -45,7 +45,6 @@ export default defineConfig({
       'text-accent-foreground': 'text-[hsl(var(--accent-foreground))]',
       'nav-link': 'flex h-10 w-max items-center justify-center gap-4 rounded-full px-4 py-2 transition-colors hover:bg-accent/.2 focus:bg-accent/.2 focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/.2 data-[state=open]:bg-accent/.2',
       'fade-trigger': 'transition-property-[transform,opacity] transition-duration-500 translate-y-[50px] opacity-0',
-      'fade-trigger-active': 'translate-y-0 opacity-100',
     },
     [/^bg-accent\/(.*)$/, ([, c]) => `bg-[hsl(var(--accent)/${c})]`],
   ],
