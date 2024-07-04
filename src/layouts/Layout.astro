@@ -111,15 +111,21 @@ const { title } = Astro.props;
 </html>
 
 <script>
-  import Ino from '@/utils/Ino';
-  const slideTitle = document.querySelectorAll('.fade-in-up');
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const slideTitle = document.querySelectorAll('.fade-trigger');
   slideTitle.forEach((titleElement: HTMLElement) => {
-    Ino(titleElement, {
-      onShow: (el) => {
-        el.classList.add('am-slide');
-      },
-      onHide: (el) => {
-        el.classList.remove('am-slide');
+    console.log(titleElement);
+    const hook = titleElement.getAttribute('data-hook') || '20%';
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: titleElement,
+        start: 'top ' + hook,
+        end: 'bottom -100%',
+        toggleClass: 'fade-trigger-active',
+        // markers: true,
       },
     });
   });

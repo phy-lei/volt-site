@@ -6,7 +6,7 @@
     <p class="text-center text-xl font-500 line-height-[1.5] mt-5">
       从现在开始让我们拥有一套高端定制的光伏发电系统
       <br />
-       共同为实现中国2030“碳达峰”和2060“碳中和贡献绵薄之力吧
+      共同为实现中国2030“碳达峰”和2060“碳中和贡献绵薄之力吧
     </p>
     <a
       href="/contact"
@@ -18,13 +18,14 @@
 </section>
 
 <script>
-  import Ino from '@/utils/Ino';
-  Ino(document.querySelector('.contact-btn'), {
-    onShow: (el) => {
-      el.classList.add('animate-heart-beat');
-    },
-    onHide: (el) => {
-      el.classList.remove('animate-heart-beat');
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: document.querySelector('.contact-btn'),
+      start: 'top 70%',
+      toggleClass: 'animate-heart-beat',
     },
   });
 </script>

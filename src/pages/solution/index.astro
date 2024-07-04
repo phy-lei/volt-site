@@ -61,11 +61,12 @@ const caseList = [
     class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto py-[35px] relative"
   >
     <div class="m-auto translate-y-50% <md:translate-y-0">
-      <h1 class="text-center text-white text-size-2xl fade-in-up">
+      <h1 class="text-center text-white text-size-2xl fade-trigger">
         工商业安装光伏的三个理由
       </h1>
       <div
-        class="max-w-7xl m-auto flex items-center gap-8 text-white px-px-8 <md:flex-col pt-[25px]"
+        class="max-w-7xl m-auto flex items-center gap-8 text-white px-px-8 fade-trigger <md:flex-col pt-[25px]"
+        data-hook="10%"
       >
         {
           reasonList.map((item, index) => (
@@ -92,22 +93,24 @@ const caseList = [
       <h1 class="text-size-2xl font-700">商业模式</h1>
       <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
         <strong> EPC模式：</strong>
-         辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。<br
+        辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。<br
         />
-         业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
+        业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
       </p>
       <p class="py-4 <md:(text-nowrap text-ellipsis overflow-hidden)">
         <strong> EMC模式：</strong>
-         即合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。<br
+        即合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。<br
         />
-         无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维 可享长期收益。
+        无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维 可享长期收益。
       </p>
     </div>
   </section>
   <!-- 案例图片 -->
   <section class="w-100% pb-50">
-    <h1 class="text-center text-size-2xl fade-in-up mb-10">相关案例</h1>
-    <ul class="flex items-center justify-center gap-5 <md:flex-col">
+    <h1 class="text-center text-size-2xl fade-trigger mb-10">相关案例</h1>
+    <ul
+      class="flex items-center justify-center fade-trigger gap-5 <md:flex-col"
+    >
       {
         caseList.map((item) => (
           <li class="relative overflow-hidden w-25% h-300px flex justify-center items-center <md:w-80% cursor-pointer">
