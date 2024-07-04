@@ -65,7 +65,7 @@ const caseList = [
         工商业安装光伏的三个理由
       </h1>
       <div
-        class="max-w-7xl m-auto flex items-center gap-8 text-white px-px-8 fade-trigger <md:flex-col pt-[25px]"
+        class="max-w-7xl m-auto flex items-center gap-8 text-white px-8 fade-trigger <md:flex-col pt-[25px]"
         data-hook="10%"
       >
         {
@@ -106,26 +106,109 @@ const caseList = [
     </div>
   </section>
   <!-- 案例图片 -->
-  <section class="w-100% pb-50">
+  <section class="w-100% pb-50 section-card-view">
     <h1 class="text-center text-size-2xl fade-trigger mb-10">相关案例</h1>
-    <ul
-      class="flex items-center justify-center fade-trigger gap-5 <md:flex-col"
-    >
-      {
-        caseList.map((item) => (
-          <li class="relative overflow-hidden w-25% h-300px flex justify-center items-center <md:w-80% cursor-pointer">
-            <div
-              class="bg-no-repeat bg-cover w-100% h-100% hover:transform-scale-110 transition-all"
-              style={{ backgroundImage: `url(${item.imgUrl})` }}
-            />
-            <div class="w-100% flex justify-between absolute bottom-0 text-white">
-              <h3 class="text-size-xl p-2">{item.title}</h3>
-              <h1 class="text-size-2xl p-2">{item.desc}</h1>
-            </div>
-          </li>
-        ))
-      }
-    </ul>
+    <div class="h-[280vw] sticky-wrapper fade-trigger">
+      <div class="sticky w-100% h-auto top-150px">
+        <div class="relative flex w-50vw m-[0_auto] gap-12 section-wrapper">
+          {
+            caseList.map((item) => (
+              <div class="relative flex-shrink-0 w-100% h-500px flex justify-center items-center <md:w-80% cursor-pointer section-card">
+                <div
+                  class="bg-no-repeat bg-cover w-100% h-100%"
+                  style={{ backgroundImage: `url(${item.imgUrl})` }}
+                />
+                <div class="w-100% flex justify-between absolute bottom-0 text-white section-card-title">
+                  <h3 class="text-size-xl p-2">{item.title}</h3>
+                  <h1 class="text-size-2xl p-2">{item.desc}</h1>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
   </section>
   <ContactFooter />
 </Layout>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+  const sections = document.querySelectorAll('.section-card-view');
+
+  sections.forEach((section) => {
+    const wrapper = section.querySelector('.section-wrapper');
+    const stickyWrapper = section.querySelector('.sticky-wrapper');
+    const cards = section.querySelectorAll('.section-card');
+    const cardTitles = section.querySelectorAll('.section-card-title');
+
+    const screenWidth = document.documentElement.clientWidth;
+    const cardWidth = cards[0].clientWidth;
+    const cardMargin = Number(
+      window.getComputedStyle(wrapper).getPropertyValue('gap').slice(0, -2)
+    );
+    const cardsNumber = cards.length;
+    const swiperOffset =
+      // 距离页面左侧的宽度 * 2
+      wrapper.getBoundingClientRect().left * 2 +
+      // 每个卡片宽度 * 卡片数量
+      cardWidth * cardsNumber +
+      // 卡片的左侧距离 * (卡片数量 - 1)
+      cardMargin * (cardsNumber - 1) -
+      // 屏幕的宽度
+      screenWidth;
+    const stickyTop = 150;
+
+    gsap.to(wrapper, {
+      scrollTrigger: {
+        trigger: stickyWrapper,
+        start: stickyTop + ' ' + stickyTop,
+        end: 'bottom 100%',
+        scrub: 0,
+      },
+      ease: 'none',
+      x: -swiperOffset,
+    });
+
+    const cardScroll = cardWidth + cardMargin;
+
+    cards.forEach((card, index) => {
+      const startTrigger = stickyTop - cardScroll * (index - 1);
+      if (index > 0) {
+        gsap.to(card, {
+          scrollTrigger: {
+            trigger: card,
+            start: 'top ' + startTrigger,
+            end: 'top ' + cardScroll / 4,
+            scrub: 0,
+            // markers: true,
+          },
+          ease: 'none',
+          filter: 'blur(0px)',
+          scale: 1,
+        });
+        gsap.to(cardTitles[index], {
+          scrollTrigger: {
+            trigger: cardTitles[index],
+            start: 'top ' + startTrigger,
+            end: 'top ' + cardScroll / 4,
+            // markers: true,
+          },
+          top: '-60px',
+          color: 'black',
+          justifyContent: 'center',
+        });
+      }
+    });
+  });
+</script>
+
+<style>
+  .section-card + .section-card {
+    transform: scale(0.8);
+    transform-origin: left;
+    filter: blur(10px);
+  }
+</style>

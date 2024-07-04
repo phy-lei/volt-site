@@ -117,7 +117,6 @@ const { title } = Astro.props;
 
   const slideTitle = document.querySelectorAll('.fade-trigger');
   slideTitle.forEach((titleElement: HTMLElement) => {
-    console.log(titleElement);
     const hook = titleElement.getAttribute('data-hook') || '20%';
     gsap.timeline({
       scrollTrigger: {
