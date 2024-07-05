@@ -1,11 +1,11 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import Banner from '@/components/Banner.astro';
+import ContactFooter from '@/components/ContactFooter.astro';
 ---
 
 <Layout title="辐特佳新能源">
-  <div class="title_section">
-    联系我们
-  </div>
+  <Banner title="联系我们" imgSrc="/img_5.jpg" />
   <div class="content_section">
     <div class="item_1">
       <div class="title">全国服务热线</div>
@@ -27,7 +27,7 @@ import Layout from '@/layouts/Layout.astro';
       </div>
     </div>
   </div>
-  </div>
+  <ContactFooter />
 </Layout>
 
 <style is:global>
@@ -41,7 +41,7 @@ import Layout from '@/layouts/Layout.astro';
     font-weight: 600;
     color: white;
     letter-spacing: 10px;
-    background-image: url('/img_16.jpg');
+    background-image: url('/img_5.jpg');
     background-size: cover;
     background-position: center center;
   }

@@ -5,20 +5,8 @@ import ContactFooter from '@/components/ContactFooter.astro';
 ---
 
 <Layout title="辐特佳新能源">
-  <Banner title="家庭智能解决方案" imgSrc="/img_5.jpg" />
+  <Banner title="家庭智能解决方案" imgSrc="/img_23.jpg" />
   <div class="intro">
-    <div class="benefit">
-      <div class="title">产品卖点</div>
-      <div class="intro_content">
-        商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍
-      </div>
-    </div>
-    <div class="process">
-      <div class="title">工作流程</div>
-      <div class="intro_content">
-        商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍商业模式介绍
-      </div>
-    </div>
   </div>
   <div class="cases">
     <div class="item_1">
@@ -37,41 +25,14 @@ import ContactFooter from '@/components/ContactFooter.astro';
 
 <style is:global>
   .intro {
-    height: 50vh;
+    height: 100vh;
     display: flex;
     align-items: center;
     padding: 80px;
-    background-color: #f4f2f2bf;
-    > div {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      .title {
-        font-size: 24px;
-        font-weight: 400;
-        position: relative;
-        display: inline-block;
-        padding-bottom: 10px;
-      }
-      .title::after {
-        content: '';
-        position: absolute;
-        left: 0;
-        bottom: -5px;
-        width: 50%;
-        border-bottom: 10px solid #006400;
-        transform: translateX(50%);
-      }
-      .intro_content {
-        height: 70%;
-        line-height: 35px;
-        display: flex;
-        align-items: center;
-        margin-top: 40px;
-        border-radius: 20px;
-        padding: 25px 40px;
-      }
-    }
+    /* background-color: #f4f2f2bf; */
+    background-image: url('/gif_1.gif');
+    background-size: cover;
+    background-position: center center;
   }
   .cases {
     margin-top: 30px;
@@ -119,26 +80,6 @@ import ContactFooter from '@/components/ContactFooter.astro';
   .item_1 {
     .item_desc {
       background-image: url('/img_3.jpg');
-    }
-  }
-  .contact {
-    display: flex;
-    justify-content: center;
-    margin-top: 200px;
-    .text {
-      height: 100px;
-      width: 200px;
-      display: flex;
-      font-size: 20px;
-      font-weight: 400;
-      color: white;
-      justify-content: center;
-      align-items: center;
-      background-color: #006400;
-    }
-    .text:hover {
-      color: #006400;
-      background-color: rgba(200, 200, 200, 0.5);
     }
   }
 </style>
