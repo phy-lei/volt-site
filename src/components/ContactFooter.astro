@@ -1,31 +1,13 @@
 <section
-  class="section flex items-center justify-center w-full h-screen bg-[url(/src/assets/imgs/01.png)] bg-no-repeat bg-center bg-cover"
+  class="section flex items-center justify-center w-full h-40vh bg-[url(/public/img_21.jpg)] bg-no-repeat bg-center bg-cover"
 >
   <div class="text-white">
-    <h1 class="text-center text-4xl font-bold">开启绿色低碳新时代</h1>
-    <p class="text-center text-xl font-500 line-height-[1.5] mt-5">
-      从现在开始让我们拥有一套高端定制的光伏发电系统
-      <br />
-      共同为实现中国2030“碳达峰”和2060“碳中和贡献绵薄之力吧
-    </p>
+    <h1 class="text-center text-4xl fw-500">开启绿色低碳新时代</h1>
     <a
       href="/contact"
-      class="contact-btn w-35 h-[34px] text-xs flex items-center justify-center border border-white rounded-[34px] m-auto mt-5
-      hover:(text-emerald border-emerald)"
-      >立刻拥有</a
+      class="contact-btn w-35 h-[34px] text-size-14px flex items-center justify-center border border-white rounded-[34px] m-auto mt-8"
+      >立即联系</a
     >
   </div>
 </section>
 
-<script>
-  import gsap from 'gsap';
-  import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: document.querySelector('.contact-btn'),
-      start: 'top 70%',
-      toggleClass: 'animate-heart-beat',
-    },
-  });
-</script>
