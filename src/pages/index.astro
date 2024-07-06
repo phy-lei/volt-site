@@ -1,5 +1,20 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import icon1 from 'src/assets/imgs/icons/tubiao-17.png';
+import icon2 from 'src/assets/imgs/icons/tubiao-18.png';
+import icon3 from 'src/assets/imgs/icons/tubiao-19.png';
+import icon4 from 'src/assets/imgs/icons/tubiao-20.png';
+import icon5 from 'src/assets/imgs/icons/tubiao-21.png';
+import icon6 from 'src/assets/imgs/icons/tubiao-22.png';
+
+const iconList = [
+  { icon: icon1.src, title: '厂房' },
+  { icon: icon2.src, title: '园区' },
+  { icon: icon3.src, title: '政府' },
+  { icon: icon4.src, title: '学校' },
+  { icon: icon5.src, title: '医院' },
+  { icon: icon6.src, title: '别墅' },
+];
 ---
 
 <Layout title="辐特佳新能源">
@@ -43,54 +58,14 @@ import Layout from '@/layouts/Layout.astro';
         class="flex items-center mt-10 gap-15 flex-wrap fade-trigger"
         data-hook="60%"
       >
-        <li class="flex flex-col items-center">
-          <img
-            src="/src/assets/imgs/icons/tubiao-17.png"
-            alt=""
-            class="w-20 h-auto mb-2"
-          />
-          <p class="font-400 text-size-lg text-nowrap">厂房</p>
-        </li>
-        <li class="flex flex-col items-center">
-          <img
-            src="/src/assets/imgs/icons/tubiao-18.png"
-            alt=""
-            class="w-20 h-auto mb-2"
-          />
-          <p class="font-400 text-size-lg text-nowrap">园区</p>
-        </li>
-        <li class="flex flex-col items-center">
-          <img
-            src="/src/assets/imgs/icons/tubiao-19.png"
-            alt=""
-            class="w-20 h-auto mb-2"
-          />
-          <p class="font-400 text-size-lg text-nowrap">政府</p>
-        </li>
-        <li class="flex flex-col items-center">
-          <img
-            src="/src/assets/imgs/icons/tubiao-20.png"
-            alt=""
-            class="w-20 h-auto mb-2"
-          />
-          <p class="font-400 text-size-lg text-nowrap">学校</p>
-        </li>
-        <li class="flex flex-col items-center">
-          <img
-            src="/src/assets/imgs/icons/tubiao-21.png"
-            alt=""
-            class="w-20 h-auto mb-2"
-          />
-          <p class="font-400 text-size-lg text-nowrap">医院</p>
-        </li>
-        <li class="flex flex-col items-center">
-          <img
-            src="/src/assets/imgs/icons/tubiao-22.png"
-            alt=""
-            class="w-20 h-auto mb-2"
-          />
-          <p class="font-400 text-size-lg text-nowrap">别墅</p>
-        </li>
+        {
+          iconList.map((item) => (
+            <li class="flex flex-col items-center">
+              <img src={item.icon} alt="" class="w-20 h-auto mb-2" />
+              <p class="font-400 text-size-lg text-nowrap">{item.title}</p>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </section>
