@@ -1,14 +1,27 @@
 ---
 import Layout from '@/layouts/Layout.astro';
-import Banner from '@/components/Banner.astro';
 import ContactFooter from '@/components/ContactFooter.astro';
 ---
 
 <Layout title="辐特佳新能源">
-  <Banner title="家庭智能解决方案" imgSrc="/img_23.jpg" />
-  <div class="intro">
-  </div>
-  <div class="cases">
+  <section class="relative intro pin-card">
+    <div
+      class="pin-card-box1 gs-blur absolute right-20 bottom-0 translate-y-100%"
+    >
+      1
+    </div>
+    <div
+      class="pin-card-box2 gs-blur absolute right-20 bottom-0 translate-y-100%"
+    >
+      2
+    </div>
+    <div
+      class="pin-card-box3 gs-blur absolute right-20 bottom-0 translate-y-100%"
+    >
+      3
+    </div>
+  </section>
+  <section class="cases">
     <div class="item_1">
       <div class="item_content">
         <div class="item_name">户用光伏电站</div>
@@ -19,9 +32,45 @@ import ContactFooter from '@/components/ContactFooter.astro';
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <ContactFooter />
 </Layout>
+
+<script>
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  gsap.registerPlugin(ScrollTrigger);
+  const t1 = gsap.timeline({
+    scrollTrigger: {
+      trigger: '.pin-card',
+      start: 'top top',
+      pin: true,
+      scrub: 1,
+      // markers: true,
+    },
+  });
+
+  t1.to('.pin-card-box1', {
+    y: -300,
+    duration: 1,
+  })
+    .to(
+      '.pin-card-box2',
+      {
+        y: -300,
+        duration: 1,
+      },
+      '>1'
+    )
+    .to(
+      '.pin-card-box3',
+      {
+        y: -300,
+        duration: 1,
+      },
+      '>1'
+    );
+</script>
 
 <style is:global>
   .intro {

@@ -56,9 +56,9 @@ function Nav() {
           <Logo />
         </a>
 
-        <div class="flex items-center">
+        <div class="flex items-center font-sans">
           <div class="flex gap-4 <md:hidden">
-            <a class="nav-link font-700" href="/introduction" data-astro-prefetch>
+            <a class="nav-link font-700" href="/" data-astro-prefetch>
               光伏的探寻
             </a>
             <a class="nav-link font-700" href="/solution" data-astro-prefetch>
@@ -68,7 +68,7 @@ function Nav() {
               家庭智能解决方案
             </a>
             <a class="nav-link font-700" href="/about" data-astro-prefetch>
-              关于 volt +
+              关于volt+
             </a>
             <a class="nav-link font-700" href="/contact" data-astro-prefetch>
               联系我们

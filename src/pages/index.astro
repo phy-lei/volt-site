@@ -4,123 +4,195 @@ import Layout from '@/layouts/Layout.astro';
 
 <Layout title="辐特佳新能源">
   <section class="relative overflow-hidden">
-    <video
-      src="/video_1.mp4"
-      autoplay=""
-      muted=""
-      width="100%"
-      loop=""></video>
+    <video src="/video_1.mp4" autoplay="" muted="" width="100%" loop=""></video>
     <div class="bg-[var(--main-color)] w-10 h-10px rounded m-auto my-10"></div>
   </section>
   <section
-    class="bg-[url(/img_4.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen -mt-100 box-border"
+    class="bg-[url(/img_4.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen box-border relative page"
   >
-    <div>
-      6大应用场景
-      分布式光伏指通过利用空闲屋顶安装光伏发电系统，产生可持续性绿色清洁能源，是一种可再生能源的利用方式。
+    <div
+      class="absolute top-70 left-50% translate-x--50% flex items-center <md:flex-col"
+    >
+      <div>
+        <div class="flex items-center fade-trigger" data-hook="70%">
+          <h1 class="font-serif text-size-4xl text-white">2030</h1>
+          <span class="text-size-2xl text-white ml-2">前实现碳达峰</span>
+        </div>
+        <div class="flex items-center fade-trigger" data-hook="60%">
+          <h1 class="font-serif text-size-4xl text-white">2060</h1>
+          <span class="text-size-2xl text-white ml-2">实现碳中和</span>
+        </div>
+      </div>
+      <p class="text-size-2xl text-white ml-4 fade-trigger" data-hook="50%">
+        光伏-加速能源转型的必然选择
+      </p>
     </div>
   </section>
-  <section
-    class="bg-[url(/img_1.jpg)] bg-no-repeat bg-center bg-cover w-80% h-screen pt-[100px] <md:h-auto py-[35px] relative"
-  >
-    <div>2030前实现碳达峰 2060前实现碳中和 光伏-加速能源转型的必然选择</div>
-  </section>
-  <div class="container_section">
-    <div class="policy">
-      <div class="title">碳达峰、碳中和</div>
-      <div class="more">
-        <div class="more_text">
-          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
-        </div>
+  <section class="w-full h-70vh box-border relative">
+    <div
+      class="absolute top-50% left-50% translate-x--50% translate-y--50% <md:(left-0 translate-x-0)"
+    >
+      <div class="fade-trigger" data-hook="70%">
+        <h1 class="font-serif text-size-4xl text-center">分布式光伏</h1>
+        <p class="text-gray-5 px-2">
+          分布式光伏指通过利用空闲屋顶安装光伏发电系统，产生可持续性绿色清洁能源，是一种可再生能源的利用方式。
+        </p>
       </div>
-    </div>
-    <div class="introduction">
-      <div class="title">光伏的探寻</div>
-      <div class="more">
-        <a class="more_btn" href="/introduction">了解更多 &rarr;</a>
-        <div class="more_text">
-          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
-        </div>
-      </div>
-    </div>
-    <div class="industry">
-      <div class="title">工商业解决方案</div>
-      <div class="more">
-        <a class="more_btn" href="/solution">了解更多 &rarr;</a>
-        <div class="more_text">
-          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
-        </div>
-      </div>
-    </div>
-    <div class="family">
-      <div class="title">家庭智能解决方案</div>
-      <div class="more">
-        <a class="more_btn" href="/family">了解更多 &rarr;</a>
-        <div class="more_text">
-          概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍概括介绍
-        </div>
-      </div>
-    </div>
-  </div>
-</Layout>
 
-<style is:global>
-  .container_section {
-    div {
-      display: flex;
-      flex-direction: column;
-      height: 60vh;
-      position: relative;
-      .title {
-        width: 40%;
-        margin: 50px 50px 0 50px;
-        font-size: 28px;
-        font-weight: 400;
-        flex: 1;
-      }
-      .more {
-        position: relative;
-        height: 50vh;
-        margin: 50px;
-        overflow: hidden;
-        background-image: url('/img_7.jpg');
-        display: flex;
-        align-items: flex-end;
-        .more_text {
-          color: white;
-          width: 60%;
-          margin: 50px;
-          padding: 20px;
-          display: flex;
-          justify-content: center;
-          overflow: hidden;
-        }
-        .more_btn {
-          position: absolute;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          color: white;
-          border: 1px solid rgba(200, 200, 200, 0.5);
-          border-radius: 20px;
-          width: 150px;
-          height: 50px;
-          left: 50px;
-          bottom: 50px;
-        }
-        .more_btn:hover {
-          background-color: rgba(200, 200, 200, 0.5);
-        }
-      }
-    }
-  }
-  .title::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -20px;
-    width: 40%;
-    border-bottom: 10px solid var(--main-color);
-    border-right: 10px solid transparent;
-  }
-</style>
+      <ul
+        class="flex items-center mt-10 gap-15 flex-wrap fade-trigger"
+        data-hook="60%"
+      >
+        <li class="flex flex-col items-center">
+          <img
+            src="/src/assets/imgs/icons/tubiao-17.png"
+            alt=""
+            class="w-20 h-auto mb-2"
+          />
+          <p class="font-400 text-size-lg text-nowrap">厂房</p>
+        </li>
+        <li class="flex flex-col items-center">
+          <img
+            src="/src/assets/imgs/icons/tubiao-18.png"
+            alt=""
+            class="w-20 h-auto mb-2"
+          />
+          <p class="font-400 text-size-lg text-nowrap">园区</p>
+        </li>
+        <li class="flex flex-col items-center">
+          <img
+            src="/src/assets/imgs/icons/tubiao-19.png"
+            alt=""
+            class="w-20 h-auto mb-2"
+          />
+          <p class="font-400 text-size-lg text-nowrap">政府</p>
+        </li>
+        <li class="flex flex-col items-center">
+          <img
+            src="/src/assets/imgs/icons/tubiao-20.png"
+            alt=""
+            class="w-20 h-auto mb-2"
+          />
+          <p class="font-400 text-size-lg text-nowrap">学校</p>
+        </li>
+        <li class="flex flex-col items-center">
+          <img
+            src="/src/assets/imgs/icons/tubiao-21.png"
+            alt=""
+            class="w-20 h-auto mb-2"
+          />
+          <p class="font-400 text-size-lg text-nowrap">医院</p>
+        </li>
+        <li class="flex flex-col items-center">
+          <img
+            src="/src/assets/imgs/icons/tubiao-22.png"
+            alt=""
+            class="w-20 h-auto mb-2"
+          />
+          <p class="font-400 text-size-lg text-nowrap">别墅</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <section class="w-full h-70vh box-border relative">
+    <div class="fade-trigger m-auto" data-hook="70%">
+      <h1 class="font-serif text-size-4xl text-center">光伏系统原理</h1>
+      <p class="text-gray-5 px-2 text-center">
+        光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入用户侧。
+
+
+        <br />
+         光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网。
+      </p>
+    </div>
+
+    <ul class="flex m-auto gap-5 mt-10 px-2 fade-trigger" data-hook="60%">
+      <li class="relative">
+        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <p
+          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+        >
+          光伏组件
+        </p>
+      </li>
+      <li class="relative">
+        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <p
+          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+        >
+          光伏组件
+        </p>
+      </li>
+      <li class="relative">
+        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <p
+          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+        >
+          光伏组件
+        </p>
+      </li>
+      <li class="relative">
+        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <p
+          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+        >
+          光伏组件
+        </p>
+      </li>
+      <li class="relative">
+        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <p
+          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+        >
+          光伏组件
+        </p>
+      </li>
+      <li class="relative">
+        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <p
+          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+        >
+          光伏组件
+        </p>
+      </li>
+    </ul>
+  </section>
+  <section class="w-full box-border text-white px-20">
+    <div class="flex gap-20 fade-trigger <md:flex-col" data-hook="70%">
+      <div
+        class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer group"
+      >
+        <img
+          src="/img_6.jpg"
+          alt=""
+          class="w-100% h-600px group-hover:transform-scale-110 transition-transform <md:h-400px"
+        />
+        <div class="absolute bottom-0 overflow-hidden pb-4">
+          <h1 class="text-size-2xl mb-10 ml-2">工商业多场景解决方案</h1>
+          <a
+            href="/solution"
+            class="w-25 h-[34px] text-size-14px text-center px-4 py-2 rounded-full bg-[var(--main-color)] m-2 hidden group-hover-block"
+            >了解更多</a
+          >
+        </div>
+      </div>
+      <div
+        class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer group"
+      >
+        <img
+          src="/img_23.jpg"
+          alt=""
+          class="w-100% h-600px group-hover:transform-scale-110 transition-transform <md:h-400px"
+        />
+        <div class="absolute bottom-0 overflow-hidden pb-4">
+          <h1 class="text-size-2xl mb-10 ml-2">工商业多场景解决方案</h1>
+          <a
+            href="/family"
+            class="w-25 h-[34px] text-size-14px text-center px-4 py-2 rounded-full bg-[var(--main-color)] m-2 hidden group-hover-block"
+            >了解更多</a
+          >
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

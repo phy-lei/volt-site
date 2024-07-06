@@ -17,10 +17,6 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap"
-    />
     <script
       is:inline
       type="text/javascript"
@@ -51,7 +47,7 @@ const { title } = Astro.props;
           </div>
           <div class="text-xs flex items-end self-end">
             公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献<br />
-            创造绿色清洁能源的无限可能
+             创造绿色清洁能源的无限可能
           </div>
         </div>
         <div class="flex justify-between px-2 py-4">
@@ -70,7 +66,7 @@ const { title } = Astro.props;
           </div>
           <div class="flex items-center gap-4 <md:hidden">
             <a
-              href="/introduction"
+              href="/"
               class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
               >光伏的探寻</a
             >
@@ -112,8 +108,20 @@ const { title } = Astro.props;
 
 <script>
   import gsap from 'gsap';
+  import Lenis from 'lenis';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  // 滚动平滑插件
+  const lenis = new Lenis();
   gsap.registerPlugin(ScrollTrigger);
+
+  lenis.on('scroll', ScrollTrigger.update);
+
+  gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+  });
+
+  gsap.ticker.lagSmoothing(0);
 
   const slideTitle = document.querySelectorAll('.fade-trigger');
   slideTitle.forEach((titleElement: HTMLElement) => {
@@ -130,6 +138,9 @@ const { title } = Astro.props;
   });
 </script>
 <style is:global>
+  .gs-blur {
+    @apply color-white border border-white p-4 rounded bg-[rgba(255,255,255,0.2)] backdrop-blur-lg;
+  }
   body {
     font-family: 'Microsoft YaHei';
   }
