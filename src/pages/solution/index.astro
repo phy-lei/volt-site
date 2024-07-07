@@ -87,7 +87,11 @@ const caseList = [
     </div>
   </section>
   <section class="pt-[100px] pb-20">
-    <h1 class="font-serif text-center text-size-4xl text-center fade-trigger mb-10">商业模式</h1>
+    <h1
+      class="font-serif text-center text-size-4xl text-center fade-trigger mb-10"
+    >
+      商业模式
+    </h1>
     <div
       class="w-100% flex justify-center items-center gap-24 mt-10 fade-trigger <md:flex-col"
       data-hook="10%"
@@ -125,7 +129,11 @@ const caseList = [
   </section>
   <!-- 案例图片 -->
   <section class="w-100% pb-50 section-card-view">
-    <h1 class="font-serif text-center text-size-4xl text-center fade-trigger mb-10">相关案例</h1>
+    <h1
+      class="font-serif text-center text-size-4xl text-center fade-trigger mb-10"
+    >
+      相关案例
+    </h1>
     <div class="h-[280vw] sticky-wrapper fade-trigger">
       <div
         class="sticky w-100% h-auto top-150px overflow-hidden pt-60px box-border"
@@ -155,6 +163,9 @@ const caseList = [
 <script>
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import createLenis from '@/hooks/createLenis';
+
+  createLenis();
   gsap.registerPlugin(ScrollTrigger);
   const sections = document.querySelectorAll('.section-card-view');
 
