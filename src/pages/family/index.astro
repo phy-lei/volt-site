@@ -37,7 +37,7 @@ const caseList = [
   <Banner title="家庭智能解决方案" imgSrc="/img_23.jpg" />
   <section class="intro_1">
     <div class="item">
-      <div class="item_content fade-trigger" data-hook="70%">
+      <div class="item_content fade-trigger">
         <div class="font-serif item_desc">
           通过别墅屋顶安装光伏组件，产生可持续性绿色清洁能源。光伏所产生的电力优先业主家庭使用，多余电力通过双向表出售给国家电网。
         </div>
@@ -47,7 +47,7 @@ const caseList = [
   </section>
   <section class="intro_2">
     <div class="item">
-      <div class="item_content fade-trigger" data-hook="70%">
+      <div class="item_content fade-trigger">
         <div class="font-serif item_desc">
           降低用电成本<br />
            延缓二、三档阶梯电价<br />
@@ -59,7 +59,7 @@ const caseList = [
   </section>
   <section class="intro_3">
     <div class="item">
-      <div class="item_content fade-trigger" data-hook="70%">
+      <div class="item_content fade-trigger">
         <div class="font-serif item_desc">屋顶隔热降温，进一步节省能源</div>
         <div class="item_name"></div>
       </div>
@@ -71,7 +71,7 @@ const caseList = [
     >
       相关案例
     </h1>
-    <div class="h-[280vw] sticky-wrapper fade-trigger">
+    <div class="h-[280vw] sticky-wrapper fade-trigger" data-hook="60%">
       <div
         class="sticky w-100% h-auto top-150px overflow-hidden pt-60px box-border"
       >
@@ -189,7 +189,7 @@ const caseList = [
     },
   };
 
-  function goToSection(section, anim?) {
+  function goToSection(section) {
     if (scrolling.enabled) {
       // skip if a scroll tween is in progress
       scrolling.disable();
@@ -198,12 +198,10 @@ const caseList = [
         onComplete: scrolling.enable,
         duration: 1,
       });
-
-      anim && anim.restart();
     }
   }
 
-  sectionsList.forEach((section, i) => {
+  sectionsList.forEach((section) => {
     ScrollTrigger.create({
       trigger: section,
       start: 'top bottom-=1',
