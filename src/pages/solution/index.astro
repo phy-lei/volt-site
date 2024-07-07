@@ -2,7 +2,6 @@
 import Layout from '@/layouts/Layout.astro';
 import Banner from '@/components/Banner.astro';
 import ContactFooter from '@/components/ContactFooter.astro';
-import img03 from '/src/assets/imgs/03.jpg';
 
 import solution01 from '/src/assets/imgs/solution-case/01.png';
 import solution02 from '/src/assets/imgs/solution-case/02.jpg';
@@ -65,7 +64,7 @@ const caseList = [
       </h1>
       <div
         class="max-w-7xl m-auto flex items-center gap-8 text-white px-8 fade-trigger <md:flex-col pt-[25px]"
-        data-hook="10%"
+        data-hook="60%"
       >
         {
           reasonList.map((item, index) => (
@@ -90,7 +89,7 @@ const caseList = [
     <h1 class="font-serif text-center text-size-4xl text-center fade-trigger mb-10">商业模式</h1>
     <div
       class="w-100% flex justify-center items-center gap-24 mt-20 fade-trigger <md:flex-col"
-      data-hook="10%"
+      data-hook="60%"
     >
       <div class="w-30% border shadow-2xl border-gray p-5 rounded-lg <md:w-80%">
         <strong class="text-center text-size-xl flex items-center">
@@ -125,8 +124,12 @@ const caseList = [
   </section>
   <!-- 案例图片 -->
   <section class="w-100% pb-50 section-card-view">
-    <h1 class="font-serif text-center text-size-4xl text-center fade-trigger mb-10">相关案例</h1>
-    <div class="h-[280vw] sticky-wrapper fade-trigger">
+    <h1
+      class="font-serif text-center text-size-4xl text-center fade-trigger mb-10"
+    >
+      相关案例
+    </h1>
+    <div class="h-[280vw] sticky-wrapper fade-trigger" data-hook="60%">
       <div
         class="sticky w-100% h-auto top-150px overflow-hidden pt-60px box-border"
       >
@@ -155,6 +158,9 @@ const caseList = [
 <script>
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
+  import createLenis from '@/hooks/createLenis';
+
+  createLenis();
   gsap.registerPlugin(ScrollTrigger);
   const sections = document.querySelectorAll('.section-card-view');
 

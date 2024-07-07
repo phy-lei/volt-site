@@ -37,6 +37,11 @@ import ContactFooter from '@/components/ContactFooter.astro';
   <ContactFooter />
 </Layout>
 
+<script>
+  import createLenis from '@/hooks/createLenis';
+  createLenis();
+</script>
+
 <style is:global>
   .title_section {
     height: 100vh;
@@ -75,7 +80,7 @@ import ContactFooter from '@/components/ContactFooter.astro';
   .vision .content {
     display: flex;
   }
-  .vision .content>div {
+  .vision .content > div {
     height: 50vh;
     margin: 2.5em;
     display: flex;
@@ -101,7 +106,7 @@ import ContactFooter from '@/components/ContactFooter.astro';
         text-align: center;
         margin: 20px;
         height: 50%;
-        display: flex; 
+        display: flex;
         justify-content: center;
         align-items: center;
         z-index: 1;
@@ -120,7 +125,7 @@ import ContactFooter from '@/components/ContactFooter.astro';
     }
   }
 
-  .vision .content>div:hover {
+  .vision .content > div:hover {
     transition: 0.5s;
     transform: translateY(-20px) scale(1.05);
     box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.01);
@@ -141,5 +146,4 @@ import ContactFooter from '@/components/ContactFooter.astro';
     background-size: cover;
     background-position: center center;
   }
-
 </style>

@@ -9,7 +9,6 @@ import solution07 from '/src/assets/imgs/solution-case/07.png';
 import solution08 from '/src/assets/imgs/solution-case/08.png';
 
 
-
 // 案例图片 后续可能改为后台获取
 const caseList = [
   {
@@ -48,9 +47,9 @@ const caseList = [
     <div class="item  w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
         <div class="font-serif item_desc">
-          降低用电成本<br>
-          延缓二、三档阶梯电价<br>
-          25年以上长期稳定收益
+          降低用电成本<br />
+           延缓二、三档阶梯电价<br />
+           25年以上长期稳定收益
         </div>
       </div>
     </div>
@@ -65,8 +64,12 @@ const caseList = [
     </div>
   </section>
   <section class="cases w-100% pt-20 pb-50 section-card-view">
-    <h1 class="title font-serif text-center text-size-4xl text-center fade-trigger mb-10">相关案例</h1>
-    <div class="h-[280vw] sticky-wrapper fade-trigger">
+    <h1
+      class="title font-serif text-center text-size-4xl text-center fade-trigger mb-10"
+    >
+      相关案例
+    </h1>
+    <div class="h-[280vw] sticky-wrapper fade-trigger" data-hook="60%">
       <div
         class="sticky w-100% h-auto top-150px overflow-hidden pt-60px box-border"
       >
@@ -95,7 +98,8 @@ const caseList = [
 <script>
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  gsap.registerPlugin(ScrollTrigger);
+  import ScrollToPlugin from 'gsap/ScrollToPlugin';
+  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
   const sections = document.querySelectorAll('.section-card-view');
 
@@ -152,10 +156,64 @@ const caseList = [
       }
     });
   });
+
+  const sectionsList = document.querySelectorAll('section');
+
+  // this scrolling object just allows us to conveniently call scrolling.enable(), scrolling.disable(), and check if scrolling.enabled is true.
+  // some browsers (like iOS Safari) handle scrolling on a separate thread and can cause things to get out of sync (jitter/jumpy), so when we're animating the scroll position, force an update of GSAP tweens when there's a scroll event in order to maintain synchronization)
+  const scrolling = {
+    enabled: true,
+    events: 'scroll,wheel,touchmove,pointermove'.split(','),
+    prevent: (e: Event) => e.preventDefault(),
+    disable() {
+      if (scrolling.enabled) {
+        scrolling.enabled = false;
+        window.addEventListener('scroll', gsap.ticker.tick, { passive: true });
+        scrolling.events.forEach((e: string, i: number) =>
+          (i ? document : window).addEventListener(e, scrolling.prevent, {
+            passive: false,
+          })
+        );
+      }
+    },
+    enable() {
+      if (!scrolling.enabled) {
+        scrolling.enabled = true;
+        window.removeEventListener('scroll', gsap.ticker.tick);
+        scrolling.events.forEach((e: string, i: number) =>
+          (i ? document : window).removeEventListener(e, scrolling.prevent)
+        );
+      }
+    },
+  };
+
+  function goToSection(section: HTMLElement) {
+    if (scrolling.enabled) {
+      // skip if a scroll tween is in progress
+      scrolling.disable();
+      gsap.to(window, {
+        scrollTo: { y: section, autoKill: false },
+        onComplete: scrolling.enable,
+        duration: 1,
+      });
+    }
+  }
+
+  sectionsList.forEach((section: HTMLElement) => {
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top bottom-=1',
+      end: 'bottom top+=1',
+      onEnter: () => goToSection(section),
+      onEnterBack: () => goToSection(section),
+    });
+  });
 </script>
 
 <style is:global>
-  .intro_1,.intro_2,.intro_3 {
+  .intro_1,
+  .intro_2,
+  .intro_3 {
     position: relative;
     height: 100vh;
     display: flex;

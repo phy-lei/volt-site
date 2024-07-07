@@ -9,12 +9,16 @@ const { imgSrc, title } = Astro.props;
 const src = `url(${imgSrc})`;
 ---
 
-<section class="container_box hero">
-  <div class="hero__images">
-    <img class="hero__image" src={imgSrc} />
+<section class="container_box hero active">
+  <div
+    class="w-100% h-100% bg-no-repeat bg-cover bg-center flex"
+    style={{ backgroundImage: src }}
+  >
   </div>
   <div class="hero__content">
-    <div class="hero__headline font-serif"><span>{title}</span></div>
+    <div class="hero__headline">
+      <span class="font-serif volt-title">{title}</span>
+    </div>
   </div>
 </section>
 
@@ -23,24 +27,16 @@ const src = `url(${imgSrc})`;
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
   gsap.registerPlugin(ScrollTrigger);
-  gsap.to('.hero', {
+  gsap.timeline({
     scrollTrigger: {
       trigger: '.hero',
       scrub: true,
-      pin: true,
-      start: '0',
-      end: '50%',
-      toggleClass: 'active',
-    },
-  });
-  gsap.to('.hero__image', {
-    scrollTrigger: {
-      trigger: '.hero',
-      scrub: 0.5,
-      start: 'top bottom',
+      // pin: true,
+      start: '4% top',
       end: 'bottom -100%',
+      toggleClass: 'hide',
+      // markers: true,
     },
-    y: '-15%',
   });
 </script>
 
@@ -71,15 +67,6 @@ const src = `url(${imgSrc})`;
       display: block;
       padding-bottom: calc(100% / (16 / 9));
     }
-  }
-
-  .hero__image {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
   }
 
   .hero__content {
@@ -114,22 +101,22 @@ const src = `url(${imgSrc})`;
       background-color: white;
       width: 100%;
       height: 0.7vmin;
-      transform: scaleX(0);
+      transform: scaleX(1);
       transition: transform var(--duration) var(--delay) var(--ease);
     }
 
     span {
       display: block;
-      transform: translateY(110%);
+      transform: translateY(0);
       transition: transform var(--duration) var(--ease);
     }
 
-    .active & {
+    .hide & {
       &::after {
-        transform: scaleX(1);
+        transform: scaleX(0);
       }
       span {
-        transform: translateY(0);
+        transform: translateY(110%);
         transition-delay: var(--delay);
       }
     }

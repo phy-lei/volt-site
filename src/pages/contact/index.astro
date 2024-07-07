@@ -1,7 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import Banner from '@/components/Banner.astro';
-import ContactFooter from '@/components/ContactFooter.astro';
 ---
 
 <Layout title="辐特佳新能源">
@@ -12,21 +11,43 @@ import ContactFooter from '@/components/ContactFooter.astro';
     <div class="m-auto translate-y-40% <md:translate-y-0">
       <div
         class="cards max-w-7xl m-auto flex justify-center items-center gap-8 text-white px-8 fade-trigger <md:flex-col pt-[25px]"
-        data-hook="10%"
       >
-        <div class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%">
-          <h3 class="text-size-xl mb-4 flex justify-center items-center">全国服务热线</h3>
-          <div class="flex h-60% justify-center items-center justify-center py-4">4008-613-617</div>
+        <div
+          class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%"
+        >
+          <h3 class="text-size-xl mb-4 flex justify-center items-center">
+            全国服务热线
+          </h3>
+          <div
+            class="flex h-60% justify-center items-center justify-center py-4"
+          >
+            4008-613-617
+          </div>
         </div>
-        <div class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%">
-          <h3 class="text-size-xl mb-4 flex justify-center items-center">办公地址</h3>
-          <div class="flex h-60% justify-center items-center py-4">上海市宝山区军工路5169号A9</div>
+        <div
+          class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%"
+        >
+          <h3 class="text-size-xl mb-4 flex justify-center items-center">
+            办公地址
+          </h3>
+          <div class="flex h-60% justify-center items-center py-4">
+            上海市宝山区军工路5169号A9
+          </div>
         </div>
-        <div class="p-5 rounded-lg w-1/4 h-40vh  bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%">
-          <h3 class="text-size-xl mb-4 flex justify-center items-center">联系邮箱</h3>
+        <div
+          class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%"
+        >
+          <h3 class="text-size-xl mb-4 flex justify-center items-center">
+            联系邮箱
+          </h3>
           <div class="flex h-60% justify-center items-center py-4">xxxx</div>
         </div>
       </div>
     </div>
   </section>
 </Layout>
+
+<script>
+  import createLenis from '@/hooks/createLenis';
+  createLenis();
+</script>
