@@ -6,10 +6,10 @@ import ContactFooter from '@/components/ContactFooter.astro';
 
 <Layout title="辐特佳新能源">
   <Banner title="关于volt+" imgSrc="/img_14.jpg" />
-  <div class="content_section">
+  <div class="content_section mb-30vh">
     <div class="profile">
-      <div class="title">volt+是谁</div>
-      <div class="content">上海辐特佳新能源是国内专注于分布式光伏领域的创新企业。公司拥有强大的 技术背景团队，致力于光伏领域内的技术研发，推动光伏电站的开发建设及投 资、构建高效储能系统、打造智能化微电网项目。通过不断追求技术创新，为 客户提供全方位的智能分布式光伏解决方案，实现能源的优化管理，赋能企业 降本增效。公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献， 创造绿色清洁能源的无限可能。</div>
+      <h1 class="title font-serif text-center text-size-4xl text-center fade-trigger mt-5 mb-2">volt+是谁</h1>
+      <div class="content text-gray-5">上海辐特佳新能源是国内专注于分布式光伏领域的创新企业。公司拥有强大的技术背景团队，致力于光伏领域内的技术研发，推动光伏电站的开发建设及投资、构建高效储能系统、打造智能化微电网项目。通过不断追求技术创新，为客户提供全方位的智能分布式光伏解决方案，实现能源的优化管理，赋能企业降本增效。公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献，创造绿色清洁能源的无限可能。</div>
     </div>
     <div class="vision">
       <div class="content">
@@ -34,6 +34,7 @@ import ContactFooter from '@/components/ContactFooter.astro';
       </div>
     </div>
   </div>
+  <ContactFooter />
 </Layout>
 
 <style is:global>
@@ -81,7 +82,7 @@ import ContactFooter from '@/components/ContactFooter.astro';
     }
   }
 
-  .profile .title::after {
+  /* .profile .title::after {
     content: "";
     position: absolute;
     left:0; 
@@ -89,7 +90,7 @@ import ContactFooter from '@/components/ContactFooter.astro';
     width: 80%; 
     border-bottom: 10px solid gray;
     border-right: 10px solid transparent;
-  }
+  } */
   .vision .content {
     display: flex;
   }
@@ -133,30 +134,30 @@ import ContactFooter from '@/components/ContactFooter.astro';
       left: 0;
       width: 100%;
       height: 95%;
-      background-color: gray;
+      background-color: black;
       border-radius: 20px;
       opacity: 0.4;
     }
   }
 
   .vision .content>div:hover {
-    transition: 0.4s;
+    transition: 0.5s;
     transform: translateY(-20px) scale(1.05);
     box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.01);
   }
 
   .vision .item_1 {
-    background-image: url('/img_14.jpg');
+    background-image: url('/img_15.jpg');
     background-size: cover;
     background-position: center center;
   }
   .vision .item_2 {
-    background-image: url('/img_14.jpg');
+    background-image: url('/img_11.jpg');
     background-size: cover;
     background-position: center center;
   }
   .vision .item_3 {
-    background-image: url('/img_14.jpg');
+    background-image: url('/img_8.jpg');
     background-size: cover;
     background-position: center center;
   }
