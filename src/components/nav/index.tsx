@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount, For, Show } from 'solid-js'
+import { createSignal, onCleanup, onMount, For } from 'solid-js'
 import clsx from 'clsx'
 import ExpandButton from '../expand-button'
 import Logo from '../logo'
