@@ -9,23 +9,23 @@ import ContactFooter from '@/components/ContactFooter.astro';
   <div class="content_section mb-30vh">
     <div class="profile">
       <h1 class="title font-serif text-center text-size-4xl text-center fade-trigger mt-5 mb-2">volt+是谁</h1>
-      <div class="content text-gray-5">上海辐特佳新能源是国内专注于分布式光伏领域的创新企业。公司拥有强大的技术背景团队，致力于光伏领域内的技术研发，推动光伏电站的开发建设及投资、构建高效储能系统、打造智能化微电网项目。通过不断追求技术创新，为客户提供全方位的智能分布式光伏解决方案，实现能源的优化管理，赋能企业降本增效。公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献，创造绿色清洁能源的无限可能。</div>
+      <div class="content text-gray-5 px-40 mt-10 <md:px-0">上海辐特佳新能源是国内专注于分布式光伏领域的创新企业。公司拥有强大的技术背景团队，致力于光伏领域内的技术研发，推动光伏电站的开发建设及投资、构建高效储能系统、打造智能化微电网项目。通过不断追求技术创新，为客户提供全方位的智能分布式光伏解决方案，实现能源的优化管理，赋能企业降本增效。公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献，创造绿色清洁能源的无限可能</div>
     </div>
     <div class="vision">
-      <div class="content">
-        <div class="item_1">
+      <div class="content max-w-7xl m-auto flex justify-center items-center <md:flex-col w-100vw">
+        <div class="item_1 w-30% <md:(w-50%)">
           <div class="title">使命</div>
           <div class="text_box">
             <div class="text">致力于提供智能分布式光伏解决方案</div>
           </div>
         </div>
-        <div class="item_2">
+        <div class="item_2 w-30% <md:(w-50%)">
           <div class="title">愿景</div>
           <div class="text_box">
             <div class="text">创造绿色能源的无限可能</div>
           </div>
         </div>
-        <div class="item_3">
+        <div class="item_3 w-30% <md:(w-50%)">
           <div class="title">企业文化</div>
           <div class="text_box">
             <div class="text">诚信 创新 进步 突破</div>
@@ -59,20 +59,11 @@ import ContactFooter from '@/components/ContactFooter.astro';
     position: relative;
   }
   .profile {
-    height: 50vh;
+    height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 80px;
-    .content {
-      height: 70%;
-      line-height: 35px;
-      display: flex;
-      align-items: center;
-      margin-top: 40px;
-      border-radius: 20px;
-      padding: 30px 100px 30px 100px;
-    }
     .title {
       font-size: 24px;
       font-weight: 400;
@@ -81,23 +72,12 @@ import ContactFooter from '@/components/ContactFooter.astro';
       padding-bottom: 10px;
     }
   }
-
-  /* .profile .title::after {
-    content: "";
-    position: absolute;
-    left:0; 
-    bottom: -5px; 
-    width: 80%; 
-    border-bottom: 10px solid gray;
-    border-right: 10px solid transparent;
-  } */
   .vision .content {
     display: flex;
   }
   .vision .content>div {
     height: 50vh;
-    width: 20vw;
-    margin: 20px;
+    margin: 2.5em;
     display: flex;
     flex-direction: column;
     align-items: center;

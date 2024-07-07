@@ -30,31 +30,31 @@ const iconList = [
       <div>
         <div class="flex items-center fade-trigger" data-hook="70%">
           <h1 class="font-serif text-size-6xl text-white">2030</h1>
-          <span class="text-size-2xl text-white ml-2">前实现碳达峰</span>
+          <span class="text-size-2xl text-white ml-2 <md:text-size-sm">前实现碳达峰</span>
         </div>
         <div class="flex items-center fade-trigger" data-hook="60%">
           <h1 class="font-serif text-size-6xl text-white">2060</h1>
-          <span class="text-size-2xl text-white ml-2">实现碳中和</span>
+          <span class="text-size-2xl text-white ml-2 <md:text-size-sm">实现碳中和</span>
         </div>
         <div class="flex items-center fade-trigger mt-20" data-hook="60%">
-          <h1 class="font-serif text-size-2xl text-white">光伏-加速能源转型的必然选择</h1>
+          <h1 class="font-serif text-size-2xl text-white <md:text-size-xl">光伏-加速能源转型的必然选择</h1>
         </div>
       </div>
     </div>
   </section>
-  <section class="w-full h-70vh box-border relative">
+  <section class="w-full h-100vh box-border">
     <div
-      class="absolute top-50% left-50% translate-x--50% translate-y--50% <md:(left-0 translate-x-0)"
+      class="w-100vw <md:(left-0 translate-x-0)"
     >
-      <div class="fade-trigger" data-hook="70%">
+      <div class="flex flex-col justify-center items-center mt-25 fade-trigger" data-hook="70%">
         <h1 class="font-serif text-size-4xl text-center">分布式光伏</h1>
-        <p class="text-gray-5 px-2">
-          分布式光伏指通过利用空闲屋顶安装光伏发电系统，产生可持续性绿色清洁能源，是一种可再生能源的利用方式。
+        <p class="text-gray-5 px-2 mt-10">
+          分布式光伏指通过利用空闲屋顶安装光伏发电系统，产生可持续性绿色清洁能源，是一种可再生能源的利用方式
         </p>
       </div>
 
       <ul
-        class="flex items-center mt-10 gap-15 flex-wrap fade-trigger <md:justify-center"
+        class="flex items-center mt-10 gap-15 flex-wrap items-center justify-center fade-trigger mt-30"
         data-hook="60%"
       >
         {
@@ -68,84 +68,82 @@ const iconList = [
       </ul>
     </div>
   </section>
-  <section class="w-full h-auto box-border relative">
+  <section class="w-full h-100vh box-border relative">
     <div class="fade-trigger m-auto" data-hook="70%">
       <h1 class="font-serif text-size-4xl text-center">光伏系统原理</h1>
-      <p class="text-gray-5 px-2 text-center">
-        光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入用户侧。
-
-
+      <p class="text-gray-5 px-2 text-center mt-10">
+        光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入用户侧
         <br />
-         光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网。
+         光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网
       </p>
     </div>
 
-    <ul class="flex m-auto gap-5 mt-10 px-2 fade-trigger" data-hook="60%">
+    <ul class="flex w-70vw m-auto gap-5 mt-10 px-2 fade-trigger mt-20" data-hook="60%">
       <li class="relative">
-        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <img src="/img_8.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
         <p
-          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs "
         >
           光伏组件
         </p>
       </li>
       <li class="relative">
-        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <img src="/img_28.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
         <p
-          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
         >
-          光伏组件
+          逆变器
         </p>
       </li>
       <li class="relative">
-        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <img src="/img_29.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
         <p
-          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
         >
-          光伏组件
+          并网计量柜
         </p>
       </li>
       <li class="relative">
-        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <img src="/img_30.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
         <p
-          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
         >
-          光伏组件
+          用户柜
         </p>
       </li>
       <li class="relative">
-        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <img src="/img_31.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
         <p
-          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
         >
-          光伏组件
+          电网
         </p>
       </li>
       <li class="relative">
-        <img src="/img_6.jpg" alt="" class="w-auto h-350px rounded-xl" />
+        <img src="/img_32.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
         <p
-          class="gs-blur absolute left-50% top-50% translate-x--50% translate-y--50% text-xs"
+          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
         >
-          光伏组件
+          负载
         </p>
       </li>
     </ul>
   </section>
   <section class="w-full h-auto box-border text-white px-20 pt-25">
-    <div class="flex gap-20 fade-trigger <md:flex-col" data-hook="70%">
+    <div class="flex flex-col gap-20 h-80vh fade-trigger <md:flex-col" data-hook="70%">
       <div
         class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer group"
       >
         <img
           src="/img_6.jpg"
           alt=""
-          class="w-100% h-600px group-hover:transform-scale-110 transition-transform <md:h-400px"
+          class="solution-img w-100% h-600px object-cover group-hover:transform-scale-110 transition-duration-1000 <md:h-400px"
         />
-        <div class="absolute bottom-0 overflow-hidden pb-4">
-          <h1 class="text-size-2xl mb-10 ml-2">工商业光伏系统</h1>
+        <div class="absolute left-10 bottom-15 overflow-hidden pb-4">
+          <h1 class="font-serif text-size-2xl ">工商业解决方案</h1>
           <a
             href="/solution"
-            class="w-25 h-[34px] text-size-14px text-center px-4 py-2 rounded-full bg-[var(--main-color)] m-2 hidden group-hover-block"
+            class="w-25 h-[34px] mt-40px text-size-14px text-center px-4 py-2 rounded-full border border-white m-2 block "
             >了解更多</a
           >
         </div>
@@ -156,13 +154,13 @@ const iconList = [
         <img
           src="/img_23.jpg"
           alt=""
-          class="w-100% h-600px group-hover:transform-scale-110 transition-transform <md:h-400px"
+          class="solution-img w-100% h-600px object-cover hover:transform-scale-110 transition-transform transition-duration-1000 <md:h-400px"
         />
-        <div class="absolute bottom-0 overflow-hidden pb-4">
-          <h1 class="text-size-2xl mb-10 ml-2">家庭智能光伏系统</h1>
+        <div class="absolute left-10 bottom-15 overflow-hidden pb-4">
+          <h1 class="font-serif text-size-2xl mb-10 ml-2">家庭智能解决方案</h1>
           <a
             href="/family"
-            class="w-25 h-[34px] text-size-14px text-center px-4 py-2 rounded-full bg-[var(--main-color)] m-2 hidden group-hover-block"
+            class="w-25 h-[34px] mt-40px text-size-14px text-center px-4 py-2 rounded-full border border-white m-2 block"
             >了解更多</a
           >
         </div>
@@ -170,3 +168,16 @@ const iconList = [
     </div>
   </section>
 </Layout>
+
+<style is:global> 
+.solution-img::after {
+    content: "";
+    position: absolute;
+    left:0; 
+    bottom: -5px; 
+    width: 80%; 
+    border-bottom: 10px solid gray;
+    border-right: 10px solid transparent;
+  }
+
+</style>

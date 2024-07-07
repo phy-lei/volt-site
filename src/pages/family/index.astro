@@ -3,31 +3,32 @@ import Layout from '@/layouts/Layout.astro';
 import ContactFooter from '@/components/ContactFooter.astro';
 import Banner from '@/components/Banner.astro';
 
-import solution01 from '/src/assets/imgs/solution-case/01.png';
-import solution02 from '/src/assets/imgs/solution-case/02.jpg';
-import solution03 from '/src/assets/imgs/solution-case/03.png';
-import solution04 from '/src/assets/imgs/solution-case/04.jpg';
+import solution05 from '/src/assets/imgs/solution-case/05.png';
+import solution06 from '/src/assets/imgs/solution-case/06.png';
+import solution07 from '/src/assets/imgs/solution-case/07.png';
+import solution08 from '/src/assets/imgs/solution-case/08.png';
+
 
 
 // 案例图片 后续可能改为后台获取
 const caseList = [
   {
-    imgUrl: solution01.src,
+    imgUrl: solution05.src,
     title: '上海浦东',
     desc: '11.18KWp',
   },
   {
-    imgUrl: solution02.src,
+    imgUrl: solution06.src,
     title: '上海闵行',
     desc: '15.48KWp',
   },
   {
-    imgUrl: solution03.src,
+    imgUrl: solution07.src,
     title: '上海宝山 ',
     desc: '20.64KWp',
   },
   {
-    imgUrl: solution04.src,
+    imgUrl: solution08.src,
     title: '上海青浦',
     desc: '11.61KWp',
   },
@@ -37,34 +38,29 @@ const caseList = [
 <Layout title="辐特佳新能源">
   <Banner title="家庭智能解决方案" imgSrc="/img_23.jpg" />
   <section class="intro_1">
-    <div class="item">
+    <div class="item w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
         <div class="font-serif item_desc">通过别墅屋顶安装光伏组件，产生可持续性绿色清洁能源。光伏所产生的电力优先业主家庭使用，多余电力通过双向表出售给国家电网。</div>
-        <div class="item_name"></div>
-        
       </div>
     </div>
   </section>
   <section class="intro_2">
-    <div class="item">
+    <div class="item  w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
         <div class="font-serif item_desc">
           降低用电成本<br>
           延缓二、三档阶梯电价<br>
           25年以上长期稳定收益
         </div>
-        <div class="item_name"></div>
-        
       </div>
     </div>
   </section>
   <section class="intro_3">
-    <div class="item">
+    <div class="item  w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
         <div class="font-serif item_desc">
           屋顶隔热降温，进一步节省能源
         </div>
-        <div class="item_name"></div>
       </div>
     </div>
   </section>
@@ -174,7 +170,6 @@ const caseList = [
       justify-content: center;
       align-items: center;
       height: 40vh;
-      width: 40vw;
       overflow: hidden;
       .item_desc {
         font-size: 26px;
