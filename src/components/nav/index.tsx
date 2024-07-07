@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount } from 'solid-js'
+import { createSignal, onCleanup, onMount, For, Show } from 'solid-js'
 import clsx from 'clsx'
 import ExpandButton from '../expand-button'
 import Logo from '../logo'
@@ -18,6 +18,29 @@ function getScrollPercentage() {
 
 function Nav() {
   const [transparent, setTransparent] = createSignal(true)
+  const [showMobileNav, setShowMobileNav] = createSignal(false)
+  const navList = [
+    {
+      name: '光伏的探寻',
+      href: '/'
+    },
+    {
+      name: '工商业解决方案',
+      href: '/solution'
+    },
+    {
+      name: '家庭智能解决方案',
+      href: '/family'
+    },
+    {
+      name: '关于volt+',
+      href: '/about'
+    },
+    {
+      name: '联系我们',
+      href: '/contact'
+    },
+  ]
 
   onMount(() => {
     const scrollEvent = () => {
@@ -58,31 +81,57 @@ function Nav() {
 
         <div class="flex items-center font-sans">
           <div class="flex gap-4 <md:hidden">
-            <a class="nav-link font-700" href="/" data-astro-prefetch>
-              光伏的探寻
-            </a>
-            <a class="nav-link font-700" href="/solution" data-astro-prefetch>
-              工商业解决方案
-            </a>
-            <a class="nav-link font-700" href="/family" data-astro-prefetch>
-              家庭智能解决方案
-            </a>
-            <a class="nav-link font-700" href="/about" data-astro-prefetch>
-              关于volt+
-            </a>
-            <a class="nav-link font-700" href="/contact" data-astro-prefetch>
-              联系我们
-            </a>
+            <For each={navList}>
+              {
+                (item) => (
+                  <a
+                    class="nav-link font-700"
+                    href={item.href}
+                    data-astro-prefetch
+                  >
+                    {item.name}
+                  </a>
+                )
+              }
+            </For>
           </div>
           <div class="md:hidden inline-flex items-center justify-center rounded-full text-center text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border hover:bg-accent hover:text-accent-foreground h-10 w-10">
             <ExpandButton
               onChange={(flag) => {
                 console.log(flag)
+                if (flag === 'expand') {
+                  setShowMobileNav(true)
+                } else {
+                  setShowMobileNav(false)
+                }
               }}
             />
           </div>
         </div>
       </div>
+      <div class={
+        clsx('w-100% h-300px bg-green-7 my--72px pt-72px transition-transform transition-duration-400 absolute z--1', showMobileNav() ? 'translate-x-0' : 'translate-x--100%')
+      }>
+        <div class='px-4 pt-5'>
+          <For each={navList}>
+            {
+              (item) => (
+                <a
+                  class="nav-link font-700"
+                  href={item.href}
+                  data-astro-prefetch
+                >
+                  {item.name}
+                </a>
+              )
+            }
+          </For>
+        </div>
+      </div>
+      {/* <Show when={showMobileNav()} fallback={null}>
+
+      </Show> */}
+
     </nav>
   )
 }
