@@ -1,17 +1,18 @@
-import gsap from 'gsap';
-import Lenis from 'lenis';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import gsap from 'gsap'
+import Lenis from 'lenis'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 export default () => {
-  // 滚动平滑插件
-  const lenis = new Lenis();
-  gsap.registerPlugin(ScrollTrigger);
+  gsap.registerPlugin(ScrollTrigger)
 
-  lenis.on('scroll', ScrollTrigger.update);
+  // 滚动平滑插件
+  const lenis = new Lenis()
+
+  lenis.on('scroll', ScrollTrigger.update)
 
   gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-  });
+    lenis.raf(time * 1000)
+  })
 
-  gsap.ticker.lagSmoothing(0);
+  gsap.ticker.lagSmoothing(0)
 }
