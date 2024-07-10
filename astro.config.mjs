@@ -3,6 +3,7 @@ import solidJs from '@astrojs/solid-js'
 import UnoCSS from 'unocss/astro'
 import netlify from '@astrojs/netlify/functions'
 import node from '@astrojs/node'
+import partytown from '@astrojs/partytown'
 
 function envAdapter() {
   switch (process.env.OUTPUT) {
@@ -21,6 +22,11 @@ export default defineConfig({
   integrations: [
     UnoCSS({ injectReset: true }),
     solidJs(),
+    partytown({
+			config: {
+			  forward: ["dataLayer.push"],
+			},
+		}),
   ],
   prefetch: {
     defaultStrategy: 'viewport',
