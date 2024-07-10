@@ -17,22 +17,7 @@ const { title } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      is:inline
-      src="https://www.googletagmanager.com/gtag/js?id=G-FR8ZQZVTJE"></script>
-    <script>
-      (window as any).dataLayer = (window as any).dataLayer || [];
-      function gtag() {
-        // @ts-ignore
-        dataLayer.push(arguments);
-      }
-      // @ts-ignore
-      gtag('js', new Date());
-      // @ts-ignore
-      gtag('config', 'G-FR8ZQZVTJE');
-    </script>
+
     <script
       is:inline
       type="text/javascript"
@@ -118,7 +103,22 @@ const { title } = Astro.props;
     </footer>
   </body>
 </html>
-
+<!-- Google tag (gtag.js) -->
+<script
+  async
+  is:inline
+  src="https://www.googletagmanager.com/gtag/js?id=G-FR8ZQZVTJE"></script>
+<script>
+  (window as any).dataLayer = (window as any).dataLayer || [];
+  function gtag() {
+    // @ts-ignore
+    dataLayer.push(arguments);
+  }
+  // @ts-ignore
+  gtag('js', new Date());
+  // @ts-ignore
+  gtag('config', 'G-FR8ZQZVTJE');
+</script>
 <script>
   import createFadeAnimateGsap from '@/hooks/createFadeAnimateGsap';
   const dom = document.querySelectorAll('.fade-trigger');
