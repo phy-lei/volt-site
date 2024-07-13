@@ -51,67 +51,53 @@ const { title } = Astro.props;
     <div>
       <slot />
     </div>
-    <footer
-      class="bg-white bottom-0 border-[var(--main-color)] border-t mt-20 w-100%"
-    >
-      <div class="m-auto max-w-5xl">
-        <div class="flex justify-between border-gray border-b pt-10 pb-2 gap-4">
-          <div class="text-[var(--main-color)]">
+    <footer class="bg-[var(--main-color)] text-white bottom-0 w-100%">
+      <div class="px-20">
+        <div
+          class="flex justify-between border-gray-2 border-b pt-10 pb-4 gap-4"
+        >
+          <div class="flex items-center">
             <LogoSvg />
-            <h1 class="text-black px-2">辐特佳新能源</h1>
-          </div>
-          <div class="text-xs flex items-end self-end">
-            公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献<br />
-            创造绿色清洁能源的无限可能
-          </div>
-        </div>
-        <div class="flex justify-between px-2 py-4">
-          <div class="flex-1">
-            <h1 class="flex items-center mt-2">
-              <i
-                class="i-carbon:phone-voice-filled text-[var(--main-color)] mr-2"
-              ></i>
-              <span>4008-613-617</span>
-            </h1>
-            <h1 class="flex items-center mt-2">
-              <i class="i-carbon:location-filled text-[var(--main-color)] mr-2"
-              ></i>
-              <span>上海市宝山区军工路5169号A9-102室</span>
-            </h1>
-          </div>
-          <div class="flex items-center gap-4 <md:hidden">
-            <a
-              href="/"
-              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
-              >光伏的探寻</a
-            >
-            <a
-              href="/solution"
-              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
-              >工商业解决方案</a
-            >
-            <a
-              href="/family"
-              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
-              >家庭解决方案</a
-            >
-            <a
-              href="/about"
-              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
-              >关于 volt +</a
-            >
-            <a
-              href="/contact"
-              class="text-xs hover:(border-b border-[var(--main-color)]) pb-2"
-              >联系我们</a
-            >
+            <div class="ml-4">
+              <h1>辐特佳新能源</h1>
+              <p class="text-size-8px text-gray-2">
+                SHANGHAI VOLTPLUS <br />NEW ENERGY
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="bg-black text-white text-xs">
-        <div class="m-auto h-40px max-w-5xl flex items-center justify-between">
-          <span>上海辐特佳新能源科技有限公司 | 沪ICP备2024079517号-1</span>
-          <a href="javascript:;">返回顶部</a>
+        <div class="flex justify-between pt-4 pb-8">
+          <div class="flex flex-col">
+            <p class="text-sm line-height-normal tracking-widest">
+              公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献<br />
+               创造绿色清洁能源的无限可能
+            </p>
+            <div class="mt-auto">
+              <h1 class="flex items-center mt-2">
+                <i class="i-carbon:location-filled mr-2"></i>
+                <span class="text-gray-2">上海市宝山区军工路5169号A9-102室</span
+                >
+              </h1>
+              <h1 class="flex items-center mt-2">
+                <i class="i-carbon:phone-voice-filled mr-2"></i>
+                <span class="text-gray-2">4008-613-617</span>
+              </h1>
+              <h1 class="flex items-center mt-2">
+                <i class="i-carbon:police mr-2"></i>
+                <span class="text-gray-2">沪ICP备2024079517号-1</span>
+              </h1>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col text-xs text-gray-2 text-align-right gap-4 <md:hidden"
+          >
+            <a href="/">光伏的探寻</a>
+            <a href="/solution">工商业解决方案</a>
+            <a href="/family">家庭智能解决方案</a>
+            <a href="/about">关于 volt +</a>
+            <a href="/contact">联系我们</a>
+          </div>
         </div>
       </div>
     </footer>
@@ -128,7 +114,7 @@ const { title } = Astro.props;
     @apply color-white border border-white p-4 rounded bg-[rgba(255,255,255,0.2)] backdrop-blur-lg;
   }
   body {
-    font-family: 'Microsoft YaHei';
+    @apply font-sans;
   }
   :root {
     --accent: 136, 58, 234;

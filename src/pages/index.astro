@@ -15,46 +15,133 @@ const iconList = [
   { icon: icon5.src, title: '医院' },
   { icon: icon6.src, title: '别墅' },
 ];
+
+const principles = [
+  {
+    title: '光伏组件',
+    src: '/img_7.jpg',
+  },
+  {
+    title: '逆变器',
+    src: '/img_28.jpg',
+  },
+  {
+    title: '并网计量柜',
+    src: '/img_29.png',
+  },
+  {
+    title: '用户柜',
+    src: '/img_30.png',
+  },
+  {
+    title: '电网',
+    src: '/img_31.jpg',
+  },
+  {
+    title: '负载',
+    src: '/img_32.jpg',
+  },
+];
 ---
 
 <Layout title="辐特佳新能源">
-  <section class="relative overflow-hidden">
-    <video src="/video_1.mp4" autoplay="" muted="" width="100%" loop=""></video>
-  </section>
-  <section
-    class="bg-[url(/img_4.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen box-border relative page"
-  >
-    <div
-      class="absolute top-60 left-50% translate-x--50% flex items-center <md:flex-col"
-    >
-      <div>
-        <div class="flex items-center fade-trigger">
-          <h1 class="font-serif text-size-6xl text-white">2030</h1>
-          <span class="text-size-2xl text-white ml-2 <md:text-size-sm">前实现碳达峰</span>
+  <section class="relative overflow-hidden mySwiper text-white max-h-screen">
+    <div class="swiper-wrapper mb-10">
+      <div class="swiper-slide">
+        <div class="absolute location-center text-center">
+          <h1
+            class="text-theme text-size-4xl line-height-none font-serif font-600 <md:text-size-xs"
+          >
+            SHANGHAI VOLTPLUS NEW ENERGY
+          </h1>
+          <h1 class="text-size-4xl <md:text-size-xs">辐 特 佳 新 能 源</h1>
+          <p class="mt-5 tracking-widest <md:text-size-xs">
+            分 布 式 光 伏 服 务 商
+          </p>
         </div>
-        <div class="flex items-center fade-trigger" data-hook="60%">
-          <h1 class="font-serif text-size-6xl text-white">2060</h1>
-          <span class="text-size-2xl text-white ml-2 <md:text-size-sm">实现碳中和</span>
+        <video src="/video_1.mp4" autoplay="" muted="" width="100%" loop=""
+        ></video>
+      </div>
+      <div class="swiper-slide">
+        <img class="object-cover w-full" src="/img_6.jpg" alt="" />
+        <div
+          class="absolute text-size-4xl left-20 top-30% <md:location-center!"
+        >
+          <h1 class="line-height-normal font-serif font-600 <md:text-size-xs">
+            工商业解决方案
+          </h1>
+          <h1 class="text-theme line-height-normal <md:text-size-xs">
+            INDUSTRY AND COMMERCE
+          </h1>
+          <h1
+            class="text-theme line-height-none tracking-widest <md:text-size-xs"
+          >
+            SOLUTION
+          </h1>
         </div>
-        <div class="flex items-center fade-trigger mt-20" data-hook="60%">
-          <h1 class="font-serif text-size-2xl text-white <md:text-size-xl">光伏-加速能源转型的必然选择</h1>
+      </div>
+      <div class="swiper-slide">
+        <img class="object-cover w-full" src="/img_23.jpg" alt="" />
+        <div
+          class="absolute text-size-4xl left-20 top-30% <md:location-center!"
+        >
+          <h1 class="line-height-normal font-serif font-600 <md:text-size-xs">
+            家庭智能解决方案
+          </h1>
+          <h1 class="text-theme line-height-normal <md:text-size-xs">
+            HOME INTELLIGENT
+          </h1>
+          <h1
+            class="text-theme line-height-none tracking-widest <md:text-size-xs"
+          >
+            SOLUTION
+          </h1>
         </div>
       </div>
     </div>
+    <div class="swiper-pagination bottom-10! shadow-2xl"></div>
   </section>
-  <section class="w-full h-100vh box-border">
+  <section
+    class="bg-[url(/src/assets/imgs/2030.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen box-border relative text-white"
+  >
+    <h1 class="absolute right-10 top-10 text-right text-gray-2 text-size-xs">
+      VOLTPLUS<br />NEW ENERGY
+    </h1>
     <div
-      class="w-100vw <md:(left-0 translate-x-0)"
+      class="absolute top-60 left-20 flex items-center gap-20 <md:(location-center!)"
     >
+      <div class="fade-trigger text-center">
+        <h1 class="font-mono text-size-6xl line-height-none">2030</h1>
+        <span class="text-size-xl">前实现碳达峰</span>
+      </div>
+      <div class="fade-trigger text-center" data-hook="60%">
+        <h1 class="font-mono text-size-6xl line-height-none">2060</h1>
+        <span class="text-size-xl">实现碳中和</span>
+      </div>
+    </div>
+    <div class="absolute bottom-0">
+      <img src="/src/assets/imgs/bg.png" alt="" />
+      <div class="absolute left-20 top-50% translate-y--50% <md:left-2">
+        <h1 class="text-size-6xl <md:text-size-xl">光伏</h1>
+        <p class="text-size-xl font-mono <md:text-size-sm">
+          加速能源转型的必然选择
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="w-full box-border">
+    <div class="w-full <md:(left-0 translate-x-0)">
       <div class="flex flex-col justify-center items-center mt-25 fade-trigger">
-        <h1 class="font-serif text-size-4xl text-center">分布式光伏</h1>
+        <h1 class="font-sans text-size-4xl text-center text-theme">
+          分布式光伏
+        </h1>
         <p class="text-gray-5 px-2 mt-10">
-          分布式光伏指通过利用空闲屋顶安装光伏发电系统，产生可持续性绿色清洁能源，是一种可再生能源的利用方式
+          分布式光伏指通过利用空闲屋顶安装光伏发电系统，产生可持续性绿色清洁能源，是一种可再生能源的利用方式。
         </p>
       </div>
 
       <ul
-        class="flex items-center mt-10 gap-15 flex-wrap items-center justify-center fade-trigger mt-30"
+        class="flex items-center gap-15 flex-wrap items-center justify-center fade-trigger mt-15"
         data-hook="60%"
       >
         {
@@ -68,65 +155,32 @@ const iconList = [
       </ul>
     </div>
   </section>
-  <section class="w-full h-100vh box-border relative">
-    <div class="fade-trigger m-auto" data-hook="70%">
+  <section class="w-full box-border relative bg-[#5BAB6B] text-white">
+    <img src="/src/assets/imgs/bg-1.jpg" alt="" />
+    <div class="fade-trigger pt-20" data-hook="70%">
       <h1 class="font-serif text-size-4xl text-center">光伏系统原理</h1>
-      <p class="text-gray-5 px-2 text-center mt-10">
+      <p class="text-gray-2 text-center mt-5">
         光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入用户侧
+
+
         <br />
          光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网
       </p>
     </div>
 
-    <ul class="flex w-70vw m-auto gap-5 mt-10 px-2 fade-trigger mt-20" data-hook="60%">
-      <li class="relative">
-        <img src="/img_8.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
-        <p
-          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs "
-        >
-          光伏组件
-        </p>
-      </li>
-      <li class="relative">
-        <img src="/img_28.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
-        <p
-          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
-        >
-          逆变器
-        </p>
-      </li>
-      <li class="relative">
-        <img src="/img_29.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
-        <p
-          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
-        >
-          并网计量柜
-        </p>
-      </li>
-      <li class="relative">
-        <img src="/img_30.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
-        <p
-          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
-        >
-          用户柜
-        </p>
-      </li>
-      <li class="relative">
-        <img src="/img_31.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
-        <p
-          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
-        >
-          电网
-        </p>
-      </li>
-      <li class="relative">
-        <img src="/img_32.jpg" alt="" class="w-30vw h-350px object-cover rounded-xl" />
-        <p
-          class="gs-blur absolute w-60% text-align-center left-50% top-50% translate-x--50% translate-y--50% text-xs"
-        >
-          负载
-        </p>
-      </li>
+    <ul
+      class="flex w-full mt-5 rounded-2xl overflow-hidden bg-gray-3 <md:w-full"
+    >
+      {
+        principles.map((item) => (
+          <li class="relative flex-1">
+            <img src={item.src} alt="" class="h-350px object-cover" />
+            <p class="absolute  text-center left-50% top-20px translate-x--50%  text-xs text-white bg-[var(--main-color)] rounded-full py-1 px-4 text-nowrap">
+              {item.title}
+            </p>
+          </li>
+        ))
+      }
     </ul>
   </section>
   <section class="w-full h-auto box-border text-white px-20 pt-25">
@@ -140,10 +194,10 @@ const iconList = [
           class="solution-img w-100% h-600px object-cover group-hover:transform-scale-110 transition-duration-1000 <md:h-400px"
         />
         <div class="absolute left-10 bottom-15 overflow-hidden pb-4">
-          <h1 class="font-serif text-size-2xl ">工商业解决方案</h1>
+          <h1 class="font-serif text-size-2xl">工商业解决方案</h1>
           <a
             href="/solution"
-            class="w-25 h-[34px] mt-40px text-size-14px text-center px-4 py-2 rounded-full border border-white m-2 block "
+            class="w-25 h-[34px] mt-40px text-size-14px text-center px-4 py-2 rounded-full border border-white m-2 block"
             >了解更多</a
           >
         </div>
@@ -169,19 +223,36 @@ const iconList = [
   </section>
 </Layout>
 
-<style is:global> 
-.solution-img::after {
-    content: "";
+<script>
+  import createLenis from '@/hooks/createLenis';
+  import Swiper from 'swiper';
+  import { Pagination } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/pagination';
+
+  createLenis();
+
+  new Swiper('.mySwiper', {
+    modules: [Pagination],
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
+</script>
+
+<style is:global>
+  .swiper-pagination-bullet {
+    background: rgb(3, 224, 132) !important;
+  }
+  /* @import 'swiper/css'; */
+  .solution-img::after {
+    content: '';
     position: absolute;
-    left:0; 
-    bottom: -5px; 
-    width: 80%; 
+    left: 0;
+    bottom: -5px;
+    width: 80%;
     border-bottom: 10px solid gray;
     border-right: 10px solid transparent;
   }
 </style>
-
-<script>
-  import createLenis from '@/hooks/createLenis';
-  createLenis();
-</script>
