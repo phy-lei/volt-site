@@ -63,7 +63,11 @@ const principles = [
         ></video>
       </div>
       <div class="swiper-slide">
-        <img class="object-cover w-full" src="/img_6.jpg" alt="" />
+        <img
+          class="object-cover w-full aspect-ratio-video"
+          src="/img_6.jpg"
+          alt=""
+        />
         <div
           class="absolute text-size-4xl left-20 top-30% <md:location-center!"
         >
@@ -81,7 +85,11 @@ const principles = [
         </div>
       </div>
       <div class="swiper-slide">
-        <img class="object-cover w-full" src="/img_23.jpg" alt="" />
+        <img
+          class="object-cover w-full aspect-ratio-video"
+          src="/img_23.jpg"
+          alt=""
+        />
         <div
           class="absolute text-size-4xl left-20 top-30% <md:location-center!"
         >
@@ -99,24 +107,33 @@ const principles = [
         </div>
       </div>
     </div>
-    <div class="swiper-pagination bottom-10! shadow-2xl"></div>
+    <div class="swiper-pagination shadow-2xl"></div>
   </section>
   <section
-    class="bg-[url(/src/assets/imgs/2030.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen box-border relative text-white"
+    class="bg-[url(/src/assets/imgs/2030.jpg)] bg-no-repeat bg-center bg-cover w-full box-border relative text-white aspect-ratio-video"
   >
-    <h1 class="absolute right-10 top-10 text-right text-gray-2 text-size-xs">
+    <h1
+      class="absolute right-20px top-20px text-right text-gray-2 text-size-xs"
+    >
       VOLTPLUS<br />NEW ENERGY
     </h1>
     <div
       class="absolute top-60 left-20 flex items-center gap-20 <md:(location-center!)"
     >
       <div class="fade-trigger text-center">
-        <h1 class="font-mono text-size-6xl line-height-none">2030</h1>
-        <span class="text-size-xl">前实现碳达峰</span>
+        <h1 class="font-mono text-size-6xl line-height-none <md:text-size-base">
+          2030
+        </h1>
+        <span class="text-size-xl <md:text-size-xs text-nowrap"
+          >前实现碳达峰</span
+        >
       </div>
       <div class="fade-trigger text-center" data-hook="60%">
-        <h1 class="font-mono text-size-6xl line-height-none">2060</h1>
-        <span class="text-size-xl">实现碳中和</span>
+        <h1 class="font-mono text-size-6xl line-height-none <md:text-size-base">
+          2060
+        </h1>
+        <span class="text-size-xl <md:text-size-xs text-nowrap">实现碳中和</span
+        >
       </div>
     </div>
     <div class="absolute bottom-0">
@@ -162,9 +179,8 @@ const principles = [
       <p class="text-gray-2 text-center mt-5">
         光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入用户侧
 
-
         <br />
-         光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网
+        光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网
       </p>
     </div>
 

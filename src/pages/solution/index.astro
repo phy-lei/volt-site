@@ -2,6 +2,7 @@
 import Layout from '@/layouts/Layout.astro';
 import Banner from '@/components/Banner.astro';
 import ContactFooter from '@/components/ContactFooter.astro';
+import clsx from 'clsx';
 
 import solution01 from '/src/assets/imgs/solution-case/01.png';
 import solution02 from '/src/assets/imgs/solution-case/02.jpg';
@@ -85,10 +86,15 @@ const caseList = [
       </div>
     </div>
   </section>
-  <section class="pt-[100px] h-80vh pb-20 <md:h-auto">
-    <h1 class="font-serif text-center text-size-4xl text-center fade-trigger mb-10">商业模式</h1>
+  <section class="pt-[100px] h-80vh pb-20 <md:h-auto" id="poker-wrap">
+    <h1
+      class="font-serif text-center text-size-4xl text-center mb-10"
+      id="poker"
+    >
+      商业模式
+    </h1>
     <div
-      class="w-100% flex justify-center items-center gap-24 mt-20 fade-trigger <md:flex-col"
+      class="w-100% flex justify-center items-center gap-24 mt-20 <md:flex-col"
       data-hook="60%"
     >
       <div class="w-30% border shadow-2xl border-gray p-5 rounded-lg <md:w-80%">
@@ -96,7 +102,7 @@ const caseList = [
           <i
             class="i-carbon:ibm-cloud-direct-link-2-dedicated color-[var(--main-color)] mr-2"
           ></i>
-           EPC模式：</strong
+          EPC模式：</strong
         >
         <p class="py-4">
           辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。
@@ -110,7 +116,7 @@ const caseList = [
           <i
             class="i-carbon:ibm-cloud-direct-link-2-dedicated color-[var(--main-color)] mr-2"
           ></i>
-           EMC模式：
+          EMC模式：
         </strong>
         <p class="py-4">
           合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。
@@ -123,27 +129,46 @@ const caseList = [
     </div>
   </section>
   <!-- 案例图片 -->
-  <section class="w-100% pb-50 section-card-view">
-    <h1
-      class="font-serif text-center text-size-4xl text-center fade-trigger mb-10"
-    >
-      相关案例
-    </h1>
-    <div class="h-[280vw] sticky-wrapper fade-trigger" data-hook="60%">
+  <section class="w-full pb-60px section-card-view bg-black text-white">
+    <div class="h-[280vw] sticky-wrapper <md:h-[520vw]">
       <div
-        class="sticky w-100% h-auto top-150px overflow-hidden pt-60px box-border"
+        class="sticky w-full h-auto top-150px overflow-hidden pt-60px box-border"
       >
-        <div class="relative flex w-30vw m-[0_auto] gap-12 section-wrapper">
+        <div class="relative flex w-40vw gap-12 section-wrapper <md:w-80vw">
+          <div
+            class="flex justify-center flex-shrink-0 w-100% aspect-ratio-[4/3] section-card"
+          >
+            <h1
+              class="font-serif text-size-6xl text-nowrap line-height-none mr-5 <md:text-size-4xl"
+            >
+              相关<br />案例
+            </h1>
+            <h1
+              class="font-serif text-center text-size-6xl text-theme mx-2 line-height-none <md:text-size-4xl"
+            >
+              CASE
+            </h1>
+          </div>
           {
-            caseList.map((item) => (
-              <div class="relative flex-shrink-0 w-100% h-300px flex justify-center items-center <md:w-80%  section-card">
+            caseList.map((item, i) => (
+              <div
+                class={clsx(
+                  'relative flex-shrink-0 w-100% aspect-ratio-[4/3] section-card flex flex-col justify-between item',
+                  i % 2 === 0 ? 'flex-col-reverse' : ''
+                )}
+              >
                 <div
-                  class="bg-no-repeat bg-cover w-100% h-100%"
+                  class="bg-no-repeat bg-cover w-100% h-85%"
                   style={{ backgroundImage: `url(${item.imgUrl})` }}
                 />
-                <div class="w-100% flex justify-between absolute bottom-0 text-white section-card-title">
-                  <h3 class="text-size-xl p-2">{item.title}</h3>
-                  <h1 class="text-size-2xl p-2">{item.desc}</h1>
+                <div class="w-100% flex justify-between text-white">
+                  <div>
+                    <h3 class="text-size-xl">{item.title}</h3>
+                    <p class="text-theme">CASE 0{i + 1}</p>
+                  </div>
+                  <h1 class="text-size-2xl p-2 text-theme line-height-none">
+                    {item.desc}
+                  </h1>
                 </div>
               </div>
             ))
@@ -185,7 +210,6 @@ const caseList = [
       // 屏幕的宽度
       screenWidth;
     const stickyTop = 150;
-
     gsap.to(wrapper, {
       scrollTrigger: {
         trigger: stickyWrapper,
@@ -206,7 +230,7 @@ const caseList = [
           scrollTrigger: {
             trigger: card,
             start: 'top ' + startTrigger,
-            end: 'top ' + cardScroll / 4,
+            end: 'bottom ' + cardScroll / cardsNumber,
             scrub: 0,
             // markers: true,
           },
@@ -217,6 +241,13 @@ const caseList = [
       }
     });
   });
+
+  // ScrollTrigger.create({
+  //   trigger: '#poker-wrap',
+  //   start: 'top top',
+  //   end: 'bottom 0',
+  //   pin: '#poker',
+  // });
 </script>
 
 <style>
