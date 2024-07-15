@@ -57,26 +57,33 @@ const caseList = [
 <Layout title="辐特佳新能源">
   <Banner title="工商业解决方案" imgSrc="/img_6.jpg" />
   <section
-    class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto pb-[35px] relative"
+    class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto aspect-ratio-[9/12] pb-[35px] relative"
+    id="reason-poke"
   >
     <div class="m-auto translate-y-50% <md:translate-y-0">
-      <h1 class="font-serif text-center text-white text-size-2xl fade-trigger">
+      <h1 class="font-serif text-center text-white text-size-2xl">
         安装光伏的三个理由
       </h1>
       <div
-        class="max-w-7xl m-auto flex items-center gap-8 text-white px-8 fade-trigger <md:flex-col pt-[25px]"
-        data-hook="60%"
+        class="max-w-7xl h-full flex items-center gap-8 text-white px-8 relative"
       >
         {
           reasonList.map((item, index) => (
-            <div class="border border-white p-5 rounded-lg w-1/3 bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%">
-              <h3 class="text-size-xl mb-4">0{index + 1}</h3>
-              <h4 class="text-size-xl mb-4">{item.title}</h4>
-              <ul>
-                {item.desc.map((dec) => (
-                  <li class="flex items-center py-4">
-                    <i class="i-carbon:checkmark text-[var(--main-color)] mr-2" />
+            <div class="h-200px box-border px-5 rounded-lg w-80% bg-[rgba(255,255,255,0.2)] backdrop-blur-lg absolute-center flex flex-col m-auto mt-50px z-auto overflow-hidden reason-panel">
+              <div class="text-theme text-center border-b border-b-white">
+                <h3 class="text-size-4xl font-mono line-height-none mt-5">
+                  0{index + 1}
+                </h3>
+                <h4 class="text-size-3xl tracking-widest mb-2">{item.title}</h4>
+              </div>
+
+              <ul class="flex justify-center items-center m-auto">
+                {item.desc.map((dec, i) => (
+                  <li class="flex items-center">
                     {dec}
+                    {i !== item.desc.length - 1 && (
+                      <div class="w-4px h-4px bg-white rounded mx-4" />
+                    )}
                   </li>
                 ))}
               </ul>
@@ -103,7 +110,7 @@ const caseList = [
           class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
         >
           <strong class="text-center text-size-4xl flex items-center">
-            <i class="i-carbon:ibm-cloud-direct-link-2-dedicated mr-2"></i>
+            <i class="i-carbon:ibm-cloud-direct-link-2-dedicated"></i>
           </strong>
           <h1 class="text-size-4xl">EPC模式</h1>
         </div>
@@ -111,7 +118,7 @@ const caseList = [
           class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
         >
           <strong class="text-center text-size-4xl flex items-center">
-            <i class="i-carbon:ibm-cloud-direct-link-2-dedicated mr-2"></i>
+            <i class="i-carbon:ibm-cloud-direct-link-2-dedicated"></i>
           </strong>
           <h1 class="text-size-4xl">EMC模式</h1>
         </div>
@@ -139,7 +146,7 @@ const caseList = [
               25年以上长期收益
             </p>
             <i
-              class="i-carbon:ibm-cloud-direct-link-2-dedicated text-theme mr-2 text-size-4xl self-end"
+              class="i-carbon:ibm-cloud-direct-link-2-dedicated text-theme text-size-4xl self-end"
             ></i>
           </div>
         </div>
@@ -154,7 +161,7 @@ const caseList = [
               可享长期收益
             </p>
             <i
-              class="i-carbon:ibm-cloud-direct-link-2-dedicated text-theme mr-2 text-size-4xl self-end"
+              class="i-carbon:ibm-cloud-direct-link-2-dedicated text-theme text-size-4xl self-end"
             ></i>
           </div>
         </div>
@@ -276,6 +283,34 @@ const caseList = [
   });
 
   gsap.set('.panel', { zIndex: (i, _, targets) => targets.length - i });
+  gsap.set('.reason-panel', { zIndex: (i, _, targets) => targets.length - i });
+
+  const reasonPanels = gsap.utils.toArray('.reason-panel:not(:last-child)');
+  reasonPanels.forEach((reasonPanel: Element, i) => {
+    const tl1 = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#reason-poke',
+        start: () => 'top -' + window.innerHeight * (i + 0.5),
+        end: () => '+=' + window.innerHeight,
+        scrub: true,
+        invalidateOnRefresh: true,
+        // markers: true,
+      },
+    });
+
+    tl1.to(reasonPanel, {
+      height: 0,
+    });
+  });
+
+  ScrollTrigger.create({
+    trigger: '#reason-poke',
+    scrub: true,
+    pin: true,
+    start: () => 'top top',
+    end: () => '+=' + (reasonPanels.length + 1) * window.innerHeight,
+    invalidateOnRefresh: true,
+  });
 
   const tl = gsap.timeline({
     scrollTrigger: {
