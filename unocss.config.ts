@@ -47,6 +47,7 @@ export default defineConfig({
       'fade-trigger': 'transition-property-[transform,opacity] transition-duration-500 translate-y-[50px] opacity-0',
       'text-theme': 'color-[var(--main-color)]',
       'location-center': 'top-50% left-50% translate-x--50% translate-y--50%',
+      'absolute-center': 'absolute left-0 right-0 top-0 bottom-0',
     },
     [/^bg-accent\/(.*)$/, ([, c]) => `bg-[hsl(var(--accent)/${c})]`],
   ],

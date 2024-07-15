@@ -86,45 +86,78 @@ const caseList = [
       </div>
     </div>
   </section>
-  <section class="pt-[100px] h-80vh pb-20 <md:h-auto" id="poker-wrap">
-    <h1
-      class="font-serif text-center text-size-4xl text-center mb-10"
-      id="poker"
-    >
-      商业模式
-    </h1>
+  <section class="w-full h-screen relative" id="poker-wrap">
     <div
-      class="w-100% flex justify-center items-center gap-24 mt-20 <md:flex-col"
-      data-hook="60%"
+      class="bg-white w-full h-full absolute-center z-auto panel overflow-hidden"
+      id="poker_1"
     >
-      <div class="w-30% border shadow-2xl border-gray p-5 rounded-lg <md:w-80%">
-        <strong class="text-center text-size-xl flex items-center">
-          <i
-            class="i-carbon:ibm-cloud-direct-link-2-dedicated color-[var(--main-color)] mr-2"
-          ></i>
-          EPC模式：</strong
+      <h1
+        class="font-serif text-center text-size-4xl text-center mb-20 mt-100px text-theme"
+      >
+        商业模式
+      </h1>
+      <div
+        class="w-100% flex justify-center items-center gap-24 <md:(flex-col gap-10)"
+      >
+        <div
+          class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
         >
-        <p class="py-4">
-          辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。
-        </p>
-        <p class="py-4">
-          业主自投 电站资产归属业主 投资回报率高 降低企业能耗 25年以上长期收益。
-        </p>
+          <strong class="text-center text-size-4xl flex items-center">
+            <i class="i-carbon:ibm-cloud-direct-link-2-dedicated mr-2"></i>
+          </strong>
+          <h1 class="text-size-4xl">EPC模式</h1>
+        </div>
+        <div
+          class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
+        >
+          <strong class="text-center text-size-4xl flex items-center">
+            <i class="i-carbon:ibm-cloud-direct-link-2-dedicated mr-2"></i>
+          </strong>
+          <h1 class="text-size-4xl">EMC模式</h1>
+        </div>
       </div>
-      <div class="w-30% border shadow-2xl border-gray p-5 rounded-lg <md:w-80%">
-        <strong class="text-center text-size-xl flex items-center">
-          <i
-            class="i-carbon:ibm-cloud-direct-link-2-dedicated color-[var(--main-color)] mr-2"
-          ></i>
-          EMC模式：
-        </strong>
-        <p class="py-4">
-          合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。
-        </p>
-        <p class="py-4">
-          无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维
-          可享长期收益。
-        </p>
+    </div>
+    <div
+      class="bg-[var(--main-color)] w-full h-full absolute-center z-auto panel overflow-hidden"
+    >
+      <h1
+        class="font-serif text-center text-size-4xl text-center mb-20 mt-100px text-white"
+      >
+        商业模式
+      </h1>
+      <div
+        class="w-100% flex justify-center items-center gap-24 <md:(flex-col gap-10)"
+      >
+        <div class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-white <md:w-80%">
+          <h1 class="text-theme text-size-xl pb-2">EPC模式</h1>
+          <p class="py-4 border-y border-[var(--main-color)]">
+            辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。
+          </p>
+          <div class="py-4 flex items-center justify-between">
+            <p class="text-theme">
+              业主自投 电站资产归属业主 投资回报率高 降低企业能耗
+              25年以上长期收益
+            </p>
+            <i
+              class="i-carbon:ibm-cloud-direct-link-2-dedicated text-theme mr-2 text-size-4xl self-end"
+            ></i>
+          </div>
+        </div>
+        <div class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-white <md:w-80%">
+          <h1 class="text-theme text-size-xl pb-2">EMC模式</h1>
+          <p class="py-4 border-y border-[var(--main-color)]">
+            合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。
+          </p>
+          <div class="py-4 flex items-center justify-between">
+            <p class="text-theme">
+              无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维
+              可享长期收益
+            </p>
+            <i
+              class="i-carbon:ibm-cloud-direct-link-2-dedicated text-theme mr-2 text-size-4xl self-end"
+            ></i>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -242,12 +275,23 @@ const caseList = [
     });
   });
 
-  // ScrollTrigger.create({
-  //   trigger: '#poker-wrap',
-  //   start: 'top top',
-  //   end: 'bottom 0',
-  //   pin: '#poker',
-  // });
+  gsap.set('.panel', { zIndex: (i, _, targets) => targets.length - i });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: '#poker-wrap',
+      start: 'top top',
+      end: 'bottom 30%',
+      pin: true,
+      scrub: true,
+      invalidateOnRefresh: true,
+      // markers: true,
+    },
+  });
+
+  tl.to('#poker_1', {
+    height: 0,
+  });
 </script>
 
 <style>
