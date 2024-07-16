@@ -57,7 +57,7 @@ const caseList = [
 <Layout title="辐特佳新能源">
   <Banner title="工商业解决方案" imgSrc="/img_6.jpg" />
   <section
-    class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto aspect-ratio-[9/12] pb-[35px] relative"
+    class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:(h-auto aspect-ratio-[9/12]) pb-[35px] relative"
     id="reason-poke"
   >
     <div class="m-auto translate-y-50% <md:translate-y-0">
@@ -256,6 +256,7 @@ const caseList = [
         start: stickyTop + ' ' + stickyTop,
         end: 'bottom 100%',
         scrub: 0,
+        // markers: true,
       },
       ease: 'none',
       x: -swiperOffset,
@@ -302,7 +303,16 @@ const caseList = [
       height: 0,
     });
   });
-
+  // gsap.timeline({
+  //   scrollTrigger: {
+  //     trigger: '#reason-poke',
+  //     scrub: true,
+  //     pin: true,
+  //     start: () => 'top top',
+  //     end: () => '+=' + (reasonPanels.length + 1) * window.innerHeight,
+  //     invalidateOnRefresh: true,
+  //   },
+  // });
   ScrollTrigger.create({
     trigger: '#reason-poke',
     scrub: true,
