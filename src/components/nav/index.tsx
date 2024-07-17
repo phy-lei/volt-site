@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, onMount, For } from 'solid-js'
+import { For, createSignal, onCleanup, onMount } from 'solid-js'
 import clsx from 'clsx'
 import ExpandButton from '../expand-button'
 import Logo from '../logo'
@@ -22,23 +22,23 @@ function Nav() {
   const navList = [
     {
       name: '光伏的探寻',
-      href: '/'
+      href: '/',
     },
     {
       name: '工商业解决方案',
-      href: '/solution'
+      href: '/solution',
     },
     {
       name: '家庭智能解决方案',
-      href: '/family'
+      href: '/family',
     },
     {
       name: '关于volt+',
-      href: '/about'
+      href: '/about',
     },
     {
       name: '联系我们',
-      href: '/contact'
+      href: '/contact',
     },
   ]
 
@@ -83,7 +83,7 @@ function Nav() {
           <div class="flex gap-4 <md:hidden">
             <For each={navList}>
               {
-                (item) => (
+                item => (
                   <a
                     class="nav-link font-700"
                     href={item.href}
@@ -101,7 +101,8 @@ function Nav() {
                 console.log(flag)
                 if (flag === 'expand') {
                   setShowMobileNav(true)
-                } else {
+                }
+                else {
                   setShowMobileNav(false)
                 }
               }}
@@ -111,11 +112,12 @@ function Nav() {
       </div>
       <div class={
         clsx('w-100% h-300px bg-green-7 my--72px pt-72px transition-transform transition-duration-400 absolute z--1', showMobileNav() ? 'translate-x-0' : 'translate-x--100%')
-      }>
-        <div class='px-4 pt-5'>
+      }
+      >
+        <div class="px-4 pt-5">
           <For each={navList}>
             {
-              (item) => (
+              item => (
                 <a
                   class="nav-link font-700"
                   href={item.href}

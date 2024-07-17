@@ -41,7 +41,7 @@ const Button: Component<ButtonProps> = (props) => {
     >
       {props.isLoading
         ? (
-          <div class="i-mingcute-loading-fill mr-2 h-4 w-4 animate-spin" />
+            <div class="i-mingcute-loading-fill mr-2 h-4 w-4 animate-spin" />
           )
         : null}
       {props.children}

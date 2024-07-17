@@ -32,7 +32,7 @@ function LoginButton() {
       {isLoading()
         ? null
         : (
-          <div class="i-carbon:logo-github mr-2 h-5 w-5" />
+            <div class="i-carbon:logo-github mr-2 h-5 w-5" />
           )}
       登录
     </Button>
