@@ -57,40 +57,38 @@ const caseList = [
 <Layout title="辐特佳新能源">
   <Banner title="工商业解决方案" imgSrc="/img_6.jpg" />
   <section
-    class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:(h-auto aspect-ratio-[9/12]) pb-[35px] relative"
+    class="bg-[url(/src/assets/imgs/02.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen <md:(h-auto aspect-ratio-[9/12]) pb-[35px] relative overflow-hidden text-white"
     id="reason-poke"
   >
-    <div class="m-auto translate-y-50% <md:translate-y-0">
-      <h1 class="font-serif text-center text-white text-size-2xl">
-        安装光伏的三个理由
-      </h1>
-      <div
-        class="max-w-7xl h-full flex items-center gap-8 text-white px-8 relative"
-      >
-        {
-          reasonList.map((item, index) => (
-            <div class="h-200px box-border px-5 rounded-lg w-80% bg-[rgba(255,255,255,0.2)] backdrop-blur-lg absolute-center flex flex-col m-auto mt-50px z-auto overflow-hidden reason-panel">
-              <div class="text-theme text-center border-b border-b-white">
-                <h3 class="text-size-4xl font-mono line-height-none mt-5">
-                  0{index + 1}
-                </h3>
-                <h4 class="text-size-3xl tracking-widest mb-2">{item.title}</h4>
-              </div>
-
-              <ul class="flex justify-center items-center m-auto">
-                {item.desc.map((dec, i) => (
-                  <li class="flex items-center">
-                    {dec}
-                    {i !== item.desc.length - 1 && (
-                      <div class="w-4px h-4px bg-white rounded mx-4" />
-                    )}
-                  </li>
-                ))}
-              </ul>
+    <h1
+      class="h-100px font-serif text-center text-size-2xl absolute-center m-auto translate-y--100%"
+    >
+      安装光伏的三个理由
+    </h1>
+    <div class="h-200px absolute-center m-auto">
+      {
+        reasonList.map((item, index) => (
+          <div class="h-200px box-border px-5 rounded-lg w-80% <md:w-95% bg-[rgba(255,255,255,0.2)] backdrop-blur-lg absolute-center flex flex-col m-[0_auto]  z-auto overflow-hidden reason-panel">
+            <div class="text-theme text-center border-b border-b-white">
+              <h3 class="text-size-4xl font-mono line-height-none mt-5">
+                0{index + 1}
+              </h3>
+              <h4 class="text-size-3xl tracking-widest mb-2">{item.title}</h4>
             </div>
-          ))
-        }
-      </div>
+
+            <ul class="flex justify-center items-center m-auto">
+              {item.desc.map((dec, i) => (
+                <li class="flex items-center flex-1">
+                  {dec}
+                  {i !== item.desc.length - 1 && (
+                    <div class="w-4px h-4px bg-white rounded mx-4" />
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))
+      }
     </div>
   </section>
   <section class="w-full h-screen relative" id="poker-wrap">
@@ -224,65 +222,10 @@ const caseList = [
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
   import createLenis from '@/hooks/createLenis';
-
   createLenis();
   gsap.registerPlugin(ScrollTrigger);
-  const sections = document.querySelectorAll('.section-card-view');
 
-  sections.forEach((section) => {
-    const wrapper = section.querySelector('.section-wrapper');
-    const stickyWrapper = section.querySelector('.sticky-wrapper');
-    const cards = section.querySelectorAll('.section-card');
-
-    const screenWidth = document.documentElement.clientWidth;
-    const cardWidth = cards[0].clientWidth;
-    const cardMargin = Number(
-      window.getComputedStyle(wrapper).getPropertyValue('gap').slice(0, -2)
-    );
-    const cardsNumber = cards.length;
-    const swiperOffset =
-      // 距离页面左侧的宽度 * 2
-      wrapper.getBoundingClientRect().left * 2 +
-      // 每个卡片宽度 * 卡片数量
-      cardWidth * cardsNumber +
-      // 卡片的左侧距离 * (卡片数量 - 1)
-      cardMargin * (cardsNumber - 1) -
-      // 屏幕的宽度
-      screenWidth;
-    const stickyTop = 150;
-    gsap.to(wrapper, {
-      scrollTrigger: {
-        trigger: stickyWrapper,
-        start: stickyTop + ' ' + stickyTop,
-        end: 'bottom 100%',
-        scrub: 0,
-        // markers: true,
-      },
-      ease: 'none',
-      x: -swiperOffset,
-    });
-
-    const cardScroll = cardWidth + cardMargin;
-
-    cards.forEach((card, index) => {
-      const startTrigger = stickyTop - cardScroll * (index - 1);
-      if (index > 0) {
-        gsap.to(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top ' + startTrigger,
-            end: 'bottom ' + cardScroll / cardsNumber,
-            scrub: 0,
-            // markers: true,
-          },
-          ease: 'none',
-          filter: 'blur(0px)',
-          scale: 1,
-        });
-      }
-    });
-  });
-
+  /* -------------------------------- 原因卡片 ------------------------------- */
   gsap.set('.panel', { zIndex: (i, _, targets) => targets.length - i });
   gsap.set('.reason-panel', { zIndex: (i, _, targets) => targets.length - i });
 
@@ -294,7 +237,7 @@ const caseList = [
         start: () => 'top -' + window.innerHeight * (i + 0.5),
         end: () => '+=' + window.innerHeight,
         scrub: true,
-        invalidateOnRefresh: true,
+        invalidateOnRefresh: false,
         // markers: true,
       },
     });
@@ -303,16 +246,7 @@ const caseList = [
       height: 0,
     });
   });
-  // gsap.timeline({
-  //   scrollTrigger: {
-  //     trigger: '#reason-poke',
-  //     scrub: true,
-  //     pin: true,
-  //     start: () => 'top top',
-  //     end: () => '+=' + (reasonPanels.length + 1) * window.innerHeight,
-  //     invalidateOnRefresh: true,
-  //   },
-  // });
+
   ScrollTrigger.create({
     trigger: '#reason-poke',
     scrub: true,
@@ -321,7 +255,9 @@ const caseList = [
     end: () => '+=' + (reasonPanels.length + 1) * window.innerHeight,
     invalidateOnRefresh: true,
   });
+  /* --------------------------------- 原因卡片 -------------------------------- */
 
+  /* ---------------------------------- 商业模式 ---------------------------------- */
   const tl = gsap.timeline({
     scrollTrigger: {
       trigger: '#poker-wrap',
@@ -337,6 +273,63 @@ const caseList = [
   tl.to('#poker_1', {
     height: 0,
   });
+  /* ---------------------------------- 商业模式 ---------------------------------- */
+
+  /* ---------------------------------- 案例卡片 ---------------------------------- */
+  const section = document.querySelector('.section-card-view');
+
+  const wrapper = section.querySelector('.section-wrapper');
+  const stickyWrapper = section.querySelector('.sticky-wrapper');
+  const cards = section.querySelectorAll('.section-card');
+
+  const screenWidth = document.documentElement.clientWidth;
+  const cardWidth = cards[0].clientWidth;
+  const cardMargin = Number(
+    window.getComputedStyle(wrapper).getPropertyValue('gap').slice(0, -2)
+  );
+  const cardsNumber = cards.length;
+  const swiperOffset =
+    // 距离页面左侧的宽度 * 2
+    wrapper.getBoundingClientRect().left * 2 +
+    // 每个卡片宽度 * 卡片数量
+    cardWidth * cardsNumber +
+    // 卡片的左侧距离 * (卡片数量 - 1)
+    cardMargin * (cardsNumber - 1) -
+    // 屏幕的宽度
+    screenWidth;
+  const stickyTop = 150;
+  gsap.to(wrapper, {
+    scrollTrigger: {
+      trigger: stickyWrapper,
+      start: stickyTop + ' ' + stickyTop,
+      end: 'bottom 100%',
+      scrub: 0,
+      // markers: true,
+    },
+    ease: 'none',
+    x: -swiperOffset,
+  });
+
+  const cardScroll = cardWidth + cardMargin;
+
+  cards.forEach((card, index) => {
+    const startTrigger = stickyTop - cardScroll * (index - 1);
+    if (index > 0) {
+      gsap.to(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top ' + startTrigger,
+          end: 'bottom ' + cardScroll / cardsNumber,
+          scrub: 0,
+          // markers: true,
+        },
+        ease: 'none',
+        filter: 'blur(0px)',
+        scale: 1,
+      });
+    }
+  });
+  /* ---------------------------------- 案例卡片 ---------------------------------- */
 </script>
 
 <style>
