@@ -2,12 +2,12 @@
 import Layout from '@/layouts/Layout.astro';
 import ContactFooter from '@/components/ContactFooter.astro';
 import Banner from '@/components/Banner.astro';
+import clsx from 'clsx';
 
 import solution05 from '/src/assets/imgs/solution-case/05.png';
 import solution06 from '/src/assets/imgs/solution-case/06.png';
 import solution07 from '/src/assets/imgs/solution-case/07.png';
 import solution08 from '/src/assets/imgs/solution-case/08.png';
-
 
 // 案例图片 后续可能改为后台获取
 const caseList = [
@@ -39,51 +39,71 @@ const caseList = [
   <section class="intro_1">
     <div class="item w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
-        <div class="font-serif item_desc">通过别墅屋顶安装光伏组件，产生可持续性绿色清洁能源。光伏所产生的电力优先业主家庭使用，多余电力通过双向表出售给国家电网。</div>
+        <div class="font-serif item_desc">
+          通过别墅屋顶安装光伏组件，产生可持续性绿色清洁能源。光伏所产生的电力优先业主家庭使用，多余电力通过双向表出售给国家电网。
+        </div>
       </div>
     </div>
   </section>
   <section class="intro_2">
-    <div class="item  w-40vw <md:w-80vw">
+    <div class="item w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
         <div class="font-serif item_desc">
           降低用电成本<br />
-           延缓二、三档阶梯电价<br />
-           25年以上长期稳定收益
+          延缓二、三档阶梯电价<br />
+          25年以上长期稳定收益
         </div>
       </div>
     </div>
   </section>
   <section class="intro_3">
-    <div class="item  w-40vw <md:w-80vw">
+    <div class="item w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
-        <div class="font-serif item_desc">
-          屋顶隔热降温，进一步节省能源
-        </div>
+        <div class="font-serif item_desc">屋顶隔热降温，进一步节省能源</div>
       </div>
     </div>
   </section>
-  <section class="cases w-100% pt-20 pb-50 section-card-view">
-    <h1
-      class="title font-serif text-center text-size-4xl text-center fade-trigger mb-10"
-    >
-      相关案例
-    </h1>
-    <div class="h-[280vw] sticky-wrapper fade-trigger" data-hook="60%">
+  <!-- 案例图片 -->
+  <section class="w-full pb-60px section-card-view bg-black text-white">
+    <div class="h-[280vw] sticky-wrapper <md:h-[520vw]">
       <div
-        class="sticky w-100% h-auto top-150px overflow-hidden pt-60px box-border"
+        class="sticky w-full h-auto top-150px overflow-hidden pt-60px box-border"
       >
-        <div class="relative flex w-30vw m-[0_auto] gap-12 section-wrapper">
+        <div class="relative flex w-40vw gap-12 section-wrapper <md:w-80vw">
+          <div
+            class="flex justify-center flex-shrink-0 w-100% aspect-ratio-[4/3] section-card"
+          >
+            <h1
+              class="font-serif text-size-6xl text-nowrap line-height-none mr-5 <md:text-size-4xl"
+            >
+              相关<br />案例
+            </h1>
+            <h1
+              class="font-serif text-center text-size-6xl text-theme mx-2 line-height-none <md:text-size-4xl"
+            >
+              CASE
+            </h1>
+          </div>
           {
-            caseList.map((item) => (
-              <div class="relative flex-shrink-0 w-100% h-300px flex justify-center items-center <md:w-80%  section-card">
+            caseList.map((item, i) => (
+              <div
+                class={clsx(
+                  'relative flex-shrink-0 w-100% aspect-ratio-[4/3] section-card flex flex-col justify-between item',
+                  i % 2 === 0 ? 'flex-col-reverse' : ''
+                )}
+              >
                 <div
-                  class="bg-no-repeat bg-cover w-100% h-100%"
+                  class="bg-no-repeat bg-cover w-100% h-85%"
                   style={{ backgroundImage: `url(${item.imgUrl})` }}
                 />
-                <div class="w-100% flex justify-between absolute bottom-0 text-white section-card-title">
-                  <h3 class="text-size-xl p-2">{item.title}</h3>
-                  <h1 class="text-size-2xl p-2">{item.desc}</h1>
+                <div class="w-100% flex justify-between text-white">
+                  <div>
+                    <h3 class="text-size-xl">{item.title}</h3>
+                    <p class="text-theme">CASE 0{i + 1}</p>
+                  </div>
+                  <h1 class="text-size-2xl p-2 text-theme line-height-none">
+                    {item.desc}
+                  </h1>
                 </div>
               </div>
             ))
@@ -101,62 +121,7 @@ const caseList = [
   import ScrollToPlugin from 'gsap/ScrollToPlugin';
   gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-  const sections = document.querySelectorAll('.section-card-view');
-
-  // 案例轮播
-  sections.forEach((section) => {
-    const wrapper = section.querySelector('.section-wrapper');
-    const stickyWrapper = section.querySelector('.sticky-wrapper');
-    const cards = section.querySelectorAll('.section-card');
-
-    const screenWidth = document.documentElement.clientWidth;
-    const cardWidth = cards[0].clientWidth;
-    const cardMargin = Number(
-      window.getComputedStyle(wrapper).getPropertyValue('gap').slice(0, -2)
-    );
-    const cardsNumber = cards.length;
-    const swiperOffset =
-      // 距离页面左侧的宽度 * 2
-      wrapper.getBoundingClientRect().left * 2 +
-      // 每个卡片宽度 * 卡片数量
-      cardWidth * cardsNumber +
-      // 卡片的左侧距离 * (卡片数量 - 1)
-      cardMargin * (cardsNumber - 1) -
-      // 屏幕的宽度
-      screenWidth;
-    const stickyTop = 150;
-
-    gsap.to(wrapper, {
-      scrollTrigger: {
-        trigger: stickyWrapper,
-        start: stickyTop + ' ' + stickyTop,
-        end: 'bottom 100%',
-        scrub: 0,
-      },
-      ease: 'none',
-      x: -swiperOffset,
-    });
-
-    const cardScroll = cardWidth + cardMargin;
-
-    cards.forEach((card, index) => {
-      const startTrigger = stickyTop - cardScroll * (index - 1);
-      if (index > 0) {
-        gsap.to(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: 'top ' + startTrigger,
-            end: 'top ' + cardScroll / 4,
-            scrub: 0,
-          },
-          ease: 'none',
-          filter: 'blur(0px)',
-          scale: 1,
-        });
-      }
-    });
-  });
-
+  /* ---------------------------------- 一屏滚动 ---------------------------------- */
   const sectionsList = document.querySelectorAll('section');
 
   // this scrolling object just allows us to conveniently call scrolling.enable(), scrolling.disable(), and check if scrolling.enabled is true.
@@ -208,6 +173,64 @@ const caseList = [
       onEnterBack: () => goToSection(section),
     });
   });
+
+  /* ---------------------------------- 一屏滚动 ---------------------------------- */
+
+  /* ---------------------------------- 案例卡片 ---------------------------------- */
+  const sectionCase = document.querySelector('.section-card-view');
+
+  const wrapper = sectionCase.querySelector('.section-wrapper');
+  const stickyWrapper = sectionCase.querySelector('.sticky-wrapper');
+  const cards = sectionCase.querySelectorAll('.section-card');
+
+  const screenWidth = document.documentElement.clientWidth;
+  const cardWidth = cards[0].clientWidth;
+  const cardMargin = Number(
+    window.getComputedStyle(wrapper).getPropertyValue('gap').slice(0, -2)
+  );
+  const cardsNumber = cards.length;
+  const swiperOffset =
+    // 距离页面左侧的宽度 * 2
+    wrapper.getBoundingClientRect().left * 2 +
+    // 每个卡片宽度 * 卡片数量
+    cardWidth * cardsNumber +
+    // 卡片的左侧距离 * (卡片数量 - 1)
+    cardMargin * (cardsNumber - 1) -
+    // 屏幕的宽度
+    screenWidth;
+  const stickyTop = 150;
+  gsap.to(wrapper, {
+    scrollTrigger: {
+      trigger: stickyWrapper,
+      start: stickyTop + ' ' + stickyTop,
+      end: 'bottom 100%',
+      scrub: 0,
+      // markers: true,
+    },
+    ease: 'none',
+    x: -swiperOffset,
+  });
+
+  const cardScroll = cardWidth + cardMargin;
+
+  cards.forEach((card, index) => {
+    const startTrigger = stickyTop - cardScroll * (index - 1);
+    if (index > 0) {
+      gsap.to(card, {
+        scrollTrigger: {
+          trigger: card,
+          start: 'top ' + startTrigger,
+          end: 'bottom ' + cardScroll / cardsNumber,
+          scrub: 0,
+          // markers: true,
+        },
+        ease: 'none',
+        filter: 'blur(0px)',
+        scale: 1,
+      });
+    }
+  });
+  /* ---------------------------------- 案例卡片 ---------------------------------- */
 </script>
 
 <style is:global>
@@ -257,5 +280,10 @@ const caseList = [
     display: flex;
     align-items: center;
     padding: 80px;
+  }
+  .section-card + .section-card {
+    transform: scale(0.8);
+    transform-origin: left;
+    filter: blur(10px);
   }
 </style>
