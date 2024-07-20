@@ -37,10 +37,12 @@ const caseList = [
 <Layout title="辐特佳新能源">
   <Banner title="家庭智能解决方案" imgSrc="/img_23.jpg" />
   <section class="intro_1">
-    <div class="item w-40vw <md:w-80vw">
+    <div class="item w-40vw <md:w-100vw">
       <div class="item_content fade-trigger">
         <div class="item_desc">
-          通过别墅屋顶安装光伏组件，产生可持续性绿色清洁能源。光伏所产生的电力优先业主家庭使用，多余电力通过双向表出售给国家电网。
+          通过别墅屋顶安装光伏组件，产生可持续性绿色清洁能源。<br />
+          光伏所产生的电力优先业主家庭使用，<br />
+          多余电力通过双向表出售给国家电网。
         </div>
       </div>
     </div>
@@ -59,12 +61,15 @@ const caseList = [
   <section class="intro_3">
     <div class="item w-40vw <md:w-80vw">
       <div class="item_content fade-trigger">
-        <div class="item_desc">屋顶隔热降温，进一步节省能源</div>
+        <div class="item_desc">
+          屋顶隔热降温，进一步节省能源<br />
+          舒心用电
+        </div>
       </div>
     </div>
   </section>
   <!-- 案例图片 -->
-  <section class="w-full pb-60px section-card-view bg-black text-white">
+  <section class="w-full pb-150px section-card-view bg-black text-white">
     <div class="h-[280vw] sticky-wrapper <md:h-[520vw]">
       <div
         class="sticky w-full h-auto top-150px overflow-hidden pt-60px box-border"
@@ -239,34 +244,68 @@ const caseList = [
   .intro_3 {
     position: relative;
     height: 100vh;
+    width: 100vw;
     display: flex;
-    align-items: center;
-    padding: 80px;
+    justify-content: center;
     .item {
-      position: absolute;
-      top: 20vh;
-      left: 10vw;
-      /* background-color: pink; */
       display: flex;
       justify-content: center;
-      align-items: center;
-      height: 40vh;
+      top: 10vh;
+      width: auto;
+      height: auto;
       overflow: hidden;
       .item_desc {
-        font-size: 26px;
-        font-weight: 500;
+        color: white;
+        text-align: center;
+        font-size: 16px;
+        font-weight: 400;
         padding: 30px;
-        line-height: 40px;
+        line-height: 30px;
+        margin-top: 17vh;
       }
     }
   }
+
+  .intro_1::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 95%;
+      background-color: black;
+      border-radius: 20px;
+      opacity: 0.2;
+    }
+    .intro_2::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 95%;
+      background-color: black;
+      border-radius: 20px;
+      opacity: 0.3;
+    }
+    .intro_3::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 95%;
+      background-color: black;
+      border-radius: 20px;
+      opacity: 0.3;
+    }
   .intro_1 {
     background-image: url('/img_18.jpg');
     background-size: cover;
     background-position: center center;
   }
   .intro_2 {
-    background-image: url('/img_24.jpg');
+    background-image: url('/img_24.png');
     background-size: cover;
     background-position: center center;
   }
