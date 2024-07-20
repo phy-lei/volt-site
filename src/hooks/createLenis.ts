@@ -1,9 +1,9 @@
 import gsap from 'gsap'
 import Lenis from 'lenis'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+gsap.registerPlugin(ScrollTrigger)
 
 export default () => {
-  gsap.registerPlugin(ScrollTrigger)
 
   // 滚动平滑插件
   const lenis = new Lenis()

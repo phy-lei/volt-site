@@ -1,5 +1,6 @@
 ---
 import Layout from '@/layouts/Layout.astro';
+import clsx from 'clsx';
 import icon1 from 'src/assets/imgs/icons/tubiao-17.png';
 import icon2 from 'src/assets/imgs/icons/tubiao-18.png';
 import icon3 from 'src/assets/imgs/icons/tubiao-19.png';
@@ -176,8 +177,9 @@ const principles = [
       <p class="text-gray-2 text-center mt-5">
         光伏组件吸收阳光，通过“光生伏特效应”产生直流电，经由逆变器转化为交流电，连接光伏配电系统并入用户侧
 
+
         <br />
-        光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网
+         光伏所产生的电力优先分配给用户负载使用，多余电力通过双向表出售给国家电网
       </p>
     </div>
 
@@ -185,9 +187,16 @@ const principles = [
       class="flex w-full mt-5 rounded-2xl overflow-hidden bg-gray-3 <md:w-full"
     >
       {
-        principles.map((item) => (
+        principles.map((item, i) => (
           <li class="relative flex-1">
-            <img src={item.src} alt="" class="h-350px object-cover" />
+            <img
+              src={item.src}
+              alt=""
+              class={clsx(
+                'h-350px object-cover',
+                i === 0 ? 'object-right-center' : ''
+              )}
+            />
             <p class="absolute  text-center left-50% top-20px translate-x--50%  text-xs text-white bg-[var(--main-color)] rounded-full py-1 px-4 text-nowrap">
               {item.title}
             </p>

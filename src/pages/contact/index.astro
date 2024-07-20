@@ -4,43 +4,44 @@ import Banner from '@/components/Banner.astro';
 ---
 
 <Layout title="辐特佳新能源">
-  <Banner title="联系我们" imgSrc="/img_5.jpg" />
+  <Banner title="联 系 我 们" imgSrc="/img_5.jpg" />
   <section
     class="bg-[url(/img_17.jpg)] bg-no-repeat bg-center bg-cover w-full h-screen pt-[100px] <md:h-auto pb-[35px] relative"
   >
     <div class="m-auto translate-y-40% <md:translate-y-0">
       <div
-        class="cards max-w-7xl m-auto flex justify-center items-center gap-8 text-white px-8 fade-trigger <md:flex-col pt-[25px]"
+        class="cards max-w-7xl m-auto flex justify-center items-center gap-8 px-8 fade-trigger <md:flex-col pt-[25px]"
       >
         <div
-          class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%"
+          class="p-5 rounded-lg w-1/4 h-40vh gs-blur flex flex-col items-center justify-around <md:w-80%"
         >
-          <h3 class="text-size-xl mb-4 flex justify-center items-center">
-            全国服务热线
-          </h3>
-          <div
-            class="flex h-60% justify-center items-center justify-center py-4"
-          >
-            4008-613-617
+          <i class="i-carbon:phone-application text-6xl text-theme"></i>
+          <div>
+            <h3 class="text-black text-center line-height-none">
+              全国服务热线
+            </h3>
+            <div class="text-black text-size-2xl font-num">4008-613-617</div>
           </div>
         </div>
         <div
-          class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%"
+          class="p-5 rounded-lg w-1/4 h-40vh gs-blur flex flex-col items-center justify-around <md:w-80%"
         >
-          <h3 class="text-size-xl mb-4 flex justify-center items-center">
-            办公地址
-          </h3>
-          <div class="flex h-60% justify-center items-center py-4">
-            上海市宝山区军工路5169号A9
+          <i class="i-carbon:building-insights-3 text-6xl text-theme"></i>
+          <div>
+            <h3 class="text-black text-center">办公地址</h3>
+            <div class="text-black font-500">上海市宝山区军工路5169号A9</div>
           </div>
         </div>
         <div
-          class="p-5 rounded-lg w-1/4 h-40vh bg-[rgba(255,255,255,0.2)] backdrop-blur-lg <md:w-80%"
+          class="p-5 rounded-lg w-1/4 h-40vh gs-blur flex flex-col items-center justify-around <md:w-80%"
         >
-          <h3 class="text-size-xl mb-4 flex justify-center items-center">
-            联系邮箱
-          </h3>
-          <div class="flex h-60% justify-center items-center py-4">xxxx</div>
+          <i class="i-carbon:mail-all text-6xl text-theme"></i>
+          <div>
+            <h3 class="text-black text-center">联系邮箱</h3>
+            <div class="text-black font-500 font-en text-size-xl">
+              liwangcheng@voltplus.cn
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -48,6 +49,13 @@ import Banner from '@/components/Banner.astro';
 </Layout>
 
 <script>
-  import createLenis from '@/hooks/createLenis';
-  createLenis();
+  import gsap from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  import createFullpageScroll from '@/hooks/createFullpageScroll';
+  gsap.registerPlugin(ScrollTrigger);
+
+  const sectionsList = document.querySelectorAll('section');
+
+  createFullpageScroll(sectionsList);
 </script>

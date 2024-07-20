@@ -6,7 +6,7 @@ import clsx from 'clsx';
 
 import solution01 from '/src/assets/imgs/solution-case/01.png';
 import solution02 from '/src/assets/imgs/solution-case/02.jpg';
-import solution03 from '/src/assets/imgs/solution-case/03.png';
+import solution03 from '/src/assets/imgs/solution-case/03.jpg';
 import solution04 from '/src/assets/imgs/solution-case/04.jpg';
 
 // 理由
@@ -43,7 +43,7 @@ const caseList = [
   },
   {
     imgUrl: solution03.src,
-    title: '江苏泰州 ',
+    title: '上海宝山',
     desc: '1198.665KWp',
   },
   {
@@ -68,7 +68,7 @@ const caseList = [
     <div class="h-200px absolute-center m-auto">
       {
         reasonList.map((item, index) => (
-          <div class="h-200px box-border px-5 rounded-lg w-80% <md:w-95% bg-[rgba(255,255,255,0.2)] backdrop-blur-lg absolute-center flex flex-col m-[0_auto]  z-auto overflow-hidden reason-panel">
+          <div class="h-200px box-border px-5 rounded-lg w-80% <md:w-95% bg-[rgba(255,255,255,0.2)] backdrop-blur-lg absolute-center flex flex-col  m-[0_auto]  z-auto overflow-hidden reason-panel">
             <div class="text-theme text-center border-b border-b-white">
               <h3 class="text-size-4xl font-num line-height-none mt-5">
                 0{index + 1}
@@ -76,9 +76,9 @@ const caseList = [
               <h4 class="text-size-3xl tracking-widest mb-2">{item.title}</h4>
             </div>
 
-            <ul class="flex justify-center items-center m-auto">
+            <ul class="flex justify-center items-center h-full">
               {item.desc.map((dec, i) => (
-                <li class="flex items-center flex-1">
+                <li class="flex items-center flex-1 justify-center">
                   {dec}
                   {i !== item.desc.length - 1 && (
                     <div class="w-4px h-4px bg-white rounded mx-4" />

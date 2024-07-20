@@ -1,7 +1,7 @@
 ---
 interface Props {
   imgSrc: string;
-  title: string;
+  title?: string;
 }
 
 const { imgSrc, title } = Astro.props;
@@ -17,7 +17,7 @@ const src = `url(${imgSrc})`;
   </div>
   <div class="hero__content">
     <div class="hero__headline">
-      <span class="font-serif volt-title">{title}</span>
+      <span class="font-serif volt-title">{title}<slot /></span>
     </div>
   </div>
 </section>

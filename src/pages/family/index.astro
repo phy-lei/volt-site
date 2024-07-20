@@ -41,8 +41,8 @@ const caseList = [
       <div class="item_content fade-trigger">
         <div class="item_desc">
           通过别墅屋顶安装光伏组件，产生可持续性绿色清洁能源。<br />
-          光伏所产生的电力优先业主家庭使用，<br />
-          多余电力通过双向表出售给国家电网。
+           光伏所产生的电力优先业主家庭使用，<br />
+           多余电力通过双向表出售给国家电网。
         </div>
       </div>
     </div>
@@ -52,8 +52,8 @@ const caseList = [
       <div class="item_content fade-trigger">
         <div class="item_desc">
           降低用电成本<br />
-          延缓二、三档阶梯电价<br />
-          25年以上长期稳定收益
+           延缓二、三档阶梯电价<br />
+           25年以上长期稳定收益
         </div>
       </div>
     </div>
@@ -63,7 +63,7 @@ const caseList = [
       <div class="item_content fade-trigger">
         <div class="item_desc">
           屋顶隔热降温，进一步节省能源<br />
-          舒心用电
+           舒心用电
         </div>
       </div>
     </div>
@@ -123,61 +123,12 @@ const caseList = [
 <script>
   import gsap from 'gsap';
   import { ScrollTrigger } from 'gsap/ScrollTrigger';
-  import ScrollToPlugin from 'gsap/ScrollToPlugin';
-  gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+  import createFullpageScroll from '@/hooks/createFullpageScroll';
+  gsap.registerPlugin(ScrollTrigger);
 
   /* ---------------------------------- 一屏滚动 ---------------------------------- */
   const sectionsList = document.querySelectorAll('section');
-
-  // this scrolling object just allows us to conveniently call scrolling.enable(), scrolling.disable(), and check if scrolling.enabled is true.
-  // some browsers (like iOS Safari) handle scrolling on a separate thread and can cause things to get out of sync (jitter/jumpy), so when we're animating the scroll position, force an update of GSAP tweens when there's a scroll event in order to maintain synchronization)
-  const scrolling = {
-    enabled: true,
-    events: 'scroll,wheel,touchmove,pointermove'.split(','),
-    prevent: (e: Event) => e.preventDefault(),
-    disable() {
-      if (scrolling.enabled) {
-        scrolling.enabled = false;
-        window.addEventListener('scroll', gsap.ticker.tick, { passive: true });
-        scrolling.events.forEach((e: string, i: number) =>
-          (i ? document : window).addEventListener(e, scrolling.prevent, {
-            passive: false,
-          })
-        );
-      }
-    },
-    enable() {
-      if (!scrolling.enabled) {
-        scrolling.enabled = true;
-        window.removeEventListener('scroll', gsap.ticker.tick);
-        scrolling.events.forEach((e: string, i: number) =>
-          (i ? document : window).removeEventListener(e, scrolling.prevent)
-        );
-      }
-    },
-  };
-
-  function goToSection(section: HTMLElement) {
-    if (scrolling.enabled) {
-      // skip if a scroll tween is in progress
-      scrolling.disable();
-      gsap.to(window, {
-        scrollTo: { y: section, autoKill: false },
-        onComplete: scrolling.enable,
-        duration: 1,
-      });
-    }
-  }
-
-  sectionsList.forEach((section: HTMLElement) => {
-    ScrollTrigger.create({
-      trigger: section,
-      start: 'top bottom-=1',
-      end: 'bottom top+=1',
-      onEnter: () => goToSection(section),
-      onEnterBack: () => goToSection(section),
-    });
-  });
+  createFullpageScroll(sectionsList);
 
   /* ---------------------------------- 一屏滚动 ---------------------------------- */
 
@@ -267,38 +218,38 @@ const caseList = [
   }
 
   .intro_1::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 95%;
-      background-color: black;
-      border-radius: 20px;
-      opacity: 0.2;
-    }
-    .intro_2::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 95%;
-      background-color: black;
-      border-radius: 20px;
-      opacity: 0.3;
-    }
-    .intro_3::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 95%;
-      background-color: black;
-      border-radius: 20px;
-      opacity: 0.3;
-    }
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    background-color: black;
+    border-radius: 20px;
+    opacity: 0.2;
+  }
+  .intro_2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    background-color: black;
+    border-radius: 20px;
+    opacity: 0.3;
+  }
+  .intro_3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 95%;
+    background-color: black;
+    border-radius: 20px;
+    opacity: 0.3;
+  }
   .intro_1 {
     background-image: url('/img_18.jpg');
     background-size: cover;

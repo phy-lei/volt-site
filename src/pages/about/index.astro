@@ -2,52 +2,91 @@
 import Layout from '@/layouts/Layout.astro';
 import Banner from '@/components/Banner.astro';
 import ContactFooter from '@/components/ContactFooter.astro';
+import LogoSvg from '@/components/logo/logo';
 ---
 
 <Layout title="辐特佳新能源">
-  <Banner title="关于volt+" imgSrc="/img_14.jpg" />
-  <div class="content_section mb-30vh">
-    <div class="profile">
+  <Banner imgSrc="/img_14.jpg">
+    <div class="flex items-center flex-nowrap">
+      <span>关于</span><LogoSvg class="w-200px h-full" />
+    </div>
+  </Banner>
+
+  <section class="w-full h-auto box-border text-white px-20 mb-20 pt-62px">
+    <div class="profile py-20px">
       <h1
-        class="title text-center text-size-4xl text-center fade-trigger mt-5 mb-2"
+        class="title text-center text-size-4xl text-center fade-trigger mt-5 mb-2 text-theme"
       >
-        volt+是谁
+        辐特佳新能源是谁
       </h1>
-      <div class="content text-gray-5 px-40 mt-10 <md:px-0">
-        上海辐特佳新能源是国内专注于分布式光伏领域的创新企业。公司拥有强大的技术背景团队，致力于光伏领域内的技术研发，推动光伏电站的开发建设及投资、构建高效储能系统、打造智能化微电网项目。通过不断追求技术创新，为客户提供全方位的智能分布式光伏解决方案，实现能源的优化管理，赋能企业降本增效。公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献，创造绿色清洁能源的无限可能
+      <div class="content text-gray-5 px-40 text-center <md:px-0">
+        <p>上海辐特佳新能源是国内专注于分布式光伏领域的创新企业。</p>
+        <p>
+          公司拥有强大的技术背景团队，致力于光伏领域内的技术研发，推动光伏电站的开发建设及投资、构建高效储能系统、打造智能化微电网项目。
+        </p>
+        <p>
+          通过不断追求技术创新，为客户提供全方位的智能分布式光伏解决方案，实现能源的优化管理，赋能企业降本增效。
+        </p>
+        <p>
+          公司秉承可持续发展的理念，致力于为社会和环境做出积极贡献，创造绿色清洁能源的无限可能。
+        </p>
       </div>
     </div>
-    <div class="vision">
+    <div class="flex flex-col h-screen gap-20px fade-trigger <md:flex-col">
       <div
-        class="content max-w-7xl m-auto flex justify-center items-center <md:flex-col w-100vw"
+        class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer bg-[var(--main-color)] group"
       >
-        <div class="item_1 w-30% <md:(w-50%)">
-          <div class="title">使命</div>
-          <div class="text_box">
-            <div class="text">致力于提供智能分布式光伏解决方案</div>
-          </div>
+        <img
+          src="/solar-8244680.jpg"
+          alt=""
+          class="solution-img w-100% h-[calc(100%-20px)] object-cover group-hover:transform-scale-110 transition-duration-1000 <md:h-400px"
+        />
+        <div class="absolute left-10 top-40px overflow-hidden">
+          <h1 class="text-size-2xl">使命</h1>
+          <p class="flex items-center justify-center text-gray-3 mt-10px">
+            致力于提供智能分布式光伏解决方案
+          </p>
         </div>
-        <div class="item_2 w-30% <md:(w-50%)">
-          <div class="title">愿景</div>
-          <div class="text_box">
-            <div class="text">创造绿色能源的无限可能</div>
-          </div>
+      </div>
+      <div
+        class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer bg-[var(--main-color)] group"
+      >
+        <img
+          src="/sustainabililty-scaled.jpg"
+          alt=""
+          class="solution-img w-100% h-[calc(100%-20px)] object-cover group-hover:transform-scale-110 transition-duration-1000 <md:h-400px"
+        />
+        <div class="absolute left-10 top-40px overflow-hidden">
+          <h1 class="text-size-2xl">愿景</h1>
+          <p class="flex items-center justify-center text-gray-3 mt-10px">
+            创造绿色能源的无限可能
+          </p>
         </div>
-        <div class="item_3 w-30% <md:(w-50%)">
-          <div class="title">企业文化</div>
-          <div class="text_box">
-            <div class="text">诚信 创新 进步 突破</div>
-          </div>
+      </div>
+      <div
+        class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer bg-[var(--main-color)] group"
+      >
+        <img
+          src="/calut.jpg"
+          alt=""
+          class="solution-img w-100% h-[calc(100%-20px)] object-cover object-[0_21%] group-hover:transform-scale-110 transition-duration-1000 <md:h-400px"
+        />
+        <div class="absolute left-10 top-40px overflow-hidden">
+          <h1 class="text-size-2xl">企业文化</h1>
+          <p class="flex items-center justify-center text-gray-3 mt-10px">
+            诚信 创新 进步 突破
+          </p>
         </div>
       </div>
     </div>
-  </div>
+  </section>
   <ContactFooter />
 </Layout>
 
 <script>
-  import createLenis from '@/hooks/createLenis';
-  createLenis();
+  import createFullpageScroll from '@/hooks/createFullpageScroll';
+  const sectionsList = document.querySelectorAll('section');
+  createFullpageScroll(sectionsList);
 </script>
 
 <style is:global>
@@ -65,18 +104,12 @@ import ContactFooter from '@/components/ContactFooter.astro';
     background-size: cover;
     background-position: center center;
   }
-  .content_section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
+
   .profile {
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 80px;
     .title {
       font-size: 24px;
       font-weight: 400;
@@ -84,74 +117,5 @@ import ContactFooter from '@/components/ContactFooter.astro';
       display: inline-block;
       padding-bottom: 10px;
     }
-  }
-  .vision .content {
-    display: flex;
-  }
-  .vision .content > div {
-    height: 50vh;
-    margin: 2.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border: solid rgb(229 231 235) 2px;
-    border-radius: 20px;
-    .title {
-      color: white;
-      font-size: 25px;
-      margin-top: 18px;
-    }
-
-    .text_box {
-      flex: 1;
-      position: relative;
-      width: 80%;
-      margin-top: 20px;
-      .text {
-        position: relative;
-        color: white;
-        font-size: 16px;
-        text-align: center;
-        margin: 20px;
-        height: 50%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 1;
-      }
-    }
-    .text_box::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 95%;
-      background-color: black;
-      border-radius: 20px;
-      opacity: 0.4;
-    }
-  }
-
-  .vision .content > div:hover {
-    transition: 0.5s;
-    transform: translateY(-20px) scale(1.05);
-    box-shadow: 0px 0px 36px rgba(0, 0, 0, 0.01);
-  }
-
-  .vision .item_1 {
-    background-image: url('/img_15.jpg');
-    background-size: cover;
-    background-position: center center;
-  }
-  .vision .item_2 {
-    background-image: url('/img_11.jpg');
-    background-size: cover;
-    background-position: center center;
-  }
-  .vision .item_3 {
-    background-image: url('/img_8.jpg');
-    background-size: cover;
-    background-position: center center;
   }
 </style>
