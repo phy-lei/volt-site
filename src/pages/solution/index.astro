@@ -61,15 +61,15 @@ const caseList = [
     id="reason-poke"
   >
     <h1
-      class="h-100px text-center text-size-2xl absolute-center m-auto translate-y--100%"
+      class="h-130px text-center text-size-2xl absolute-center m-auto translate-y--100%"
     >
       安装光伏的三个理由
     </h1>
-    <div class="h-200px absolute-center m-auto">
+    <div class="h-250px absolute-center m-auto">
       {
         reasonList.map((item, index) => (
-          <div class="h-200px box-border px-5 rounded-lg w-80% <md:w-95% bg-[rgba(255,255,255,0.2)] backdrop-blur-lg absolute-center flex flex-col  m-[0_auto]  z-auto overflow-hidden reason-panel">
-            <div class="text-theme text-center border-b border-b-white">
+          <div class="h-full box-border px-5 rounded-lg w-80% <md:w-95% bg-[rgba(255,255,255,0.2)] backdrop-blur-lg absolute-center flex flex-col  m-[0_auto]  z-auto overflow-hidden reason-panel">
+            <div class="text-theme text-center border-b border-b-black">
               <h3 class="text-size-4xl font-num line-height-none mt-5">
                 0{index + 1}
               </h3>
@@ -78,10 +78,10 @@ const caseList = [
 
             <ul class="flex justify-center items-center h-full">
               {item.desc.map((dec, i) => (
-                <li class="flex items-center flex-1 justify-center">
+                <li class="flex items-center flex-1 justify-center text-black">
                   {dec}
                   {i !== item.desc.length - 1 && (
-                    <div class="w-4px h-4px bg-white rounded mx-4" />
+                    <div class="w-4px h-4px bg-black rounded mx-4" />
                   )}
                 </li>
               ))}
@@ -97,7 +97,7 @@ const caseList = [
       id="poker_1"
     >
       <h1
-        class="text-center text-size-4xl text-center mb-20 mt-100px text-theme"
+        class="text-center text-size-4xl text-center mt-100px mb-20 text-theme <md:mb-0"
       >
         商业模式
       </h1>
@@ -105,17 +105,17 @@ const caseList = [
         class="w-100% flex justify-center items-center gap-24 <md:(flex-col gap-10)"
       >
         <div
-          class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
+          class="w-30% h-340px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
         >
-          <strong class="text-center text-size-4xl flex items-center">
+          <strong class="text-center text-size-6xl flex items-center">
             <i class="i-carbon:ibm-cloud-direct-link-2-dedicated"></i>
           </strong>
           <h1 class="text-size-4xl">EPC模式</h1>
         </div>
         <div
-          class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
+          class="w-30% h-340px shadow-2xl p-5 rounded-lg bg-[var(--main-color)] flex flex-col items-center justify-center text-white <md:w-80%"
         >
-          <strong class="text-center text-size-4xl flex items-center">
+          <strong class="text-center text-size-6xl flex items-center">
             <i class="i-carbon:ibm-cloud-direct-link-2-dedicated"></i>
           </strong>
           <h1 class="text-size-4xl">EMC模式</h1>
@@ -126,16 +126,18 @@ const caseList = [
       class="bg-[var(--main-color)] w-full h-full absolute-center z-auto panel overflow-hidden"
     >
       <h1
-        class="text-center text-size-4xl text-center mb-20 mt-100px text-white"
+        class="text-center text-size-4xl text-center mt-100px mb-20 text-white <md:mb-0"
       >
         商业模式
       </h1>
       <div
         class="w-100% flex justify-center items-center gap-24 <md:(flex-col gap-10)"
       >
-        <div class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-white <md:w-80%">
+        <div
+          class="w-30% h-340px shadow-2xl p-5 rounded-lg bg-white flex flex-col justify-between <md:w-80%"
+        >
           <h1 class="text-theme text-size-xl pb-2">EPC模式</h1>
-          <p class="py-4 border-y border-[var(--main-color)]">
+          <p class="py-8 border-y border-[var(--main-color)]">
             辐特佳受业主委托，对光伏项目的前期可行性研究、设计、采购、施工、验收等实行全过程的总承包。
           </p>
           <div class="py-4 flex items-center justify-between">
@@ -148,14 +150,16 @@ const caseList = [
             ></i>
           </div>
         </div>
-        <div class="w-30% h-264px shadow-2xl p-5 rounded-lg bg-white <md:w-80%">
+        <div
+          class="w-30% h-340px shadow-2xl p-5 rounded-lg bg-white flex flex-col justify-between <md:w-80%"
+        >
           <h1 class="text-theme text-size-xl pb-2">EMC模式</h1>
-          <p class="py-4 border-y border-[var(--main-color)]">
+          <p class="py-8 border-y border-[var(--main-color)]">
             合同能源管理模式。由辐特佳负责光伏电站的建设及运维，以优惠电价的方式分享收益给业主。
           </p>
           <div class="py-4 flex items-center justify-between">
             <p class="text-theme">
-              无需出资，由持有方投资 享受电价折扣 由持有方进行电站运维
+              无需出资 由持有方投资 享受电价折扣 由持有方进行电站运维
               可享长期收益
             </p>
             <i

@@ -184,11 +184,11 @@ const principles = [
     </div>
 
     <ul
-      class="flex w-full mt-5 rounded-2xl overflow-hidden bg-gray-3 <md:w-full"
+      class="flex w-full mt-5 rounded-[10px_10px_0_0] overflow-hidden bg-gray-3 <md:w-full"
     >
       {
         principles.map((item, i) => (
-          <li class="relative flex-1">
+          <li class="relative flex-1 cursor-pointer transition-transform hover:scale-120">
             <img
               src={item.src}
               alt=""
