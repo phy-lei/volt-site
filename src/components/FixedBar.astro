@@ -1,0 +1,35 @@
+---
+import CustomService from './icon/customer-service';
+---
+
+<div class="fixed z-999 right-20px bottom-20px">
+  <div class="text-white flex flex-col gap-2px">
+    <div
+      class="w-60px h-60px rounded cursor-pointer bg-orange-5 flex gap-5px flex-col items-center justify-center"
+      id="customer-service"
+      onclick="
+      qimoChatClick()
+      "
+    >
+      <CustomService class="w-25px h-25px" />
+      <div class="text-size-xs">在线咨询</div>
+    </div>
+    <div
+      class="w-60px h-60px rounded cursor-pointer bg-orange-5 flex gap-5px flex-col items-center justify-center"
+    >
+      <i class="i-carbon:chat w-25px h-25px"></i>
+      <div class="text-size-xs">留言板</div>
+    </div>
+    <div
+      class="relative w-60px h-60px rounded cursor-pointer bg-orange-5 flex gap-5px flex-col items-center justify-center children-hover:block"
+    >
+      <i class="i-carbon:phone-application w-25px h-25px"></i>
+      <div class="text-size-xs">电话</div>
+      <div
+        class="font-num bg-white w-200px hidden overflow-hidden h-60px rounded color-orange absolute left-0 top-0 translate-x--100% text-center line-height-60px text-size-xl cursor-auto transition-all"
+      >
+        4008-613-617
+      </div>
+    </div>
+  </div>
+</div>

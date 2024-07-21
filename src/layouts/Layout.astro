@@ -1,6 +1,7 @@
 ---
 import Nav from '@/components/nav';
 import LogoSvg from '@/components/logo/logo';
+import FixedBar from '@/components/FixedBar.astro';
 interface Props {
   title: string;
 }
@@ -35,7 +36,7 @@ const { title } = Astro.props;
     <script
       is:inline
       type="text/javascript"
-      src="https://webchat.7moor.com/javascripts/7moorInit.js?accessId=b39ec750-246c-11ef-9363-0d3723ecb1d0&autoShow=true&language=ZHCN"
+      src="https://webchat.7moor.com/javascripts/7moorInit.js?accessId=b39ec750-246c-11ef-9363-0d3723ecb1d0&autoShow=false&language=ZHCN"
       async="async"></script>
   </head>
   <body class="min-h-screen relative">
@@ -48,6 +49,7 @@ const { title } = Astro.props;
       <a href="/img_14.jpg" data-astro-prefetch></a>
     </div>
     <Nav client:load />
+    <FixedBar />
     <div>
       <slot />
     </div>
