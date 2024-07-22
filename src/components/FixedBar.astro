@@ -5,6 +5,16 @@ import CustomService from './icon/customer-service';
 <div class="fixed z-999 right-20px bottom-20px">
   <div class="text-white flex flex-col gap-2px">
     <div
+      class="w-60px h-60px rounded cursor-pointer bg-orange-5 flex gap-5px flex-col items-center justify-center"
+      id="customer-service"
+      onclick="
+    qimoChatClick()
+    "
+    >
+      <CustomService class="w-25px h-25px" />
+      <div class="text-size-xs">在线咨询</div>
+    </div>
+    <div
       class="relative w-60px h-60px rounded cursor-pointer bg-orange-5 flex gap-5px flex-col items-center justify-center children-hover:block"
     >
       <i class="i-carbon:phone-application w-25px h-25px"></i>
@@ -14,16 +24,6 @@ import CustomService from './icon/customer-service';
       >
         4008-613-617
       </div>
-    </div>
-    <div
-      class="w-60px h-60px rounded cursor-pointer bg-orange-5 flex gap-5px flex-col items-center justify-center"
-      id="customer-service"
-      onclick="
-      qimoChatClick()
-      "
-    >
-      <CustomService class="w-25px h-25px" />
-      <div class="text-size-xs">在线咨询</div>
     </div>
   </div>
 </div>
