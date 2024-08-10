@@ -1,46 +1,58 @@
 ---
 import Layout from '@/layouts/Layout.astro';
 import clsx from 'clsx';
-import icon1 from 'src/assets/imgs/icons/tubiao-17.png';
-import icon2 from 'src/assets/imgs/icons/tubiao-18.png';
-import icon3 from 'src/assets/imgs/icons/tubiao-19.png';
-import icon4 from 'src/assets/imgs/icons/tubiao-20.png';
-import icon5 from 'src/assets/imgs/icons/tubiao-21.png';
-import icon6 from 'src/assets/imgs/icons/tubiao-22.png';
 
 const iconList = [
-  { icon: icon1.src, title: '厂房' },
-  { icon: icon2.src, title: '园区' },
-  { icon: icon3.src, title: '政府' },
-  { icon: icon4.src, title: '学校' },
-  { icon: icon5.src, title: '医院' },
-  { icon: icon6.src, title: '别墅' },
+  {
+    icon: 'http://image-volt.test.upcdn.net/icons/tubiao-17.png',
+    title: '厂房',
+  },
+  {
+    icon: 'http://image-volt.test.upcdn.net/icons/tubiao-18.png',
+    title: '园区',
+  },
+  {
+    icon: 'http://image-volt.test.upcdn.net/icons/tubiao-19.png',
+    title: '政府',
+  },
+  {
+    icon: 'http://image-volt.test.upcdn.net/icons/tubiao-20.png',
+    title: '学校',
+  },
+  {
+    icon: 'http://image-volt.test.upcdn.net/icons/tubiao-21.png',
+    title: '医院',
+  },
+  {
+    icon: 'http://image-volt.test.upcdn.net/icons/tubiao-22.png',
+    title: '别墅',
+  },
 ];
 
 const principles = [
   {
     title: '光伏组件',
-    src: '/img_7.jpg',
+    src: 'http://image-volt.test.upcdn.net/public/img_7.jpg',
   },
   {
     title: '逆变器',
-    src: '/img_28.jpg',
+    src: 'http://image-volt.test.upcdn.net/public/img_28.jpg',
   },
   {
     title: '并网计量柜',
-    src: '/img_29.png',
+    src: 'http://image-volt.test.upcdn.net/public/img_29.png',
   },
   {
     title: '用户柜',
-    src: '/img_30.png',
+    src: 'http://image-volt.test.upcdn.net/public/img_30.png',
   },
   {
     title: '电网',
-    src: '/img_31.jpg',
+    src: 'http://image-volt.test.upcdn.net/public/img_31.jpg',
   },
   {
     title: '负载',
-    src: '/img_32.jpg',
+    src: 'http://image-volt.test.upcdn.net/public/img_32.jpg',
   },
 ];
 ---
@@ -60,13 +72,17 @@ const principles = [
             分 布 式 光 伏 服 务 商
           </p>
         </div>
-        <video src="/video_1.mp4" autoplay="" muted="" width="100%" loop=""
-        ></video>
+        <video
+          src="http://image-volt.test.upcdn.net/video_1.mp4"
+          autoplay=""
+          muted=""
+          width="100%"
+          loop=""></video>
       </div>
       <div class="swiper-slide">
         <img
           class="object-cover w-full aspect-ratio-video"
-          src="/img_6.jpg"
+          src="http://image-volt.test.upcdn.net/public/img_6.jpg"
           alt=""
         />
         <div
@@ -88,7 +104,7 @@ const principles = [
       <div class="swiper-slide">
         <img
           class="object-cover w-full aspect-ratio-video"
-          src="/img_23.jpg"
+          src="http://image-volt.test.upcdn.net/public/img_23.jpg"
           alt=""
         />
         <div
@@ -111,7 +127,7 @@ const principles = [
     <div class="swiper-pagination shadow-2xl"></div>
   </section>
   <section
-    class="bg-[url(/src/assets/imgs/2030.jpg)] bg-no-repeat bg-center bg-cover w-full box-border relative text-white aspect-ratio-video"
+    class="bg-[url(http://image-volt.test.upcdn.net/assets/2030.jpg)] bg-no-repeat bg-center bg-cover w-full box-border relative text-white aspect-ratio-video"
   >
     <h1
       class="absolute right-20px top-20px text-right text-gray-2 text-size-xs"
@@ -139,7 +155,7 @@ const principles = [
       </div>
     </div>
     <div class="absolute bottom-0">
-      <img src="/bg.png" alt="" />
+      <img src="http://image-volt.test.upcdn.net/public/bg.png" alt="" />
       <div class="absolute left-20 top-50% translate-y--50% <md:left-2">
         <h1 class="text-size-6xl <md:text-size-xl">光伏</h1>
         <p class="text-size-xl <md:text-size-sm">加速能源转型的必然选择</p>
@@ -171,7 +187,7 @@ const principles = [
     </div>
   </section>
   <section class="w-full box-border relative bg-[#5BAB6B] text-white">
-    <img src="/bg-1.jpg" alt="" />
+    <img src="http://image-volt.test.upcdn.net/public/bg-1.jpg" alt="" />
     <div class="fade-trigger pt-20" data-hook="70%">
       <h1 class="text-size-4xl text-center">光伏系统原理</h1>
       <p class="text-gray-2 text-center mt-5">
@@ -211,7 +227,7 @@ const principles = [
         class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer group"
       >
         <img
-          src="/img_6.jpg"
+          src="http://image-volt.test.upcdn.net/public/img_6.jpg"
           alt=""
           class="solution-img w-100% h-600px object-cover group-hover:transform-scale-110 transition-duration-1000 <md:h-400px"
         />
@@ -228,7 +244,7 @@ const principles = [
         class="relative overflow-hidden rounded-2xl flex-1 cursor-pointer group"
       >
         <img
-          src="/img_23.jpg"
+          src="http://image-volt.test.upcdn.net/public/img_23.jpg"
           alt=""
           class="solution-img w-100% h-600px object-cover hover:transform-scale-110 transition-transform transition-duration-1000 <md:h-400px"
         />

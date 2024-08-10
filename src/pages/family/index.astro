@@ -4,30 +4,25 @@ import ContactFooter from '@/components/ContactFooter.astro';
 import Banner from '@/components/Banner.astro';
 import clsx from 'clsx';
 
-import solution05 from '/src/assets/imgs/solution-case/05.png';
-import solution06 from '/src/assets/imgs/solution-case/06.png';
-import solution07 from '/src/assets/imgs/solution-case/07.png';
-import solution08 from '/src/assets/imgs/solution-case/08.png';
-
 // 案例图片 后续可能改为后台获取
 const caseList = [
   {
-    imgUrl: solution05.src,
+    imgUrl: 'http://image-volt.test.upcdn.net/assets/solutions/05.png',
     title: '上海浦东',
     desc: '11.18KWp',
   },
   {
-    imgUrl: solution06.src,
+    imgUrl: 'http://image-volt.test.upcdn.net/assets/solutions/06.png',
     title: '上海闵行',
     desc: '15.48KWp',
   },
   {
-    imgUrl: solution07.src,
+    imgUrl: 'http://image-volt.test.upcdn.net/assets/solutions/07.png',
     title: '上海宝山 ',
     desc: '20.64KWp',
   },
   {
-    imgUrl: solution08.src,
+    imgUrl: 'http://image-volt.test.upcdn.net/assets/solutions/08.png',
     title: '上海青浦',
     desc: '11.61KWp',
   },
@@ -35,7 +30,10 @@ const caseList = [
 ---
 
 <Layout title="辐特佳新能源">
-  <Banner title="家庭智能解决方案" imgSrc="/img_23.jpg" />
+  <Banner
+    title="家庭智能解决方案"
+    imgSrc="http://image-volt.test.upcdn.net/public/img_23.jpg"
+  />
   <section class="intro_1">
     <div class="item w-40vw <md:w-100vw">
       <div class="item_content fade-trigger">
@@ -251,17 +249,17 @@ const caseList = [
     opacity: 0.3;
   }
   .intro_1 {
-    background-image: url('/img_18.jpg');
+    background-image: url('http://image-volt.test.upcdn.net/public/img_18.jpg');
     background-size: cover;
     background-position: center center;
   }
   .intro_2 {
-    background-image: url('/img_24.png');
+    background-image: url('http://image-volt.test.upcdn.net/public/img_24.png');
     background-size: cover;
     background-position: center center;
   }
   .intro_3 {
-    background-image: url('/img_27.jpg');
+    background-image: url('http://image-volt.test.upcdn.net/public/img_27.jpg');
     background-size: cover;
     background-position: center center;
   }
