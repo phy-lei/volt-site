@@ -21,7 +21,7 @@ export default defineConfig({
   output: 'server',
   image: {
     // 示例：允许来自单个域名的远程图像优化。
-    domains: ['image-volt.test.upcdn.net'],
+    domains: ['images.voltjia.com'],
   },
   integrations: [
     UnoCSS({ injectReset: true }),
