@@ -19,14 +19,18 @@ function envAdapter() {
 // https://astro.build/config
 export default defineConfig({
   output: 'server',
+  image: {
+    // 示例：允许来自单个域名的远程图像优化。
+    domains: ['image-volt.test.upcdn.net'],
+  },
   integrations: [
     UnoCSS({ injectReset: true }),
     solidJs(),
     partytown({
-			config: {
-			  forward: ["dataLayer.push"],
-			},
-		}),
+      config: {
+        forward: ["dataLayer.push"],
+      },
+    }),
   ],
   prefetch: {
     defaultStrategy: 'viewport',
